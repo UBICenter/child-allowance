@@ -1,0 +1,10 @@
+name: childallowance
+dependencies:
+- python
+- plotly
+- pandas
+- numpy
+- pip
+- pip:
+  - jupyter-book
+  - "git+https://github.com/MaxGhenis/microdf.git"
