@@ -26,7 +26,9 @@ There is little evidence on the longer-term impact of cash transfers on child he
 ### Sex and gender-based outcomes
 
 [Malawi's ZCTP](http://documents1.worldbank.org/curated/en/159871468272378854/pdf/WPS5259.pdf) found that the provision of an unconditional cash transfer reduced the incidence of marriage and pregnancy amongst recipients by 48% and 34% respectively.
- 
+
+## References
+
 ```{bibliography} references.bib
 :filter: docname in docnames
 ```
