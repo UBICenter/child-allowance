@@ -16,4 +16,4 @@ repository:
 
 execute:
   execute_notebooks: 'cache'
-  timeout: 'None'
+  timeout: -1
