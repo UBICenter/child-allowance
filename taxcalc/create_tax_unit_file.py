@@ -21,6 +21,10 @@ person = convert_asec_person_taxcalc(person)
 
 
 # Run baseline tax calculation.
+BASELINE_REFORM = {
+    'BEN_mcaid_repeal': {2019: True},
+    'BEN_mcare_repeal': {2019: True}
+}
 
 # Run reform tax calculation.
 
