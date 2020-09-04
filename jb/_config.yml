@@ -13,3 +13,7 @@ html:
 repository:
   url: https://github.com/UBICenter/childallowance
   path_to_book: jb
+
+execute:
+  execute_notebooks: 'cache'
+  timeout: None
