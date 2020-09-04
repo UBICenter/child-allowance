@@ -15,5 +15,5 @@ repository:
   path_to_book: jb
 
 execute:
-  execute_notebooks: 'cache'
+  execute_notebooks: 'force'
   timeout: -1
