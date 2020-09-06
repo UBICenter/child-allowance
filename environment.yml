@@ -6,5 +6,5 @@ dependencies:
 - numpy
 - pip
 - pip:
-  - jupyter-book
+  - jupyter-book==0.7.5
   - "git+https://github.com/MaxGhenis/microdf.git"

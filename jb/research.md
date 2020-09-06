@@ -119,3 +119,7 @@ Across less commonly reported metrics such as empowerment indicies, the usage of
 
 ## Conclusions
 While the evidence from sub-Saharan Africa is complex and difficult to interpret, it is clear that cash transfers significantly improve the lives of children that live in households that receive them. In particular, these children are substantially less likely to be poor, more likely to have their material needs satisfied and receive some educational and health benefits. 
+
+```{bibliography} references.bib
+:filter: docname in docnames
+```
