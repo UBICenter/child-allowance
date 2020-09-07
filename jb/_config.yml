@@ -16,4 +16,4 @@ repository:
 
 execute:
   execute_notebooks: 'force'
-  timeout: -1
+  timeout: null

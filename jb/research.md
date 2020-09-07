@@ -10,8 +10,8 @@ In reporting the results of evaluations, an asterix is included after each stati
 ### Studies Considered 
 This report considers 20 programs, which include 6 conditional cash transfers (CCTs) and 17 unconditional cash transfers (UCTs), with 4 programs involving independent treatment arms that were both CCTs and UCTs and a country-wide old age pension in South Africa. The programs span 11 countries and the program title, country, conditionality and a short-hand name by which we refer to it throughout the report are listed in Table 1.
 
-<center>
 Table 1: Studies considered by this report
+
 |Country      |Program Name                                  |Transfer Type |Project Reference  |
 |:------------|:---------------------------------------------|:-------------|:------------------|
 |Burkino Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkino Faso NCTPP |
@@ -34,7 +34,7 @@ Table 1: Studies considered by this report
 |Zambia       |Child Grant Programme                         |UCT           |Zambia CGP         |
 |Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |
 |Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |
-</center>
+
 
 ### Poverty 
 Poverty metrics offer a simple means of estimating the capacity of households to provide for the material needs of children that are part of it. They tend to report against 3 such metrics, namely changes in 1) the poverty head count, a measure the share of the population earning or consuming below a nationally-determined poverty line, 2) the poverty gap index, a measure of the intensity of poverty, and 3) the squared poverty gap, a measure of the severity of poverty that more heavily weights relatively poor households.
@@ -43,8 +43,8 @@ Against these three measures, there is clear evidence from the Ghana LEAP, Kenya
 
 The findings of these studies are summarized in Table 2, which shows the percentage point reduction in measures of poverty driven by each of the programs. In its totality, the evidence indicates that cash transfers do reduce household poverty.
 
-<center>
-Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty 
+Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
+
 |Program       |Head Count (pp) |Poverty Gap (pp) |Squared Poverty Gap (pp) |
 |:------------:|:---------:|:----------:|:------------------:|
 |Ghana LEAP    |-2.1\*\*    |10.3\*\*      |             |
@@ -54,15 +54,14 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 |Uganda SAGE   |-8.3\*      |-2.2\*       |-0.83\*              |
 |Zambia CGP    |-4.1\*\*    |-8.4\*\*     |-7.6\*\*             |
 |Zimbabwe HSCT |-          |-           |-                   |
-</center>
 
 ### Child material deprivation
 To determine whether increases in household income translate to improvements in the material well-being of children, many programs measure changes in child ownership of basic items, namely, a pair of shoes, a blanket and a spare set of clothing. There were highly significant results across the majority of evaluations that considered child deprivation metrics, reflecting households' tendency to spend transfers on meeting the material needs of children as well as the potential efficacy of cash transfers as an intervention to improve the material wellbeing of children.
 
 All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer. The Ghana LEAP reported a 10 percentage point\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30\*\*\* percentage point increase in ownership of both blankets and shoes and the Zambia MCTG reported roughly 20\*\*\* pp increases in ownership of blankets and shoes and a 5\*\* pp increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final` . That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp) {cite}`Tanzania_TASAF_final`. These findings are summarized in Table 2.
 
-<center>
 Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material deprivation
+
 |Program          |Owns all (pp) |Blanket (pp) |Shoes (pp) |Change of clothes (pp) |
 |:---------------|:------------:|:-----------:|:---------:|:---------------------:|
 |Ghana LEAP       |              |             |10\*\*\*      |9.5\*\*\*                 |
@@ -70,7 +69,7 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 |Tanzania (TASAF) |-             |-            |17.9\*\*\*    |-                      |
 |Zambia MCTG      |22.7\*\*\*       |16.5\*\*\*      |22.7\*\*\*    |4.8\*\*                  |
 |Zimbabwe HSCT    |26.1\*\*\*       |-            |25.1\*\*\*    |-                      |
-</center>
+
 
 ### Food security and nutrition
 Households that received a cash transfer tended to spend significantly more money consuming food and these households tended to benefit from greater diversity in their diet. There is some weak evidence of improvements in household food security and an increase in the number of meals eaten each day by children. 
