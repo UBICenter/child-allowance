@@ -59,8 +59,8 @@ To determine whether increases in household income translate to improvements in 
 
 All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer. The Ghana LEAP reported a 10 pp\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30 pp\*\*\* increase in ownership of both blankets and shoes and the Zambia MCTG reported roughly 20 pp\*\*\* increases in ownership of blankets and shoes and a 5 pp\*\* increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final`. That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp), which was a central goal of the transfer {cite}`Tanzania_TASAF_final`. These findings are summarized in Table 3.
 
-<center>
 Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material deprivation
+
 |Program          |Owns all (pp) |Blanket (pp) |Shoes (pp) |Change of clothes (pp) |
 |:---------------|:------------:|:-----------:|:---------:|:---------------------:|
 |Ghana LEAP       |              |             |10\*\*\*      |9.5\*\*\*                 |
@@ -68,7 +68,6 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 |Tanzania (TASAF) |-             |-            |17.9\*\*\*    |-                      |
 |Zambia MCTG      |22.7\*\*\*       |16.5\*\*\*      |22.7\*\*\*    |4.8\*\*                  |
 |Zimbabwe HSCT    |26.1\*\*\*       |-            |25.1\*\*\*    |-                      |
-</center>
 
 ### Food security and nutrition
 There is also some evidence that household and child nutrition improve on the receipt of a cash transfer. Households that received a cash transfer tended to spend significantly more money on consuming food and these households tended to benefit from greater diversity in their diet. There is some weak evidence of improvements in household food security and an increase in the number of meals eaten each day by children. 
