@@ -11,6 +11,7 @@ In reporting the results of evaluations, an asterix is included after each stati
 This report considers 20 programs, which include 6 conditional cash transfers (CCTs) and 17 unconditional cash transfers (UCTs), with 4 programs involving independent treatment arms that included both CCTs and UCTs as well as an old age pension in South Africa. The programs span 11 countries and the program title, country, conditionality and a short-hand name by which we refer to it throughout the report are listed in Table 1.
 
 Table 1: Studies considered by this report
+
 |Country      |Program Name                                  |Transfer Type |Project Reference  |
 |:------------|:---------------------------------------------|:-------------|:------------------|
 |Burkino Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkino Faso NCTPP |
@@ -42,6 +43,7 @@ Against these three measures, there is clear evidence from the Ghana LEAP, Kenya
 The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs. In its totality, the evidence indicates that cash transfers do reduce household poverty.
 
 Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty 
+
 |Program       |Head Count (pp) |Poverty Gap (pp) |Squared Poverty Gap (pp) |
 |:------------:|:---------:|:----------:|:------------------:|
 |Ghana LEAP    |-2.1\*\*    |10.3\*\*      |             |
