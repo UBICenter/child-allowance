@@ -16,7 +16,7 @@ repository:
 
 execute:
   execute_notebooks: 'force'
-  timeout: null
+  timeout: -1
 
 # See https://github.com/executablebooks/jupyter-book/issues/954#issuecomment-688220038
 sphinx:
