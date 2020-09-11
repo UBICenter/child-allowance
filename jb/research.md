@@ -181,15 +181,22 @@ The absence of evidence is reflected in the World Bank meta-analysis, which foun
 
 ### Empowerment
 
-In recent years there has been substantial interest in whether cash transfers, particularly if they are given to women recipients, improve metrics of women's empowerment. As yet, there is little evidence that cash tranfers improve women's empowerment.
+In recent years there has been substantial interest in whether cash transfers, particularly if they are given to women, improve metrics of women's empowerment.
+As yet, there is little evidence that cash tranfers improve women's empowerment.
 
-The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 48%\*\*\* and 34%\*\*\* respectively, and the Kenya CT-OVC reported a 4.9 pp** reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage {cite}`MZCTP` {cite}`HANDA201536` . The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy {cite}`Ghana_final` . The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects {cite}`Tanzania_TASAF_final` {cite}`Malawi_SCTP_final` {cite}.
+*Note: Use % or pp consistently, specify outcomes in final sentence*
 
-Across less commonly reported metrics, such as empowerment indicies, the usage of modern contraceptives and incidence of sex and gender-based violence, the evidence is similarly weak. While the Kenya GiveDirectly program reported improvements in an index of women's empowerment\*\*\* and a reduction in both physical violence\*\*\* and sexual violence** indices for female recipients, there were null results in similar outcome metrics across the Ghana LEAP, Tanzania TASAF and Zambia MCTG {cite}`KenyaGD_domvio` {cite}`Ghana_final` {cite}`Tanzania_TASAF_final` {cite}`MZCTP` .
+The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 48%\*\*\* and 34%\*\*\* respectively, and the Kenya CT-OVC reported a 4.9 pp** reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage {cite}`MZCTP` {cite}`HANDA201536` . The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy {cite}`Ghana_final`.
+The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects {cite}`Tanzania_TASAF_final` {cite}`Malawi_SCTP_final` {cite}.
 
-## Conclusions
+Across less commonly reported metrics, such as empowerment indicies, the usage of modern contraceptives and incidence of sex- and gender-based violence, the evidence is similarly weak. While the Kenya GiveDirectly program reported improvements in an index of women's empowerment\*\*\* and a reduction in both physical violence\*\*\* and sexual violence** indices for female recipients, there were null results in similar outcome metrics across the Ghana LEAP, Tanzania TASAF and Zambia MCTG {cite}`KenyaGD_domvio` {cite}`Ghana_final` {cite}`Tanzania_TASAF_final` {cite}`MZCTP` .
 
-While the evidence from sub-Saharan Africa is complex and difficult to interpret, it is clear that cash transfers significantly improve the lives of children that live in households that receive them. In particular, these children are substantially less likely to be poor, more likely to have their material needs satisfied and receive some educational and health benefits. 
+### Conclusions
+
+While the evidence from sub-Saharan Africa is complex and difficult to interpret, it is clear that cash transfers significantly improve the lives of children that live in households that receive them.
+In particular, these children are substantially less likely to be poor and more likely to have their material needs satisfied, and they also receive some educational and health benefits.
+
+## References
 
 ```{bibliography} references.bib
 :filter: docname in docnames
