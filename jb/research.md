@@ -54,16 +54,17 @@ Against these three measures, there is clear evidence from the Ghana LEAP, Kenya
 The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure {cite} `Uganda_SAGE_final` .
 That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no effect on any measure of poverty {cite} `Lesotho_CGP` {cite} `Zimbabwe_HSCT_final` . 
 
-The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs. In its totality, the evidence indicates that cash transfers do reduce household poverty.
+The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs.
+In its totality, the evidence indicates that cash transfers do reduce household poverty.
 
-Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty 
+Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 
-|Program       |Head Count (pp) |Poverty Gap (pp) |Squared Poverty Gap (pp) |
+|Program       |Headcount (pp) |Poverty gap (pp) |Squared poverty gap (pp) |
 |:------------:|:---------:|:----------:|:------------------:|
 |Ghana LEAP    |-2.1\*\*    |10.3\*\*      |             |
 |Kenya HSNP    |-10.3\*\*    |-7.5\*\*      |-6.9\*\*              |
 |Lesotho CGP   |-          |-           |-                   |
-|Malawi SCTP   |-14.89\*\*\*  |-10.87\*\*\*   |-12.18\*\*\*           |
+|Malawi SCTP   |-14.9\*\*\*  |-10.9\*\*\*   |-12.2\*\*\*           |
 |Uganda SAGE   |-8.3\*      |-2.2\*       |-0.83\*              |
 |Zambia CGP    |-4.1\*\*    |-8.4\*\*     |-7.6\*\*             |
 |Zimbabwe HSCT |-          |-           |-                   |
