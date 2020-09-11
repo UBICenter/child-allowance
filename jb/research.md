@@ -109,11 +109,16 @@ The Uganda GiveDirectly program found that the proportion of children skipping m
 
 ### Nutrition long-term impacts 
 
-There is little evidence on the longer-term impact of cash transfers on child health outcomes associated with better childhood nutrition. While the GiveDirectly Rwanda found small positive impacts of transfers on Height-for-age and Weight-for-age (0.091 standard deviations\*\* and 0.067 standard deviations\*\* respectively {cite}`RwandaGD` ), as did the South African CSG, most other evaluations, including the Ghana LEAP and Zambia CGP, did not find significant impacts, likely because the anthropomorphic benefits of nutrition take extended periods to materialize {cite}`SouthAfrica_CSG_final` {cite}`Ghana_final` {cite}`Zambia_CGP_final` . 
+These studies find little evidence on the longer-term impact of cash transfers on child health outcomes associated with better childhood nutrition.
+The GiveDirectly Rwanda program found small positive impacts of transfers on Height-for-age and Weight-for-age (0.091 standard deviations\*\* and 0.067 standard deviations\*\*, respectively {cite}`RwandaGD`),
+as did the South African CSG.
+However, most other evaluations, including the Ghana LEAP and Zambia CGP, did not find significant impacts.
+The Lesotho CGP evaluation even found a significant reduction in Weight-for-age amongst program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition {cite}`Lesotho_CGP`.
 
-There is also some evidence that the gender of the recipient is important in the impact of cash transfers. The South African Old Age Pension only had significant impacts on weight-for-height for girls if their grandmother (and not grandfather) were eligible for the pension {cite}`SA_Duflo` . 
+These small and inconsistent effects may result from the long delays between nutrition and its anthropomorphic benefits {cite}`SouthAfrica_CSG_final` {cite}`Ghana_final` {cite}`Zambia_CGP_final`.
 
-Perhaps concerningly, in the Lesotho CGP evaluation, a significant reduction in Weight-for-age was found amongst program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition {cite}`Lesotho_CGP` . Overall though, if anything, the evidence indicates small improvements in anthropomorphic child outcomes and recipient gender may affect the scale of impacts.
+There is also some evidence that the gender of the recipient affects the impact of cash transfers.
+The South African Old Age Pension only had significant impacts on Weight-for-height for girls if their grandmother (and not grandfather) was eligible for the pension {cite}`SA_Duflo` . 
 
 ### Health
 
