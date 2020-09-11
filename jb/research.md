@@ -74,7 +74,7 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 To determine whether increases in household income translate to improvements in the material well-being of children, many programs measure changes in child ownership of basic items, namely, a pair of shoes, a blanket and a spare set of clothing.
 Most evaluations reported highly significant effects on child deprivation metrics, reflecting households' tendency to spend transfers on meeting the material needs of children, as well as the potential efficacy of cash transfers as an intervention to improve the material wellbeing of children.
 
-All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer. The Ghana LEAP reported a 10 pp\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30 pp\*\*\* increase in ownership of both blankets and shoes and the Zambia MCTG reported roughly 20 pp\*\*\* increases in ownership of blankets and shoes and a 5 pp\*\* increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final` . That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp), which was a central goal of the transfer {cite}`Tanzania_TASAF_final` . These findings are summarized in Table 3.
+All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer. The Ghana LEAP reported a 10 pp\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30 pp\*\*\* increase in ownership of both blankets and shoes, and the Zambia MCTG reported roughly 20 pp\*\*\* increases in ownership of blankets and shoes and a 5 pp\*\* increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final` . That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp), which was a central goal of the transfer {cite}`Tanzania_TASAF_final` . These findings are summarized in Table 3.
 
 Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material deprivation
 
@@ -88,13 +88,24 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 
 ### Food security and nutrition
 
-There is also some evidence that household and child nutrition improve on the receipt of a cash transfer. Households that received a cash transfer tended to spend significantly more money on consuming food and these households tended to benefit from greater diversity in their diet. There is some weak evidence of improvements in household food security and an increase in the number of meals eaten each day by children. 
+There is also some evidence that cash transfers improve nutrition of children and other household members.
+Households that received a cash transfer tended to spend significantly more money on food, and these households tended to benefit from greater diversity in their diet.
+There is some weak evidence of improvements in household food security and an increase in the number of meals eaten each day by children. 
 
-The change in food consumption as a percentage of the total transfer was high across most interventions. For example, a 2018 World Bank Meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*) Malawi SCTP (148%\*\*) and the Kenya CT-OVC (60%\*\*) {cite}`World_Bank_meta` . On the other hand, some transfers, and most often smaller or irregular transfers, such as the Ghana LEAP and Lesotho CGP, had no impact on food consumption {cite}`Ghana_final` {cite}`Lesotho_CGP` . Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta` . 
+The change in food consumption as a percentage of the total transfer was high across most interventions.
+For example, a 2018 World Bank meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*), Malawi's SCTP (148%\*\*), and Kenya's CT-OVC (60%\*\*) {cite}`World_Bank_meta`.
+On the other hand, some transfers---most often smaller or irregular transfers, such as the Ghana LEAP and Lesotho CGP---had no impact on food consumption {cite}`Ghana_final` {cite}`Lesotho_CGP`.
+Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta` . 
 
-This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households. The number of meals eaten per day unilaterally increased across the programs that measured it: 0.09\*\*\* in the Ghana LEAP and 0.29\*\* in the Malawi SCTP {cite}`Ghana_final` {cite}`Malawi_SCTP_final` . Similarly, the proportion of people consuming more than one meal per day increased 11\*\* percentage points in the Zambia MCTG and the majority of programs reported improvements in indices of food securty {cite}`Zambia_MCTG_final` . 
+This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
+The number of meals eaten per day unilaterally increased across the programs that measured it:
+0.09\*\*\* in the Ghana LEAP and 0.29\*\* in the Malawi SCTP {cite}`Ghana_final` {cite}`Malawi_SCTP_final`.
+Similarly, the proportion of people consuming more than one meal per day increased 11\*\* percentage points in the Zambia MCTG and the majority of programs reported improvements in indices of food securty {cite}`Zambia_MCTG_final`.
 
-However, the evidence on other measures of food security is less clear. For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`CT_OVC` . Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the the number of meals that children are forced to skip as a result of economic pressures. The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric {cite}`Uganda_GD_final` {cite}`Lesotho_CGP` .
+However, the evidence on other measures of food security is less clear.
+For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`CT_OVC`.
+Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the the number of meals that children are forced to skip as a result of economic pressures.
+The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric {cite}`Uganda_GD_final` {cite}`Lesotho_CGP` .
 
 ### Nutrition long-term impacts 
 
