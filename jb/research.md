@@ -2,11 +2,15 @@
 
 ### Introduction
 
-In developing contexts, there is a large volume of literature on the efficacy of cash transfers in improving child outcomes. In particular, in recent times, countries in sub-Saharan Africa have routinely been the site of rigorously evaluated government and international organization-led interventions, creating a rich comparative literature on the impacts of cash transfers.
+In developing contexts, there is a large volume of literature on the efficacy of cash transfers in improving child outcomes.
+In particular, in recent times, countries in sub-Saharan Africa have routinely been the site of rigorously evaluated government and international organization-led interventions, creating a rich comparative literature on the impacts of cash transfers.
 
-This report summarizes evidence from experimental and pseudo-experimental studies on the impacts of cash transfers on metrics of poverty, food security, health, educational attainment, child labour and empowerment-related outcomes. Thereby, it seeks to provide an indication of both the range of outcomes affected by cash transfers and the magnitude of those effects. Of course, the impacts of any intervention vary markedly between contexts, even between the programs and countries considered by this report.
+This report summarizes evidence from experimental and pseudo-experimental studies on the impacts of cash transfers on metrics of poverty, food security, health, educational attainment, child labour and empowerment-related outcomes.
+Thereby, it seeks to provide an indication of both the range of outcomes affected by cash transfers and the magnitude of those effects.
+Of course, the impacts of any intervention vary markedly between contexts, even between the programs and countries considered by this report.
 
-In reporting the results of evaluations, an asterisk is included after each statistically significant coefficient at the $\alpha = 0.10$ significance level. An additional asterisk is reported at each threshold significance level (* = 0.10, ** = 0.05, *** = 0.01). 
+In reporting the results of evaluations, an asterisk is included after each statistically significant coefficient at the $\alpha = 0.10$ significance level.
+An additional asterisk is reported at each threshold significance level (* = 0.10, ** = 0.05, *** = 0.01). 
 
 ### Studies considered
 
@@ -76,7 +80,10 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 To determine whether increases in household income translate to improvements in the material well-being of children, many programs measure changes in child ownership of basic items, namely, a pair of shoes, a blanket and a spare set of clothing.
 Most evaluations reported highly significant effects on child deprivation metrics, reflecting households' tendency to spend transfers on meeting the material needs of children, as well as the potential efficacy of cash transfers as an intervention to improve the material wellbeing of children.
 
-All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer. The Ghana LEAP reported a 10 pp\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30 pp\*\*\* increase in ownership of both blankets and shoes, and the Zambia MCTG reported roughly 20 pp\*\*\* increases in ownership of blankets and shoes and a 5 pp\*\* increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final` . That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp), which was a central goal of the transfer {cite}`Tanzania_TASAF_final` . These findings are summarized in Table 3.
+All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer.
+The Ghana LEAP reported a 10 pp\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30 pp\*\*\* increase in ownership of both blankets and shoes, and the Zambia MCTG reported roughly 20 pp\*\*\* increases in ownership of blankets and shoes and a 5 pp\*\* increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final`.
+That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp), which was a central goal of the transfer {cite}`Tanzania_TASAF_final`.
+These findings are summarized in Table 3.
 
 Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material deprivation
 
@@ -189,7 +196,8 @@ As yet, there is little evidence that cash tranfers improve women's empowerment.
 The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 48%\*\*\* and 34%\*\*\* respectively, and the Kenya CT-OVC reported a 4.9 pp** reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage {cite}`MZCTP` {cite}`HANDA201536` . The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy {cite}`Ghana_final`.
 The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects {cite}`Tanzania_TASAF_final` {cite}`Malawi_SCTP_final` {cite}.
 
-Across less commonly reported metrics, such as empowerment indicies, the usage of modern contraceptives and incidence of sex- and gender-based violence, the evidence is similarly weak. While the Kenya GiveDirectly program reported improvements in an index of women's empowerment\*\*\* and a reduction in both physical violence\*\*\* and sexual violence** indices for female recipients, there were null results in similar outcome metrics across the Ghana LEAP, Tanzania TASAF and Zambia MCTG {cite}`KenyaGD_domvio` {cite}`Ghana_final` {cite}`Tanzania_TASAF_final` {cite}`MZCTP` .
+Across less commonly reported metrics, such as empowerment indicies, the usage of modern contraceptives and incidence of sex- and gender-based violence, the evidence is similarly weak.
+While the Kenya GiveDirectly program reported improvements in an index of women's empowerment\*\*\* and a reduction in both physical\*\*\* and sexual violence** indices for female recipients, there were null results in similar outcome metrics across the Ghana LEAP, Tanzania TASAF and Zambia MCTG {cite}`KenyaGD_domvio` {cite}`Ghana_final` {cite}`Tanzania_TASAF_final` {cite}`MZCTP` .
 
 ### Conclusions
 
