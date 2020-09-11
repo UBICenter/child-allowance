@@ -52,7 +52,7 @@ Studies on cash transfers in sub-Saharan Africa tend to report 3 such metrics, n
 
 Against these three measures, there is clear evidence from the Ghana LEAP, Kenya HSNP, Malawi SCTP and Zambia CGP that cash transfers are effective tools in reducing the incidence, intensity and severity of poverty {cite}`Ghana_final` {cite}`Kenya_HSNP_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_CGP_final` .
 The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure {cite}`Uganda_SAGE_final` .
-That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no effect on any measure of poverty {cite}`Lesotho_CGP` {cite}`Zimbabwe_HSCT_final` . 
+That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty {cite}`Lesotho_CGP` {cite}`Zimbabwe_HSCT_final` . 
 
 The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs.
 In its totality, the evidence indicates that cash transfers do reduce household poverty.
@@ -71,7 +71,8 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 
 ### Child material deprivation
 
-To determine whether increases in household income translate to improvements in the material well-being of children, many programs measure changes in child ownership of basic items, namely, a pair of shoes, a blanket and a spare set of clothing. There were highly significant results across the majority of evaluations that considered child deprivation metrics, reflecting households' tendency to spend transfers on meeting the material needs of children as well as the potential efficacy of cash transfers as an intervention to improve the material wellbeing of children.
+To determine whether increases in household income translate to improvements in the material well-being of children, many programs measure changes in child ownership of basic items, namely, a pair of shoes, a blanket and a spare set of clothing.
+Most evaluations reported highly significant effects on child deprivation metrics, reflecting households' tendency to spend transfers on meeting the material needs of children, as well as the potential efficacy of cash transfers as an intervention to improve the material wellbeing of children.
 
 All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer. The Ghana LEAP reported a 10 pp\*\*\* increase in ownership of shoes and a change of clothes, the Malawi SCTP reported a roughly 30 pp\*\*\* increase in ownership of both blankets and shoes and the Zambia MCTG reported roughly 20 pp\*\*\* increases in ownership of blankets and shoes and a 5 pp\*\* increase in change of clothes {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final` . That said, in the Tanzania TASAF evaluation, the only significant impact found was in possession of a pair of shoes (18** pp), which was a central goal of the transfer {cite}`Tanzania_TASAF_final` . These findings are summarized in Table 3.
 
@@ -95,7 +96,7 @@ This increase in household food consumption is reflected in more concrete measur
 
 However, the evidence on other measures of food security is less clear. For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`CT_OVC` . Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the the number of meals that children are forced to skip as a result of economic pressures. The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric {cite}`Uganda_GD_final` {cite}`Lesotho_CGP` .
 
-### Nutrition Long-term impacts 
+### Nutrition long-term impacts 
 
 There is little evidence on the longer-term impact of cash transfers on child health outcomes associated with better childhood nutrition. While the GiveDirectly Rwanda found small positive impacts of transfers on Height-for-age and Weight-for-age (0.091 standard deviations\*\* and 0.067 standard deviations\*\* respectively {cite}`RwandaGD` ), as did the South African CSG, most other evaluations, including the Ghana LEAP and Zambia CGP, did not find significant impacts, likely because the anthropomorphic benefits of nutrition take extended periods to materialize {cite}`SouthAfrica_CSG_final` {cite}`Ghana_final` {cite}`Zambia_CGP_final` . 
 
