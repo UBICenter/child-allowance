@@ -10,6 +10,8 @@ In reporting the results of evaluations, an asterisk is included after each stat
 
 ### Studies considered
 
+*Note: Add the typical conditions, either here or in the outcome sections (e.g. any healthcare results should state if the CCT was conditioned on healthcare activities, and similarly for education)*
+
 This report considers 20 programs spanning 11 countries:
 13 pure unconditional cash transfers (UCTs), 
 2 pure conditional cash transfers (CCTs), 
@@ -89,8 +91,7 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 ### Food security and nutrition
 
 There is also some evidence that cash transfers improve nutrition of children and other household members.
-Households that received a cash transfer tended to spend significantly more money on food, and these households tended to benefit from greater diversity in their diet.
-There is some weak evidence of improvements in household food security and an increase in the number of meals eaten each day by children. 
+Households that received a cash transfer tended to spend significantly more money on food, and these households tended to benefit from greater diversity in their diet and more meals per day.
 
 The change in food consumption as a percentage of the total transfer was high across most interventions.
 For example, a 2018 World Bank meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*), Malawi's SCTP (148%\*\*), and Kenya's CT-OVC (60%\*\*) {cite}`World_Bank_meta`.
@@ -122,25 +123,61 @@ The South African Old Age Pension only had significant impacts on Weight-for-hei
 
 ### Health
 
-Despite improving access to healthcare being a central aim of many cash transfers, there is little evidence that household expenditure on health-related services increases with receipt of a cash transfer. The Burkino Faso NCTPP and Malawi SCTP report significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer {cite}`BurkinaFaso_final` {cite}`Malawi_SCTP_final` . However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure {cite}`World_Bank_meta` {cite}`Tanzania_TASAF_final` {cite}`Zimbabwe_HSCT_final` . 
+*TODO: Consider grouping health outcomes and describing this as healthcare, morbidity (maybe group with an above section),
+and mental health. Also reconsider including non-child programs, maybe put in an appendix?*
 
-There is similarly weak evidence of improvement across a range medium-term health outcomes. The Kenya UBI found between -3 to -6 pp\*\* reductions in morbidity (depending on time-scale) and similar results were reported by the Malawi SCTP (-6 pp\*\*) {cite}`Kenya_UBI`  `Malawi_SCTP_final` . However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects {cite}`Ghana_final` {cite}`Uganda_SAGE_final` . Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with very modest declines in child mortality of -1** pp and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes {cite}`RwandaGD` . 
+Despite improving access to healthcare being a central aim of many cash transfers, there is little evidence that household expenditure on health-related services increases with receipt of a cash transfer.
+The Burkino Faso NCTPP and Malawi SCTP report significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer {cite}`BurkinaFaso_final` {cite}`Malawi_SCTP_final`.
+However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure {cite}`World_Bank_meta` {cite}`Tanzania_TASAF_final` {cite}`Zimbabwe_HSCT_final` . 
 
-There is interesting, though inconclusive, evidence of mental health impacts. Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale {cite}`KenyaGD_domvio` {cite}`Kenya_UBI` . By contrast, the Zimbabwe HSCT found a weakly significant increase in depression\* but a highly significant improvement in subjective well-being\*\*\*, while the Malawi SCTP, Tanzania TASAF and Zambia MCTG found null effects {cite}`Zimbabwe_HSCT_final` {cite}`Malawi_SCTP_final` {cite}`Tanzania_TASAF_final` {cite}`Zambia_MCTG_final` . 
+There is similarly weak evidence of improvement across a range medium-term health outcomes.
+The Kenya UBI found between 3 and 6 pp\*\* reductions in morbidity (depending on time-scale) {cite}`Kenya_UBI`, and the Malawi SCTP found a 6 pp reduction\*\*) `Malawi_SCTP_final`.
+However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects {cite}`Ghana_final` {cite}`Uganda_SAGE_final`.
+Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with very modest declines in child mortality of -1** pp and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes {cite}`RwandaGD`. 
+
+There is interesting, though inconclusive, evidence of mental health impacts.
+Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale {cite}`KenyaGD_domvio` {cite}`Kenya_UBI`.
+By contrast, the Zimbabwe HSCT found a weakly significant increase in depression\* but a highly significant improvement in subjective well-being\*\*\*, while the Malawi SCTP, Tanzania TASAF and Zambia MCTG found null effects {cite}`Zimbabwe_HSCT_final` {cite}`Malawi_SCTP_final` {cite}`Tanzania_TASAF_final` {cite}`Zambia_MCTG_final` . 
 
 ### Education
 
-There is some evidence that receipt of a cash transfer increases the probability that a child is enrolled in school. For example, the Malawi SCTP found that receipt of the transfer was associated with an 11 pp\*\*\* increase in enrollment from baseline and the Zambia MCTG an 8 pp\* increase {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final` . There is also evidence from the Burkino Faso NCTPP that, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*), there is no effect for unconditional transfers {cite}`BurkinoFaso_School` .
+*Note: this can have more causal language than "associated" right?*
 
-However, the evidence isn't conclusive. The Kenya CT-OVC and Ghana LEAP reported null results for enrollment in their general populations but significant results for sub-samples of adolescent age children (13-17) {cite}`Ghana_final` {cite}`Kenya_CT_OVC` . The Zimbabwe HSCT found no enrolment effects, though the authors indicate substantive and negative correlation between receipt of the transfer and other scholarships were likely responsible {cite}`Zimbabwe_HSCT_final` . Moreover, evidence from the Zambia CGP indicates that enrollment improvements are not persistent with a 10 pp\*\* increase at 30 months declining to a non-significant 6 pp at 36 months. In its totality, the evidence likely indicates a small improvement in enrollment outcomes. 
+There is some evidence that cash transfers increase the probability that a child is enrolled in school.
+For example, the Malawi SCTP found that receipt of the transfer was associated with an 11 pp\*\*\* increase in enrollment from baseline and the Zambia MCTG an 8 pp\* increase {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final`.
+There is also evidence from the Burkino Faso NCTPP that, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*), there is no effect for unconditional transfers {cite}`BurkinoFaso_School`.
 
-On the intensive margin, there is some weak evidence that school attendance increases on receipt of the transfer (e.g. 13.4 pp\*\*\* for the CCT arm of the Burkino Faso NCTPP null result for the UCT arm and 13 pp\*\* Malawi SCTP {cite}`BurkinoFaso_School` {cite}`Malawi_SCTP_final` ) though a clear majority of null results is reflected in the the World Bank meta-analysis finding no significant impact across the programs {cite}`World_Bank_meta` . Similarly mixed results are reported by these programs for grade attainment. 
+*Note: are any of the below conditional on child attendance? If any other than NCTPP were, it'd be good to break out the UCTs into a single paragraph.*
 
-Malawi's ZCTP also found improvements in varied scores of educational attainment and cognition for its conditional transfer program (which required school attendance), but not the unconditional transfer program (on average, roughly 0.15\*\*\* sd improvements) {cite}`MZCTP` . This, combined with evidence from the Burkino Faso NCTPP may indicate that if educational outcomes are the primary purpose of the cash transfer intervention, then conditioning the transfer on school attendance may be a more cost-efficient intervention. There is, however, evidence that these educational effects are once transfers stop {cite}`ZCTP_medium` . 
+However, the evidence isn't conclusive.
+The Kenya CT-OVC and Ghana LEAP only found significant enrollment effects on children age 13 to 17 {cite}`Ghana_final` {cite}`Kenya_CT_OVC`.
+The Zimbabwe HSCT found no enrollment effects, though the authors indicate that this could be due to loss of income-based scholarships {cite}`Zimbabwe_HSCT_final`.
+Moreover, evidence from the Zambia CGP indicates that enrollment improvements did not persist: a 10 pp\*\* increase at 30 months declined to a non-significant 6 pp at 36 months.
+In its totality, the evidence likely indicates a small improvement in enrollment outcomes. 
 
-### Child Labour
+*TODO: Confirm attendance = days attended / total school days, and mention this.*
 
-The studies considered showed no evidence of reductions in child labour associated with provision of a cash transfer. While the Kenya CT-OVC found a modest reduction (-12%\*\*\*) in own-farm labour, the vast majority of studies found no effect of cash transfers on child labour incidence {cite}`CTOVC_food` . Indeed, the Malawi SCTP found a 0.09 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities {cite}`Malawi_SCTP_final` . The absense of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta` . 
+On the intensive margin, there is some weak evidence that transfers increase school attendance, as quantified as share of school days attended.
+For example, the Burkina Faso NCTPP CCT arm increased attendance by 13.4 pp\*\*\* (its UCT arm found a null effect) and the Malawi SCTP raised attendance by  13 pp\*\* {cite}`BurkinoFaso_School` {cite}`Malawi_SCTP_final`.
+However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`.
+The programs reported similarly mixed results on grade attainment.
+
+*Note: How is grade attainment defined?*
+
+Malawi's ZCTP also found that its CCT (which required school attendance) improved various scores of educational attainment and cognition by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes {cite}`MZCTP`.
+Combined with evidence from the Burkino Faso NCTPP, this suggests that CCTs conditioned on school attendance more cost-effectively improve educational outcomes than UCTs.
+There is, however, evidence that these educational effects are once transfers stop {cite}`ZCTP_medium`.
+
+*TODO: Missing word in sentence above*
+
+### Child labor
+
+*TODO: Define terms*
+
+The studies considered found inconsistent evidence on the effects of cash transfers on child labor.
+While the Kenya CT-OVC found a modest reduction (-12%\*\*\*) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence {cite}`CTOVC_food`.
+Indeed, the Malawi SCTP found a 0.09 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities {cite}`Malawi_SCTP_final`.
+The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
 ### Empowerment
 
