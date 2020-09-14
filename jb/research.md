@@ -117,23 +117,17 @@ Looking specifically at child outcomes, there is mixed evidence on whether trans
 The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric {cite}`Uganda_GD_final` {cite}`Lesotho_CGP` .
 
 ### Health
+While food security and nutrition are improved markedly by cash transfers, there is weaker evidence of an impact on child health outcomes. Across child anthropomorphic outcomes, healthcare utilization, morbidity and mental health outcomes, there is only limited evidence that child health improves as a result of a cash transfer. 
 
-
-These studies find little evidence on the longer-term impact of cash transfers on child anthropomorphic outcomes associated with better childhood nutrition.
-The GiveDirectly Rwanda program found small positive impacts of transfers on Height-for-age and Weight-for-age (0.091 standard deviations\*\* and 0.067 standard deviations\*\*, respectively {cite}`RwandaGD`),
+The GiveDirectly Rwanda program found small positive impacts of transfers on two anthropomorphic measures, Height-for-age and Weight-for-age (0.091 standard deviations\*\* and 0.067 standard deviations\*\*, respectively {cite}`RwandaGD`),
 as did the South African CSG.
-However, most other evaluations, including the Ghana LEAP and Zambia CGP, did not find significant impacts.
+However, most other evaluations, including the Ghana LEAP and Zambia CGP, found null effects.
 The Lesotho CGP evaluation even found a significant reduction in Weight-for-age amongst program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition {cite}`Lesotho_CGP`.
 
 These small and inconsistent effects may result from the long delays between nutrition and its anthropomorphic benefits {cite}`SouthAfrica_CSG_final` {cite}`Ghana_final` {cite}`Zambia_CGP_final`.
 
 There is also some evidence that the gender of the recipient affects the impact of cash transfers on health anthropomorphic outcomes.
 The South African Old Age Pension only had significant impacts on Weight-for-height for girls if their grandmother (and not grandfather) was eligible for the pension {cite}`SA_Duflo` . 
-
-
-*TODO: Consider grouping health outcomes and describing this as healthcare, morbidity (maybe group with an above section),
-and mental health. Also reconsider including non-child programs, maybe put in an appendix?*
-*Note: Add the typical conditions, either here or in the outcome sections (e.g. any healthcare results should state if the CCT was conditioned on healthcare activities, and similarly for education)*
 
 Despite improving access to healthcare being a central aim of many cash transfers, there is little evidence that household expenditure on health-related services increases with receipt of a cash transfer.
 The Burkino Faso NCTPP and Malawi SCTP report significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer {cite}`BurkinaFaso_final` {cite}`Malawi_SCTP_final`.
@@ -147,6 +141,10 @@ Looking specifically at child outcomes, there is tentative evidence from the Rwa
 There is interesting, though inconclusive, evidence of mental health impacts.
 Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale {cite}`KenyaGD_domvio` {cite}`Kenya_UBI`.
 By contrast, the Zimbabwe HSCT found a weakly significant increase in depression\* but a highly significant improvement in subjective well-being\*\*\*, while the Malawi SCTP, Tanzania TASAF and Zambia MCTG found null effects {cite}`Zimbabwe_HSCT_final` {cite}`Malawi_SCTP_final` {cite}`Tanzania_TASAF_final` {cite}`Zambia_MCTG_final` . 
+
+*TODO: Consider grouping health outcomes and describing this as healthcare, morbidity (maybe group with an above section),
+and mental health. Also reconsider including non-child programs, maybe put in an appendix?*
+*Note: Add the typical conditions, either here or in the outcome sections (e.g. any healthcare results should state if the CCT was conditioned on healthcare activities, and similarly for education)*
 
 ### Education
 
