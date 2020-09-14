@@ -9,8 +9,7 @@ This report summarizes evidence from experimental and pseudo-experimental studie
 Thereby, it seeks to provide an indication of both the range of outcomes affected by cash transfers and the magnitude of those effects.
 Of course, the impacts of any intervention vary markedly between contexts, even between the programs and countries considered by this report.
 
-In reporting the results of evaluations, an asterisk is included after each statistically significant coefficient at the $\alpha = 0.10$ significance level.
-An additional asterisk is reported at each threshold significance level (* = 0.10, ** = 0.05, *** = 0.01). 
+In reporting evaluation impacts, where possible, percentage point changes are reported alongside the baseline treatment group mean in brackets. An asterisk is included after each statistically significant coefficient at the $\alpha = 0.10$ significance level. An additional asterisk is reported at each threshold significance level (* = 0.10, ** = 0.05, *** = 0.01). 
 
 ### Studies considered
 
@@ -59,7 +58,7 @@ Against these three measures, there is clear evidence from the Ghana LEAP, Kenya
 The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure {cite}`Uganda_SAGE_final`.
 That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty {cite}`Lesotho_CGP` {cite}`Zimbabwe_HSCT_final`. 
 
-The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs.
+The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs alongside the baseline treatment mean.
 In its totality, the evidence indicates that cash transfers do reduce household poverty.
 
 Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
@@ -69,7 +68,7 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 |Ghana LEAP    |-2.1\*\*    |10.3\*\*      |             |
 |Kenya HSNP    |-10.3\*\*    |-7.5\*\*      |-6.9\*\*              |
 |Lesotho CGP   |-          |-           |-                   |
-|Malawi SCTP   |-14.9\*\*\*  |-10.9\*\*\*   |-12.2\*\*\*           |
+|Malawi SCTP   |-14.9\*\*\* (82%)  |-10.9\*\*\* (60)  |-12.2\*\*\* (41)          |
 |Uganda SAGE   |-8.3\*      |-2.2\*       |-0.83\*              |
 |Zambia CGP    |-4.1\*\*    |-8.4\*\*     |-7.6\*\*             |
 |Zimbabwe HSCT |-          |-           |-                   |
@@ -91,7 +90,7 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 |Program          |Owns all (pp) |Blanket (pp) |Shoes (pp) |Change of clothes (pp) |
 |:---------------|:------------:|:-----------:|:---------:|:---------------------:|
 |Ghana LEAP       |              |             |10\*\*\*      |9.5\*\*\*                 |
-|Malawi SCTP      |30.6\*\*\*       |29.2\*\*\*      |32.0\*\*\*    |                       |
+|Malawi SCTP      |30.6\*\*\* (13%)    |29.2\*\*\* (36%)    |32.0\*\*\* (20%)   |10.2 (76%)      |
 |Tanzania (TASAF) |-             |-            |17.9\*\*\*    |-                      |
 |Zambia MCTG      |22.7\*\*\*       |16.5\*\*\*      |22.7\*\*\*    |4.8\*\*                  |
 |Zimbabwe HSCT    |26.1\*\*\*       |-            |25.1\*\*\*    |-                      |
@@ -108,12 +107,12 @@ Across all of the meta-analysis subjects, for each dollar transferred, average h
 
 This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
 The number of meals eaten per day unilaterally increased across the programs that measured it:
-0.09\*\*\* in the Ghana LEAP and 0.29\*\* in the Malawi SCTP {cite}`Ghana_final` {cite}`Malawi_SCTP_final`.
-Similarly, the proportion of people consuming more than one meal per day increased 11\*\* percentage points in the Zambia MCTG and the majority of programs reported improvements in indices of food securty {cite}`Zambia_MCTG_final`.
+0.09\*\*\* in the Ghana LEAP and 0.29\*\* (1.9) in the Malawi SCTP {cite}`Ghana_final` {cite}`Malawi_SCTP_final`.
+Similarly, the proportion of people consuming more than one meal per day increased in both the Malawi SCTP 13 pp\*\*\* (79%) and the Zambia MCTG 11\*\* pp and the majority of programs reported improvements in indices of food securty {cite}`Zambia_MCTG_final`.
 
 However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`CT_OVC`.
-Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the the number of meals that children are forced to skip as a result of economic pressures.
+Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the number of meals that children are forced to skip as a result of economic pressures.
 The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric {cite}`Uganda_GD_final` {cite}`Lesotho_CGP` .
 
 ### Health
@@ -149,7 +148,7 @@ and mental health. Also reconsider including non-child programs, maybe put in an
 ### Education
 
 There is some evidence that cash transfers increase the probability that a child is enrolled in school.
-For example, the Malawi SCTP found that receipt of the transfer was associated with an 11 pp\*\*\* increase in enrollment from baseline and the Zambia MCTG an 8 pp\* increase {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final`.
+For example, the Malawi SCTP found that receipt of the transfer was associated with an 9 pp\*\*\* (69%) increase in enrollment and the Zambia MCTG an 8 pp\* increase {cite}`Malawi_SCTP_final` {cite}`Zambia_MCTG_final`.
 There is also evidence from the Burkino Faso NCTPP that, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*), there is no effect for unconditional transfers {cite}`BurkinoFaso_School`.
 
 *Note: are any of the below conditional on child attendance? If any other than NCTPP were, it'd be good to break out the UCTs into a single paragraph.*
@@ -161,9 +160,10 @@ Moreover, evidence from the Zambia CGP indicates that enrollment improvements di
 In its totality, the evidence likely indicates a small improvement in enrollment outcomes. 
 
 *TODO: Confirm attendance = days attended / total school days, and mention this.*
+*TODO: Malawi SCTP refers to "the effect of the SCT on school attendance during the current school year" as enrolment, may want to re-class this as attendance. 
 
 On the intensive margin, there is some weak evidence that transfers increase school attendance, as quantified as share of school days attended.
-For example, the Burkina Faso NCTPP CCT arm increased attendance by 13.4 pp\*\*\* (its UCT arm found a null effect) and the Malawi SCTP raised attendance by  13 pp\*\* {cite}`BurkinoFaso_School` {cite}`Malawi_SCTP_final`. However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
+For example, the Burkina Faso NCTPP CCT arm increased attendance by 13.4 pp\*\*\* (its UCT arm found a null effect) and the Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by  13 pp\*\*\* (59%) {cite}`BurkinoFaso_School` {cite}`Malawi_SCTP_final`. However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
 
 Malawi's ZCTP also found that its CCT (which required school attendance) improved various scores of educational attainment and cognition by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes {cite}`MZCTP`.
 Combined with evidence from the Burkino Faso NCTPP, this suggests that CCTs conditioned on school attendance more cost-effectively improve educational outcomes than UCTs.
@@ -173,6 +173,18 @@ There is, however, evidence that these educational effects are not persistent {c
 ### Child labor
 
 *TODO: Define terms*
+*SCTP definiton:
+1. For economic activities the following age-specific thresholds are applied to identify child labour:
+ Ages 5-11: 1 any engagement in the week prior to the interview;
+ Age 12-14: 14 hours or more in the week prior to the interview.
+ Age 15-17: 43 hours or more in the week prior to the interview.
+2. For household chores (in combination with economic activities) the following age-specific
+thresholds are applied to identify child labour:
+ Age 5-14: 28 hours or more in the week prior to the interview;
+ Age 15-17: 43 hours or more in the week prior to the interview.
+3. Hazardous economic activities carried out in the year prior to the interview are considered to be
+child labour for all children under the age of 18. 
+*
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor.
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\*) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence {cite}`CTOVC_food`.
