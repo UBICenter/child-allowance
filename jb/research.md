@@ -183,7 +183,7 @@ There is, however, evidence that these educational effects are once transfers st
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor.
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\*) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence {cite}`CTOVC_food`.
-Indeed, the Malawi SCTP found a 0.09 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities {cite}`Malawi_SCTP_final`.
+Indeed, the Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities {cite}`Malawi_SCTP_final`.
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
 ### Empowerment
