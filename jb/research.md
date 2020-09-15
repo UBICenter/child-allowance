@@ -25,11 +25,11 @@ Table 1: Studies considered by this report
 |Country      |Program Name                                  |Transfer Type |Project Reference  |
 |:------------|:---------------------------------------------|:-------------|:------------------|
 |Burkino Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkino Faso NCTPP |
-|Ghana        |Livelihood empowerment against poverty (LEAP) |Both          |Ghana LEAP         |
+|Ghana        |Livelihood Empowerment Against Poverty (LEAP) |Both          |Ghana LEAP         |
 |Kenya        |Hunger Safety Net Programme                   |UCT           |Kenya HSNP         |
 |Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |
 |Kenya        |Kenya GiveDirectly Experiment                 |UCT           |Kenya GD           |
-|Kenya        |Kenya UBI Pilot                               |UCT           |Kenya UBI          |
+|Kenya        |Kenya GiveDirectly UBI Experiment             |UCT           |Kenya UBI          |
 |Lesotho      |Child Grant Programme                         |UCT           |Lesotho CGP        |
 |Malawi       |Social Cash Transfer Programme                |UCT           |Malawi SCTP        |
 |Malawi       |Zomba Cash Transfer Programme                 |Both          |Malawi ZCTP        |
@@ -37,7 +37,7 @@ Table 1: Studies considered by this report
 |South Africa |Child Support Grant and Foster Grant          |UCT           |South Africa CSG   |
 |South Africa |South Africa Old-Age Pension                  |Pension       |South Africa OAP   |
 |Tanzania     |Tanzania Social Action Fund                   |CCT           |Tanzania TASAF     |
-|Uganda       |Social Assistance Grants for Empowerment      |UCT           |Uganda SAGE        |
+|Uganda       |Social Assistance Grants for Empowerment: Vulnerable Family Support Grant      |UCT           |Uganda SAGE        |
 |Uganda       |WFP Karamoja cash transfer                    |CCT           |Uganda KWFP        |
 |Uganda       |Uganda GiveDirectly Experiment                |UCT           |Uganda GD          |
 |Zambia       |Monze Cash Transfer Pilot                     |UCT           |Zambia MCTG        |
@@ -65,15 +65,16 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 
 |Program       |Headcount (pp) |Poverty gap (pp) |Squared poverty gap (pp) |
 |:------------:|:---------:|:----------:|:------------------:|
-|Ghana LEAP    |-2.1\*\*    |10.3\*\*      |             |
-|Kenya HSNP    |-10.3\*\*    |-7.5\*\*      |-6.9\*\*              |
-|Lesotho CGP   |-          |-           |-                   |
+|Ghana LEAP    |-2.1\*\* (93%)   |-2.6\*\* (0.51)     |             |
+|Kenya HSNP    |-3.9 (88%)    |-7.5\*\* (41)     |-6.9\*\* (23)             |
+|Lesotho CGP   |3.8          |3.2           |                   |
 |Malawi SCTP   |-14.9\*\*\* (82%)  |-10.9\*\*\* (60)  |-12.2\*\*\* (41)          |
-|Uganda SAGE   |-8.3\*      |-2.2\*       |-0.83\*              |
-|Zambia CGP    |-4.1\*\*    |-8.4\*\*     |-7.6\*\*             |
-|Zimbabwe HSCT |-          |-           |-                   |
+|Uganda SAGE   |-8.3\* (44%)     |-2.2\* (10)       |-0.83\* (3)             |
+|Zambia CGP    |-4.1\*\* (94%)    |-8.4\*\* (60)    |-7.6\*\*  (43)           |
+|Zimbabwe HSCT |-0.5 (92%)           |-0.0 (0.55)           |-0.2 (0.37)                   |
 
 *To do: add in a paragraph on why poverty wouldn't necessarily fall (remittances etc.)*
+*To do: how do we interpret the baseline of poverty gap and squared poverty gap?* 
 
 ### Child material deprivation
 
@@ -89,11 +90,12 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 
 |Program          |Owns all (pp) |Blanket (pp) |Shoes (pp) |Change of clothes (pp) |
 |:---------------|:------------:|:-----------:|:---------:|:---------------------:|
-|Ghana LEAP       |              |             |10\*\*\*      |9.5\*\*\*                 |
+|Ghana LEAP       |              |             |10\*\*\* (22%)     |9.5\*\*\* (63%)                |
 |Malawi SCTP      |30.6\*\*\* (13%)    |29.2\*\*\* (36%)    |32.0\*\*\* (20%)   |10.2 (76%)      |
-|Tanzania (TASAF) |-             |-            |17.9\*\*\*    |-                      |
-|Zambia MCTG      |22.7\*\*\*       |16.5\*\*\*      |22.7\*\*\*    |4.8\*\*                  |
-|Zimbabwe HSCT    |26.1\*\*\*       |-            |25.1\*\*\*    |-                      |
+|Tanzania (TASAF) |             |            |17.9\*\*\* (42%)   |[^1]                      |
+|Zambia MCTG      |22.7\*\*\* (16%)       |16.5\*\*\* (61%)      |22.6\*\*\* (21%)   |4.8\*\* (77%)                  |
+|Zimbabwe HSCT    |26.1\*\*\* (37%)      |1.3 (77%)            |25.1\*\*\* (41%)    |2.7 (78%)                      |
+[^1]: The study reports higher expenditure on child clothing
 
 ### Food security and nutrition
 
@@ -107,8 +109,8 @@ Across all of the meta-analysis subjects, for each dollar transferred, average h
 
 This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
 The number of meals eaten per day unilaterally increased across the programs that measured it:
-0.09\*\*\* in the Ghana LEAP and 0.29\*\* (1.9) in the Malawi SCTP {cite}`Ghana_final` {cite}`Malawi_SCTP_final`.
-Similarly, the proportion of people consuming more than one meal per day increased in both the Malawi SCTP 13 pp\*\*\* (79%) and the Zambia MCTG 11\*\* pp and the majority of programs reported improvements in indices of food securty {cite}`Zambia_MCTG_final`.
+0.09\*\*\* (2.6) in the Ghana LEAP and 0.29\*\* (1.9) in the Malawi SCTP {cite}`Ghana_final` {cite}`Malawi_SCTP_final`.
+Similarly, the proportion of people consuming more than one meal per day increased in both the Malawi SCTP 13 pp\*\*\* (79%) and the Zambia MCTG 11\*\* pp (71%) and the majority of programs reported improvements in indices of food securty {cite}`Zambia_MCTG_final`.
 
 However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC {cite}`Ghana_final` {cite}`Malawi_SCTP_final` {cite}`CT_OVC`.
