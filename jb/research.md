@@ -19,7 +19,6 @@ This report considers 20 programs spanning 11 countries:
 4 programs involving independent treatment arms that included both CCTs and UCTs, and one old age pension.
 Table 1 shows the program title, country, conditionality, and a short-hand name by which we refer to each program throughout the report. While program conditions are detailed under their associated outcomes, in general they tend to put requirements on attendance at health checkups and school attendance. 
 
-
 Table 1: Studies considered by this report
 
 |Country      |Program Name                                  |Transfer Type |Project Reference  | Studies |
@@ -27,7 +26,7 @@ Table 1: Studies considered by this report
 |Burkino Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkino Faso NCTPP |{cite}`BurkinaFaso_final`|
 |Ghana        |Livelihood Empowerment Against Poverty (LEAP) |Both          |Ghana LEAP         |{cite}`Ghana_final`|
 |Kenya        |Hunger Safety Net Programme                   |UCT           |Kenya HSNP         |{cite}`Kenya_HSNP_final`|
-|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`|
+|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`[^food] {cite}`HANDA201536`[^empowerment]|
 |Kenya        |Kenya GiveDirectly Experiment                 |UCT           |Kenya GD           |{cite}`KenyaGD_domvio`|
 |Kenya        |Kenya GiveDirectly UBI Experiment             |UCT           |Kenya UBI          |{cite}`Kenya_UBI` |
 |Lesotho      |Child Grant Programme                         |UCT           |Lesotho CGP        |{cite}`Lesotho_CGP`
@@ -38,12 +37,15 @@ Table 1: Studies considered by this report
 |South Africa |South Africa Old-Age Pension                  |Pension       |South Africa OAP   |{cite}`SA_Duflo`|
 |Tanzania     |Tanzania Social Action Fund                   |CCT           |Tanzania TASAF     |{cite}`Tanzania_TASAF_final`|
 |Uganda       |Social Assistance Grants for Empowerment: Vulnerable Family Support Grant      |UCT           |Uganda SAGE        |`Uganda_SAGE_final`|
-|Uganda       |WFP Karamoja cash transfer                    |CCT           |Uganda KWFP        |
+|Uganda       |WFP Karamoja cash transfer                    |CCT           |Uganda KWFP        |{cite}`Uganda_WFP_food`
 |Uganda       |Uganda GiveDirectly Experiment                |UCT           |Uganda GD          |{cite}`Uganda_GD_final`
 |Zambia       |Monze Cash Transfer Pilot                     |UCT           |Zambia MCTG        |{cite}`Zambia_MCTG_final`
 |Zambia       |Child Grant Programme                         |UCT           |Zambia CGP         |{cite}`Zambia_CGP_final` |
-|Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |
+|Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite}`Zimbabwe_CCTP_Final`
 |Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |`Zimbabwe_HSCT_final`|
+
+[^food]: This study covers nutrition and food security related indices from the Kentya CT-OVC. 
+[^empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kentya CT-OVC.  
 
 ### Poverty 
 
@@ -68,9 +70,9 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 |Ghana LEAP    |-2.1\*\* [93%]   |-2.6\*\* [0.51]     |             |
 |Kenya HSNP    |-3.9 [88%]    |-7.5\*\* [41]     |-6.9\*\* [23]             |
 |Lesotho CGP   |3.8          |3.2           |                   |
-|Malawi SCTP   |-14.9\*\*\* (82%)  |-10.9\*\*\* (60)  |-12.2\*\*\* (41)          |
-|Uganda SAGE   |-8.3\* (44%)     |-2.2\* (10)       |-0.83\* (3)             |
-|Zambia CGP    |-4.1\*\* (94%)    |-8.4\*\* (60)    |-7.6\*\*  (43)           |
+|Malawi SCTP   |-14.9\*\*\* [82%]  |-10.9\*\*\* [60]  |-12.2\*\*\* [41]          |
+|Uganda SAGE   |-8.3\* [44%]     |-2.2\* [10]       |-0.83\* [3]             |
+|Zambia CGP    |-4.1\*\* [94%]    |-8.4\*\* [60]    |-7.6\*\*  [43]           |
 |Zimbabwe HSCT |-0.5 (92%)           |-0.0 (0.55)           |-0.2 (0.37)                   |
 
 *To do: add in a paragraph on why poverty wouldn't necessarily fall (remittances etc.)*
@@ -105,7 +107,7 @@ Households that received a cash transfer tended to spend significantly more mone
 
 The change in food consumption as a percentage of the total transfer was high across most interventions.
 For example, a 2018 World Bank meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*), Malawi's SCTP (148%\*\*), and Kenya's CT-OVC (60%\*\*).
-On the other hand, some transfers---most often smaller or irregular transfers, such as the Ghana LEAP and Lesotho CGP---had no impact on food consumption.
+On the other hand, some transfers--- most often smaller or irregular transfers--- had no impact on food consumption.
 Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta` . 
 
 This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
@@ -117,6 +119,7 @@ However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC.
 Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the number of meals that children are forced to skip as a result of economic pressures.
 The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric.
+Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value.
 
 *This is a 42% decrease - should we do the math to show a pp change?*
 
@@ -125,7 +128,7 @@ While food security and nutrition are improved markedly by cash transfers, there
 Across child anthropomorphic outcomes, healthcare utilization, morbidity and mental health outcomes, there is only limited evidence that child health improves as a result of a cash transfer. 
 
 The GiveDirectly Rwanda program found small positive impacts of transfers on two anthropomorphic measures, Height-for-age and Weight-for-age (0.091 standard deviations\*\* [0.15] and 0.067 standard deviations\*\* [0.15], respectively), as did the South African CSG.
-However, most other evaluations, including the Ghana LEAP and Zambia CGP, found null effects.
+However, most other evaluations, including the Ghana LEAP and Zambia CGP, found null effects. This is perhaps particularly surprising as the Ghana LEAP also provided free enrolment in a national health insurance program.
 The Lesotho CGP evaluation even found a significant reduction in Weight-for-age amongst program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition.
 These small and inconsistent effects may result from the long delays between nutrition and its anthropomorphic benefits.
 There is also some evidence that the gender of the recipient affects the impact of cash transfers on health anthropomorphic outcomes.
@@ -139,37 +142,39 @@ There is similarly weak evidence of improvement across a range medium-term healt
 The Kenya UBI found between 3 and 6 pp\*\* [44%] reductions in the probability of a houshold member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30%] in the incidence of illness in the past two weeks.
 However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects.
 The Zimbabwe CCTP and Ghana LEAP also found no evidence of increased vaccination coverage.
-Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [-70% from baseline value] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
+Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
 
-*Should we do the maths here to get the baseline value?*
+*To do: Back out baseline value*
 
 There is interesting, though inconclusive, evidence of mental health impacts.
 Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale.
 By contrast, the Zimbabwe HSCT found a weakly significant increase in depression\* but a highly significant improvement in subjective well-being\*\*\*, while the Malawi SCTP, Tanzania TASAF and Zambia MCTG found null effects. 
 
-*To do: Add any health-based conditions.*
+*To do: Add any health-based conditions to be described here.*
+
 
 ### Education
 
-There is some evidence that cash transfers increase the probability that a child is enrolled in school.
-For example, the Malawi SCTP found that receipt of the transfer was associated with a 9 pp\*\*\* [69%] increase in enrollment and the Zambia MCTG a 9 pp\*\* [70%] increase in enrollment amongst young males (7-14) and a 19 pp\*\* [65%] older females (15-17).
-There is also evidence from the Burkino Faso NCTPP that, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*) [-], there is no effect for unconditional transfers.
-
-*Note: are any of the below conditional on child attendance? If any other than NCTPP were, it'd be good to break out the UCTs into a single paragraph.*
+There is some evidence that unconditional cash transfers improve indicators of educational attainment.  
+For example, the Malawi SCTP found that receipt of the transfer was associated with a 9 pp\*\*\* [69%] increase in enrollment and the Zambia MCTG a 9 pp\*\* [70%] increase in enrollment amongst young males (7-14) and a 19 pp\*\* [65%] older females (15-17). 
+The Zambia CGP similarly found a 4 pp\*\* [-] increase at 30 months, though this was non-significant at 36 months, largely because of 'catch-up' among the control group.
 
 However, the evidence isn't conclusive.
 The Kenya CT-OVC and Ghana LEAP only found significant enrollment effects on children age 13 to 17.
-The Zimbabwe HSCT found no enrollment effects, though the authors indicate that this could be due to loss of income-based scholarships.
-Moreover, evidence from the Zambia CGP indicates that enrollment improvements did not persist: a 10 pp\*\* increase at 30 months declined to a non-significant 6 pp at 36 months.
-In its totality, the evidence likely indicates a small improvement in enrollment outcomes. 
+The Zimbabwe HSCT found no enrollment effects, though the authors indicate that this could be due to recipients losing means tested scholarships that they would have otherwise held.
+In its totality, the evidence likely indicates that cash transfers cause a small improvement in enrollment outcomes. 
 
-*TODO: Confirm attendance = days attended / total school days, and mention this.*
-*TODO: Malawi SCTP refers to "the effect of the SCT on school attendance during the current school year" as enrolment, may want to re-class this as attendance. 
+On the intensive margin, there is some weak evidence that transfers increase school attendance.
+The Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by  13 pp\*\*\* [59%]. 
+However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. 
+The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
 
-On the intensive margin, there is some weak evidence that transfers increase school attendance, as quantified as share of school days attended.
-For example, the Burkina Faso NCTPP CCT arm increased attendance by 13.4 pp\*\*\* (its UCT arm found a null effect) and the Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by  13 pp\*\*\* (59%). However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
+*Working on below* 
+### Attendance Conditions
+For example, the Burkina Faso NCTPP CCT arm increased the share of school days attended by recipient students by 13.4 pp\*\*\* (its UCT arm found a null effect) and 
+There is also evidence from the Burkino Faso NCTPP that, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*) [-], there is no effect for unconditional transfers.
 
-Malawi's ZCTP also found that its CCT (which required school attendance) improved various scores of educational attainment and cognition by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes.
+Malawi's ZCTP also found that its CCT (which required school attendance) improved various scores of educational attainment and cognition by roughly 0.15\*\*\* [-] standard deviations each, while its UCT did not significantly improve these outcomes.
 Combined with evidence from the Burkino Faso NCTPP, this suggests that CCTs conditioned on school attendance more cost-effectively improve educational outcomes than UCTs.
 There is, however, evidence that these educational effects are not persistent.
 
@@ -206,14 +211,15 @@ The absence of evidence is reflected in the World Bank meta-analysis, which foun
 In recent years there has been substantial interest in whether cash transfers, particularly if they are given to women, improve metrics of women's empowerment.
 As yet, there is little evidence that cash tranfers improve women's empowerment.
 
-*To do*
-*Note: Use % or pp consistently, specify outcomes in final sentence*
+*To do: The Malawi ZCTP reductions are 48% and 34% reductions respectively, back out the baseline.*
 
-The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 48%\*\*\* and 34%\*\*\* respectively, and the Kenya CT-OVC reported a 4.9 pp** reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy.
+The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. 
+For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 9 pp\*\*\* and 8 pp\*\*\* respectively while there were null effects in the CCT arm, and the Kenya CT-OVC reported a 4.9 pp** reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. 
+The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy.
 The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects.
 
 Across less commonly reported metrics, such as empowerment indicies, the usage of modern contraceptives and incidence of sex- and gender-based violence, the evidence is similarly weak.
-While the Kenya GiveDirectly program reported improvements in an index of women's empowerment\*\*\* and a reduction in both physical\*\*\* and sexual violence** indices for female recipients, there were null results in similar outcome metrics across the Ghana LEAP, Tanzania TASAF and Zambia MCTG.
+While the Kenya GiveDirectly program reported improvements in an index of women's empowerment\*\*\* and a reduction in both physical\*\*\* and sexual violence\*\* indices for female recipients, there were null results in similar outcome metrics across the Ghana LEAP, Tanzania TASAF and Zambia MCTG.
 
 ### Conclusions
 
