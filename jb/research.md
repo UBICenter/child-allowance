@@ -164,19 +164,23 @@ The Kenya CT-OVC and Ghana LEAP only found significant enrollment effects on chi
 The Zimbabwe HSCT found no enrollment effects, though the authors indicate that this could be due to recipients losing means tested scholarships that they would have otherwise held.
 In its totality, the evidence likely indicates that cash transfers cause a small improvement in enrollment outcomes. 
 
-On the intensive margin, there is some weak evidence that transfers increase school attendance.
+On the intensive margin, there is some weak evidence that unconditional cash transfers increase school attendance.
 The Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by  13 pp\*\*\* [59%]. 
 However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. 
 The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
 
-*Working on below* 
-### Attendance Conditions
-For example, the Burkina Faso NCTPP CCT arm increased the share of school days attended by recipient students by 13.4 pp\*\*\* (its UCT arm found a null effect) and 
-There is also evidence from the Burkino Faso NCTPP that, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*) [-], there is no effect for unconditional transfers.
 
-Malawi's ZCTP also found that its CCT (which required school attendance) improved various scores of educational attainment and cognition by roughly 0.15\*\*\* [-] standard deviations each, while its UCT did not significantly improve these outcomes.
-Combined with evidence from the Burkino Faso NCTPP, this suggests that CCTs conditioned on school attendance more cost-effectively improve educational outcomes than UCTs.
-There is, however, evidence that these educational effects are not persistent.
+### Attendance Conditions
+
+There is some evidence that conditioning transfers on school attendance may be associated with more consistent educational outcomes compared to unconditional cash transfers. 
+The Tanzania TASAF, which required recipients aged 0-5 to attend a clinic 6 times per year and aged 7-15 years to be enrolled with 80% attendance, also found a 6 pp* increase in the proportion of children aged 0-18 years who had ever attended school, though there was no effect on current attendance.
+
+Some studies included both CCT and UCT arms, offering the opportunity to compare their impacts.
+The Burkina Faso NCTPP CCT arm, which required recipients aged 7-15 enroll and retain 90% attendance each quarter, increased the share of school days attended by recipient students by 13.4 pp\*\*\*, while its UCT arm found a null effect.
+Similarly, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*) [-], there is no effect for unconditional transfers.
+Malawi's ZCTP also found that its CCT (which required 80% attendance) improved the fraction of days that students attended school by around 8 pp\*\* [-] as well as varied student test scores by roughly 0.15\*\*\* [-] standard deviations each, while its UCT did not significantly improve these outcomes.
+Thus, there appears to be some evidence of stronger educational impacts associated with transfers conditioned on attendance.
+
 
 
 ### Child labor
