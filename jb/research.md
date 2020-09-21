@@ -17,7 +17,7 @@ This report considers 20 programs spanning 11 countries:
 13 pure unconditional cash transfers (UCTs), 
 2 pure conditional cash transfers (CCTs), 
 4 programs involving independent treatment arms that included both CCTs and UCTs, and one old age pension.
-Table 1 shows the program title, country, conditionality, and a short-hand name by which we refer to each program throughout the report. While program conditions are detailed under their associated outcomes, in general they tend to put requirements on attendance at health checkups and school attendance. 
+Table 1 shows the program title, country, conditionality, and a short-hand name by which we refer to each program throughout the report. While the requirements put upon recipients of individual conditional cash transfers are detailed under their associated outcomes, in general, they tend to include any of: regular attendance at health checkups, enrolment in health insurance and school attendance. 
 
 Table 1: Studies considered by this report
 
@@ -36,15 +36,15 @@ Table 1: Studies considered by this report
 |South Africa |Child Support Grant and Foster Grant          |UCT           |South Africa CSG   |{cite}`SouthAfrica_CSG_final`|
 |South Africa |South Africa Old-Age Pension                  |Pension       |South Africa OAP   |{cite}`SA_Duflo`|
 |Tanzania     |Tanzania Social Action Fund                   |CCT           |Tanzania TASAF     |{cite}`Tanzania_TASAF_final`|
-|Uganda       |Social Assistance Grants for Empowerment: Vulnerable Family Support Grant      |UCT           |Uganda SAGE        |`Uganda_SAGE_final`|
+|Uganda       |Social Assistance Grants for Empowerment: Vulnerable Family Support Grant      |UCT           |Uganda SAGE        |{cite}`Uganda_SAGE_final`|
 |Uganda       |WFP Karamoja cash transfer                    |CCT           |Uganda KWFP        |{cite}`Uganda_WFP_food`
 |Uganda       |Uganda GiveDirectly Experiment                |UCT           |Uganda GD          |{cite}`Uganda_GD_final`
 |Zambia       |Monze Cash Transfer Pilot                     |UCT           |Zambia MCTG        |{cite}`Zambia_MCTG_final`
 |Zambia       |Child Grant Programme                         |UCT           |Zambia CGP         |{cite}`Zambia_CGP_final` |
 |Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite}`Zimbabwe_CCTP_Final`
-|Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |`Zimbabwe_HSCT_final`|
+|Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |{cite}`Zimbabwe_HSCT_final`|
 
-[^food]: This study covers nutrition and food security related indices from the Kentya CT-OVC. 
+[^food]: This study covers nutrition and food security-related indices from the Kentya CT-OVC. 
 [^empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kentya CT-OVC.  
 
 ### Poverty 
@@ -57,7 +57,7 @@ Studies on cash transfers in sub-Saharan Africa tend to report 3 such metrics, n
 3. the squared poverty gap, a measure of the severity of poverty that more heavily weights relatively poor households.
 
 Against these three measures, there is clear evidence from the Ghana LEAP, Kenya HSNP, Malawi SCTP and Zambia CGP that cash transfers are effective tools in reducing the incidence, intensity and severity of poverty.
-The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure {cite}.
+The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure.
 That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty. 
 
 The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs alongside the baseline treatment mean.
@@ -67,15 +67,17 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 
 |Program       |Headcount (pp) |Poverty gap (pp) |Squared poverty gap (pp) |
 |:------------:|:---------:|:----------:|:------------------:|
-|Ghana LEAP    |-2.1\*\* [93%]   |-2.6\*\* [0.51]     |             |
+|Ghana LEAP    |-2.1\*\* [93%]   |-2.6\*\* [51]     |             |
 |Kenya HSNP    |-3.9 [88%]    |-7.5\*\* [41]     |-6.9\*\* [23]             |
-|Lesotho CGP   |3.8          |3.2           |                   |
+|Lesotho CGP   |3.8 [68%]          |3.2 [47]          |                   |
 |Malawi SCTP   |-14.9\*\*\* [82%]  |-10.9\*\*\* [60]  |-12.2\*\*\* [41]          |
 |Uganda SAGE   |-8.3\* [44%]     |-2.2\* [10]       |-0.83\* [3]             |
 |Zambia CGP    |-4.1\*\* [94%]    |-8.4\*\* [60]    |-7.6\*\*  [43]           |
-|Zimbabwe HSCT |-0.5 (92%)           |-0.0 (0.55)           |-0.2 (0.37)                   |
+|Zimbabwe HSCT |-0.5 [92%]           |-0.0 [55]           |-0.2 [37]                   |
 
-*To do: add in a paragraph on why poverty wouldn't necessarily fall (remittances etc.)*
+*Should these be decimal points? the pp changes are *100 the regression coefficients, so I did the same for the baseline but not sure if that makes sense, probably not on reflection?*
+
+*To do: perhaps add in a paragraph on why poverty wouldn't necessarily fall (remittances etc.)*
 
 
 ### Child material deprivation
@@ -142,9 +144,9 @@ There is similarly weak evidence of improvement across a range medium-term healt
 The Kenya UBI found between 3 and 6 pp\*\* [44%] reductions in the probability of a houshold member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30%] in the incidence of illness in the past two weeks.
 However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects.
 The Zimbabwe CCTP and Ghana LEAP also found no evidence of increased vaccination coverage.
-Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
+Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [-] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
 
-*To do: Back out baseline value*
+*To do: Back out baseline value* 
 
 There is interesting, though inconclusive, evidence of mental health impacts.
 Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale.
@@ -165,7 +167,7 @@ The Zimbabwe HSCT found no enrollment effects, though the authors indicate that 
 In its totality, the evidence likely indicates that cash transfers cause a small improvement in enrollment outcomes. 
 
 On the intensive margin, there is some weak evidence that unconditional cash transfers increase school attendance.
-The Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by  13 pp\*\*\* [59%]. 
+The Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by 13 pp\*\*\* [59%]. 
 However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. 
 The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
 
@@ -186,10 +188,10 @@ Thus, there appears to be some evidence of stronger educational impacts associat
 ### Child labor
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor. 
-There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation[^Child labor].
+There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child labor].
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
-For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
-Indeed, the Malawi SCTP found a 9 pp*** [-] increase in child labour incidence, with the majority of the increase in hazardous activities.
+For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
+That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** [-] increase in child labour incidence, with the majority of the increase in hazardous activities.
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
 [^Child labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
