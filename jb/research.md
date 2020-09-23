@@ -58,27 +58,24 @@ Studies on cash transfers in sub-Saharan Africa tend to report 3 such metrics, n
 
 Against these three measures, there is clear evidence from the Ghana LEAP, Kenya HSNP, Malawi SCTP and Zambia CGP that cash transfers are effective tools in reducing the incidence, intensity and severity of poverty.
 The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure.
-That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty. 
+That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty, though the studies' authors note thatthis may relate to the irregularity of payments through the Lesotho CGP and a large reduction in net gifts and remittances in the Zimbabwe HSCT. 
 
 The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs alongside the baseline treatment mean.
 In its totality, the evidence indicates that cash transfers do reduce household poverty.
 
 Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 
-|Program       |Headcount (pp) |Poverty gap (pp) |Squared poverty gap (pp) |
+|Program       |Headcount |Poverty gap |Squared poverty gap |
 |:------------:|:---------:|:----------:|:------------------:|
-|Ghana LEAP    |-2.1\*\* [93%]   |-2.6\*\* [51]     |             |
-|Kenya HSNP    |-3.9 [88%]    |-7.5\*\* [41]     |-6.9\*\* [23]             |
-|Lesotho CGP   |3.8 [68%]          |3.2 [47]          |                   |
-|Malawi SCTP   |-14.9\*\*\* [82%]  |-10.9\*\*\* [60]  |-12.2\*\*\* [41]          |
-|Uganda SAGE   |-8.3\* [44%]     |-2.2\* [10]       |-0.83\* [3]             |
-|Zambia CGP    |-4.1\*\* [94%]    |-8.4\*\* [60]    |-7.6\*\*  [43]           |
-|Zimbabwe HSCT |-0.5 [92%]           |-0.0 [55]           |-0.2 [37]                   |
-
-*Should these be decimal points? the pp changes are *100 the regression coefficients, so I did the same for the baseline but not sure if that makes sense, probably not on reflection?*
+|Ghana LEAP    |-2.1\*\* [93]   |-2.6\*\* [51]     |             |
+|Kenya HSNP    |-3.9 [88]    |-7.5\*\* [41]     |-6.9\*\* [23]             |
+|Lesotho CGP   |3.8 [68]          |3.2 [47]          |                   |
+|Malawi SCTP   |-14.9\*\*\* [82]  |-10.9\*\*\* [60]  |-12.2\*\*\* [41]          |
+|Uganda SAGE   |-8.3\* [44]     |-2.2\* [10]       |-0.83\* [3]             |
+|Zambia CGP    |-4.1\*\* [94]    |-8.4\*\* [60]    |-7.6\*\*  [43]           |
+|Zimbabwe HSCT |-0.5 [92]           |-0.0 [55]           |-0.2 [37]                   |
 
 *To do: perhaps add in a paragraph on why poverty wouldn't necessarily fall (remittances etc.)*
-
 
 ### Child material deprivation
 
@@ -88,17 +85,17 @@ Most evaluations reported highly significant effects on child deprivation metric
 All programs that reported on child shoe ownership found significant percentage point increases following the cash transfer and evidence on each of the other indicators was similarly strong.
 However, findings across the remaining indicators (posession of a blanket, a change of clothing and all 3) are not as clear, likely due to ceiling effects. 
 In the Zimbabwe HSCT for example, 77% of children had blankets at baseline and this increased substantially at mid line, leaving almost no room for statistically signficant increases at endline.
-These findings are summarized in Table 3.
+These findings are summarized in Table 3, which shows the percentage point impact of cash transfers on measures of child deprivation.
 
 Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material deprivation
 
-|Program          |Owns all (pp) |Blanket (pp) |Shoes (pp) |Change of clothes (pp) |
-|:---------------|:------------:|:-----------:|:---------:|:---------------------:|
-|Ghana LEAP       |              |             |10\*\*\* [22%]     |9.5\*\*\* [63%]                |
-|Malawi SCTP      |30.6\*\*\* [13%]    |29.2\*\*\* [36%]    |32.0\*\*\* [20%]   |10.2 [76%]      |
-|Tanzania (TASAF) |             |            |17.9\*\*\* [42%]   |[^Clothing]                      |
-|Zambia MCTG      |22.7\*\*\* [16%]       |16.5\*\*\* [61%]      |22.6\*\*\* [21%]   |4.8\*\* [77%]                  |
-|Zimbabwe HSCT    |26.1\*\*\* [37%]      |1.3 [77%]            |25.1\*\*\* [41%]    |2.7 [78%]                      |
+|Program          |Owns all      |Blanket       |Shoes      |Change of clothes  |
+|:----------------|:------------:|:------------:|:---------:|:---------------------:|
+|Ghana LEAP       |              |             |10\*\*\* [22]     |9.5\*\*\* [63]                |
+|Malawi SCTP      |30.6\*\*\* [13]    |29.2\*\*\* [36]    |32.0\*\*\* [20]   |10.2 [76]      |
+|Tanzania (TASAF) |             |            |17.9\*\*\* [42]   |[^Clothing]                      |
+|Zambia MCTG      |22.7\*\*\* [16]       |16.5\*\*\* [61]      |22.6\*\*\* [21]   |4.8\*\* [77]                  |
+|Zimbabwe HSCT    |26.1\*\*\* [37]      |1.3 [77]            |25.1\*\*\* [41]    |2.7 [78]                      |
 [^Clothing]: The study reports higher expenditure on child clothing
 
 
@@ -110,20 +107,19 @@ Households that received a cash transfer tended to spend significantly more mone
 The change in food consumption as a percentage of the total transfer was high across most interventions.
 For example, a 2018 World Bank meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*), Malawi's SCTP (148%\*\*), and Kenya's CT-OVC (60%\*\*).
 On the other hand, some transfers--- most often smaller or irregular transfers--- had no impact on food consumption.
-Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta` . 
+Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta`. 
 
 This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
 The number of meals eaten per day unilaterally increased across the programs that measured it:
 0.09\*\*\* [2.6] in the Ghana LEAP and 0.29\*\* [1.9] in the Malawi SCTP.
-Similarly, the proportion of people consuming more than one meal per day increased in both the Malawi SCTP 13 pp\*\*\* [79%] and the Zambia MCTG 11\*\* pp [71%] and the majority of programs reported improvements in indices of food securty.
+Similarly, the proportion of people consuming more than one meal per day increased in both the Malawi SCTP 13 pp\*\*\* [79] and the Zambia MCTG 11\*\* pp [71] and the majority of programs reported improvements in indices of food securty.
 
 However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC.
 Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the number of meals that children are forced to skip as a result of economic pressures.
-The Uganda GiveDirectly program found that the proportion of children skipping meals fell 19.3 pp\*\*\* but the Lesotho CGP found no effect on the same metric.
+The Uganda GiveDirectly program found a reduction in meals skipped by children of -1.93\*\*\* [4.22] but the Lesotho CGP found no effect on the same metric.
 Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value.
 
-*This is a 42% decrease - should we do the math to show a pp change?*
 
 ### Health
 While food security and nutrition are improved markedly by cash transfers, there is weaker evidence of an impact on child health outcomes. 
@@ -141,12 +137,12 @@ The Burkino Faso NCTPP and Malawi SCTP report significantly higher utilization o
 However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure. 
 
 There is similarly weak evidence of improvement across a range medium-term health outcomes.
-The Kenya UBI found between 3 and 6 pp\*\* [44%] reductions in the probability of a houshold member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30%] in the incidence of illness in the past two weeks.
+The Kenya UBI found between 3 and 6 pp\*\* [44] reductions in the probability of a houshold member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30] in the incidence of illness in the past two weeks.
 However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects.
 The Zimbabwe CCTP and Ghana LEAP also found no evidence of increased vaccination coverage.
-Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [-] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
-
-*To do: Back out baseline value* 
+Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [3.3] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
+ 
+*baseline = ppchange/(1-%change) = 1/(1-0.7) =3.3*
 
 There is interesting, though inconclusive, evidence of mental health impacts.
 Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale.
@@ -215,12 +211,12 @@ The absence of evidence is reflected in the World Bank meta-analysis, which foun
 ### Empowerment
 
 In recent years there has been substantial interest in whether cash transfers, particularly if they are given to women, improve metrics of women's empowerment.
-As yet, there is little evidence that cash tranfers improve women's empowerment.
+As yet, there is little evidence that cash transfers improve women's empowerment.
 
-*To do: The Malawi ZCTP reductions are 48% and 34% reductions respectively, back out the baseline.*
+*baseline = ppchange/(1-%change) = 9/(1-0.48) baseline = ppchange/(1-%change) = 8/(1-0.34)*
 
 The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. 
-For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 9 pp\*\*\* and 8 pp\*\*\* respectively while there were null effects in the CCT arm, and the Kenya CT-OVC reported a 4.9 pp** reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. 
+For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 9 pp\*\*\* [17.3] and 8 pp\*\*\* [12.1] respectively while there were null effects in the CCT arm, and the Kenya CT-OVC reported a 4.9 pp** [15] reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. 
 The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy.
 The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects.
 
