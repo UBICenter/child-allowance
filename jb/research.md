@@ -136,7 +136,7 @@ These small and inconsistent effects may result from the long delays between nut
 There is also some evidence that the gender of the recipient affects the impact of cash transfers on health anthropomorphic outcomes.
 The South African Old Age Pension only had significant impacts on Weight-for-height for girls if their grandmother (and not grandfather) was eligible for the pension.
 
-Despite improving access to healthcare being a central aim of many cash transfers, there is little evidence that household expenditure on health-related services increases with receipt of a cash transfer.
+Despite many cash transfers aiming to improve access to healthcare, there is little evidence that they increase household expenditure on health-related services.
 The Malawi SCTP reports significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer.
 However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure. 
 That said, there is some evidence from the Burkino Faso NCTTP that conditioning transfers on quarterly visits to the local health clinic for child growth monitoring for children under 6 (as well as 90% attendance for children 7-15) leads to greater healthcare service usage.
