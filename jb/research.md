@@ -130,7 +130,7 @@ While food security and nutrition are improved markedly by cash transfers, there
 Across child anthropomorphic outcomes, healthcare utilization, morbidity and mental health outcomes, there is only limited evidence that child health improves as a result of a cash transfer. 
 
 The GiveDirectly Rwanda program found small positive impacts of transfers on two anthropomorphic measures, Height-for-age and Weight-for-age (0.091 standard deviations\*\* [0.15] and 0.067 standard deviations\*\* [0.15], respectively), as did the South African CSG.
-However, most other evaluations, including the Ghana LEAP and Zambia CGP, found null effects. This is perhaps particularly surprising as the Ghana LEAP also provided free enrolment in a national health insurance program.
+However, most other evaluations, including the Ghana LEAP and Zambia CGP, found null effects, despite Ghana LEAP's provision of free enrollment in a national health insurance program.
 The Lesotho CGP evaluation even found a significant reduction in Weight-for-age among program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition.
 These small and inconsistent effects may result from the long delays between nutrition and its anthropomorphic benefits.
 There is also some evidence that the gender of the recipient affects the impact of cash transfers on health anthropomorphic outcomes.
