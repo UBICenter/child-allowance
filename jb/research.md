@@ -216,7 +216,7 @@ In recent years there has been substantial interest in whether cash transfers, p
 As yet, there is little evidence that cash transfers improve women's empowerment.
 
 The majority of studies reported the incidence of marriage and pregnancy among female-identifying recipients. 
-For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 9 pp\*\*\* [17.3] and 8 pp\*\*\* [12.1] respectively while there were null effects in the CCT arm, and the Kenya CT-OVC reported a 4.9 pp** [15] reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. 
+For example, the UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 9 pp\*\*\* [17.3] and 8 pp\*\*\* [12.1] respectively while there were null effects in the CCT arm, and the Kenya CT-OVC reported a 4.9 pp** [15.0] reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. 
 The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy.
 The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects.
 
