@@ -60,7 +60,7 @@ Studies on cash transfers in sub-Saharan Africa tend to report 3 such metrics, n
 
 Against these three measures, there is clear evidence from the Ghana LEAP, Kenya HSNP, Malawi SCTP and Zambia CGP that cash transfers are effective tools in reducing the incidence, intensity and severity of poverty.
 The Uganda SAGE found similar, though less statistically significant impacts by defining a poverty line with respect to consumption expenditure.
-That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty, though the studies' authors note thatthis may relate to the irregularity of payments through the Lesotho CGP and a large reduction in net gifts and remittances in the Zimbabwe HSCT. 
+That said, the Lesotho CGP and Zimbabwe HSCT evaluations found no significant effects on any measure of poverty, though the studies' authors note that this may relate to the irregularity of payments through the Lesotho CGP and a large reduction in net gifts and remittances in the Zimbabwe HSCT. 
 
 The findings of these studies are summarized in Table 2, which shows the percentage point (pp) reduction in measures of poverty driven by each of the programs alongside the baseline treatment mean.
 In its totality, the evidence indicates that cash transfers do reduce household poverty.
@@ -77,7 +77,6 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 |Zambia CGP    |-4.1\*\* [94]    |-8.4\*\* [60]    |-7.6\*\*  [43]           |
 |Zimbabwe HSCT |-0.5 [92]           |-0.0 [55]           |-0.2 [37]                   |
 
-*To do: perhaps add in a paragraph on why poverty wouldn't necessarily fall (remittances etc.)*
 
 ### Child material deprivation
 
@@ -119,8 +118,11 @@ Similarly, the proportion of people consuming more than one meal per day increas
 However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC.
 Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the number of meals that children are forced to skip as a result of economic pressures.
-The Uganda GiveDirectly program found a reduction in meals skipped by children of -1.93\*\*\* [4.22] but the Lesotho CGP found no effect on the same metric.
-Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value.
+The Uganda GiveDirectly program found a 45% reduction in meals skipped by children[^meals skipped] but the Lesotho CGP found no effect on the same metric.
+
+[^meals skipped]: While the duration over which meals were skipped was not reported, the study noted a -1.93\*\*\* [4.22] reduction in meals skipped by children.
+
+Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value across a range of food security measures. The study found that cash transfers outperformed food transfers in increasing both individual and household indices of dietary diversity as well food consumption. 
 
 
 ### Health
@@ -129,7 +131,7 @@ Across child anthropomorphic outcomes, healthcare utilization, morbidity and men
 
 The GiveDirectly Rwanda program found small positive impacts of transfers on two anthropomorphic measures, Height-for-age and Weight-for-age (0.091 standard deviations\*\* [0.15] and 0.067 standard deviations\*\* [0.15], respectively), as did the South African CSG.
 However, most other evaluations, including the Ghana LEAP and Zambia CGP, found null effects. This is perhaps particularly surprising as the Ghana LEAP also provided free enrolment in a national health insurance program.
-The Lesotho CGP evaluation even found a significant reduction in Weight-for-age amongst program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition.
+The Lesotho CGP evaluation even found a significant reduction in Weight-for-age among program recipients, though there was no corresponding increase in the proportion of children suffering from malnutrition.
 These small and inconsistent effects may result from the long delays between nutrition and its anthropomorphic benefits.
 There is also some evidence that the gender of the recipient affects the impact of cash transfers on health anthropomorphic outcomes.
 The South African Old Age Pension only had significant impacts on Weight-for-height for girls if their grandmother (and not grandfather) was eligible for the pension.
@@ -138,15 +140,13 @@ Despite improving access to healthcare being a central aim of many cash transfer
 The Malawi SCTP reports significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer.
 However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure. 
 That said, there is some evidence from the Burkino Faso NCTTP that conditioning transfers on quarterly visits to the local health clinic for child growth monitoring for children under 6 (as well as 90% attendance for children 7-15) leads to greater healthcare service usage.
-It found no effect for the unconditional transfer treatment arm but the conditional transfer increased the number of routine preventative health clinic visits by 0.43/*/* [1.03]
+It found no effect for the unconditional transfer treatment arm but the conditional transfer increased the number of routine preventative health clinic visits by 0.43\*\* [1.03]
 
 There is similarly weak evidence of improvement across a range medium-term health outcomes.
 The Kenya UBI found between 3 and 6 pp\*\* [44] reductions in the probability of a houshold member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30] in the incidence of illness in the past two weeks.
 However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects.
 The Zimbabwe CCTP and Ghana LEAP also found no evidence of increased vaccination coverage.
-Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers are associated with a decline in child mortality of -1** pp [3.3] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
- 
-*baseline = ppchange/(1-%change) = 1/(1-0.7) =3.3*
+Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers reduce child mortality by -1** pp [3.3] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
 
 There is interesting, though inconclusive, evidence of mental health impacts.
 Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale.
@@ -156,7 +156,7 @@ By contrast, the Zimbabwe HSCT found a weakly significant increase in depression
 ### Education
 
 There is some evidence that unconditional cash transfers improve indicators of educational attainment.  
-For example, the Malawi SCTP found that receipt of the transfer was associated with a 9 pp\*\*\* [69%] increase in enrollment and the Zambia MCTG a 9 pp\*\* [70%] increase in enrollment amongst young males (7-14) and a 19 pp\*\* [65%] older females (15-17). 
+For example, the Malawi SCTP found that receipt of the transfer increased enrollment by 9 pp\*\*\* [69%] and the Zambia MCTG increased enrollment by 9 pp\*\* [70%] for young males (7-14) and 19 pp\*\* [65%] for older females (15-17). 
 The Zambia CGP similarly found a 4 pp\*\* [-] increase at 30 months, though this was non-significant at 36 months, largely because of 'catch-up' among the control group.
 
 However, the evidence isn't conclusive.
@@ -172,14 +172,14 @@ The programs reported similarly mixed results for the number of grades completed
 
 ### Attendance Conditions
 
-There is some evidence that conditioning transfers on school attendance may be associated with more consistent educational outcomes compared to unconditional cash transfers. 
+There is some evidence that conditioning transfers on school attendance may induce more consistent educational outcomes compared to unconditional cash transfers. 
 The Tanzania TASAF, which required recipients aged 0-5 to attend a clinic 6 times per year and aged 7-15 years to be enrolled with 80% attendance, also found a 6 pp* increase in the proportion of children aged 0-18 years who had ever attended school, though there was no effect on current attendance.
 
 Some studies included both CCT and UCT arms, offering the opportunity to compare their impacts.
 The Burkino Faso NCTPP CCT arm, which required recipients aged 7-15 enroll and retain 90% attendance each quarter, increased the share of school days attended by recipient students by 13.4 pp\*\*\*, while its UCT arm found a null effect.
-Similarly, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*) [-], there is no effect for unconditional transfers.
-Malawi's ZCTP also found that its CCT (which required 80% attendance) improved the fraction of days that students attended school by around 8 pp\*\* [-] as well as varied student test scores by roughly 0.15\*\*\* [-] standard deviations each, while its UCT did not significantly improve these outcomes.
-Thus, there appears to be some evidence of stronger educational impacts associated with transfers conditioned on attendance.
+Similarly, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*), there is no effect for unconditional transfers.
+Malawi's ZCTP also found that its CCT (which required 80% attendance) improved the fraction of days that students attended school by around 8 pp\*\* as well as varied student test scores by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes.
+Thus, there appears to be some evidence of stronger educational impacts where transfers are conditioned on attendance.
 
 
 
@@ -189,7 +189,7 @@ The studies considered found inconsistent evidence on the effects of cash transf
 There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child labor].
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
 For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
-That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** [-] increase in child labour incidence, with the majority of the increase in hazardous activities.
+That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities.
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
 [^Child labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
@@ -205,7 +205,7 @@ The absence of evidence is reflected in the World Bank meta-analysis, which foun
     child labour for all children under the age of 18. 
 
     It differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
-    UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid labour are as follows:
+    UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
      Age 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
      Age 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
      Age 15 to 17 years: At least 43 hours of economic work per week.
@@ -215,9 +215,7 @@ The absence of evidence is reflected in the World Bank meta-analysis, which foun
 In recent years there has been substantial interest in whether cash transfers, particularly if they are given to women, improve metrics of women's empowerment.
 As yet, there is little evidence that cash transfers improve women's empowerment.
 
-*baseline = ppchange/(1-%change) = 9/(1-0.48) baseline = ppchange/(1-%change) = 8/(1-0.34)*
-
-The majority of studies reported the incidence of marriage and pregnancy amongst female-identifying recipients. 
+The majority of studies reported the incidence of marriage and pregnancy among female-identifying recipients. 
 For example, The UCT arm of the Malawi ZCTP reported large reductions in the likelihood of marriage and pregnancy, 9 pp\*\*\* [17.3] and 8 pp\*\*\* [12.1] respectively while there were null effects in the CCT arm, and the Kenya CT-OVC reported a 4.9 pp** [15] reduction in the incidence of pregnancy among cash transfer recipients and a null result for marriage. 
 The Ghana LEAP found a reduction in the probability of marriage for women from 12-24 years at baseline but not women 12-17 and no effect on pregnancy.
 The majority of studies, including the Malawi SCTP, as well as the Tanzania TASAF reported null effects.
