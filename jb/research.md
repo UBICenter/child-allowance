@@ -143,7 +143,7 @@ That said, there is some evidence from the Burkino Faso NCTTP that conditioning 
 It found no effect for the unconditional transfer treatment arm but the conditional transfer increased the number of routine preventative health clinic visits by 0.43\*\* [1.03]
 
 There is similarly weak evidence of improvement across a range medium-term health outcomes.
-The Kenya UBI found between 3 and 6 pp\*\* [44] reductions in the probability of a houshold member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30] in the incidence of illness in the past two weeks.
+The Kenya UBI found between 3 and 6 pp\*\* [44] reductions in the probability of a household member being sick (depending on time-scale), and the Malawi SCTP found a 6 pp reduction\*\* [30] in the incidence of illness in the past two weeks.
 However, the majority of studies, including the Ghana LEAP and Uganda SAGE, found no similar effects.
 The Zimbabwe CCTP and Ghana LEAP also found no evidence of increased vaccination coverage.
 Looking specifically at child outcomes, there is tentative evidence from the Rwanda GD that large cash transfers reduce child mortality by -1** pp [3.3] and this tentatively positive evidence characterises what we know about the impact of cash transfers on a broad range of health-related outcomes. 
