@@ -1,7 +1,7 @@
 # Book settings
 title: Child Allowance
 author: UBI Center
-logo: _static/ubi_center_logo.png
+logo: _static/ubi_center_logo_wide_blue.png
 
 html:
   use_edit_page_button      : true
