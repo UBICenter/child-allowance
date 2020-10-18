@@ -8,10 +8,14 @@ Original file is located at
 # Distributional impact of tax-funded child allowance by state
 
 Approach:
-* Calculate SPM resources, people, children (people under 18) and taxable income per SPM unit
-* Calculate deciles of SPM resources per person, both nationally and by state [TODO: Adjust numbers for inflation across years.]
-* Calculate taxable income per child for each state, and merge that back to the person dataframe
-* Calculate the change in income per dollar of child allowance for each person, using SPM columns
+* Calculate SPM resources, people, children (people under 18) and taxable
+  income per SPM unit
+* Calculate deciles of SPM resources per person, both nationally and by state
+  [TODO: Adjust numbers for inflation across years.]
+* Calculate taxable income per child for each state, and merge that back to
+  the person dataframe
+* Calculate the change in income per dollar of child allowance for each person,
+using SPM columns
 * Aggregate to SPM unit
 """
 
@@ -45,9 +49,8 @@ df['state'] = df.statefip.apply(
 
 """Aggregate to SPM unit."""
 
-df.columns
-
-spmu = pd.DataFrame(df.groupby(['spmfamunit', 'year', 'state', 'spmwt', 'spmtotres'])[
+SPMU_COLS = ['spmfamunit', 'year', 'state', 'spmwt', 'spmtotres']
+spmu = pd.DataFrame(df.groupby(SPMU_COLS)[
     ['child', 'person', 'taxinc']].sum()).reset_index()
 # Calculate weight that represents number of people.
 # Note: no longer used.
@@ -108,12 +111,14 @@ total_children = mdf.weighted_sum(spmu2, 'child', 'spmwt')
 fed_taxinc_per_child = total_taxinc / total_children
 fed_taxinc_per_child
 
-"""Since each dollar of child allowance equals the number of children, a SPM unit's tax per dollar of child allowance equals their taxable income divided by the overall taxable income per child.
+"""Since each dollar of child allowance equals the number of children,
+a SPM unit's tax per dollar of child allowance equals their taxable income
+divided by the overall taxable income per child.
 
-For example, a SPM unit with average income within the country or state will pay that average amount, and any deviations from that will be in proportion to income.
+For example, a SPM unit with average income within the country or state will
+pay that average amount, and any deviations from that will be in proportion
+to income.
 """
-
-spmu2
 
 spmu2['tax_per_dollar_ca_fed'] = spmu2.taxinc / fed_taxinc_per_child
 spmu2['net_per_dollar_ca_fed'] = spmu2.child - spmu2.tax_per_dollar_ca_fed
@@ -121,11 +126,13 @@ spmu2['tax_per_dollar_ca_state'] = spmu2.taxinc / spmu2.state_taxinc_per_child
 spmu2['net_per_dollar_ca_state'] = spmu2.child - spmu2.tax_per_dollar_ca_state
 
 # Check that it nets out, both overall and by decile.
-assert np.allclose(0, mdf.weighted_mean(spmu2, 'net_per_dollar_ca_fed', 'spmwt'))
+assert np.allclose(0,
+                   mdf.weighted_mean(spmu2, 'net_per_dollar_ca_fed','spmwt'))
 assert np.allclose(
     0,
     spmu2.groupby('spm_resources_pp_decile').apply(
-        lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_fed', 'spmwt')).mean(),
+        lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_fed',
+                                    'spmwt')).mean(),
     atol=1e-5)
 
 """## Calculate data for each state
@@ -143,7 +150,8 @@ fed_deciles = spmu2.groupby(['spm_resources_pp_decile', 'state']).apply(
                                 'spmwt')).to_frame().reset_index()
 fed_deciles['funding'] = 'federal'
 # State
-state_deciles = spmu2.groupby(['spm_resources_pp_decile_state', 'state']).apply(
+state_deciles = spmu2.groupby(
+    ['spm_resources_pp_decile_state', 'state']).apply(
     lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_state',
                                 'spmwt')).to_frame().reset_index()
 state_deciles['funding'] = 'state'
