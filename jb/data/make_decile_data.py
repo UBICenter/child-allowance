@@ -121,7 +121,7 @@ spmu2['net_per_dollar_ca_state'] = spmu2.child - spmu2.tax_per_dollar_ca_state
 
 # Check that it nets out, both overall and by decile.
 assert np.allclose(0,
-                   mdf.weighted_mean(spmu2, 'net_per_dollar_ca_fed','spmwt'))
+                   mdf.weighted_mean(spmu2, 'net_per_dollar_ca_fed', 'spmwt'))
 assert np.allclose(
     0,
     spmu2.groupby('spm_resources_pp_decile').apply(
