@@ -24,19 +24,13 @@ import pandas as pd
 import numpy as np
 import us
 
-"""## Load data"""
+# Load data from Nate's repo, which pulls from IPUMS.
 
 raw = pd.read_csv('https://github.com/ngpsu22/State_Child_Allowance_Income_Tax/raw/master/cps_00022.csv.gz')
 
-"""## Define functions
-
-Assign state and federal income deciles based on SPM resources per person.
-"""
-
 df = raw.copy(deep=True)
 
-"""Cleanup."""
-
+# Clean up.
 df.columns = df.columns.str.lower()
 df.taxinc = np.where(df.taxinc == 9999999, 0, df.taxinc)
 df.adjginc = np.where(df.adjginc == 99999999, 0, df.adjginc)
