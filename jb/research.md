@@ -23,10 +23,10 @@ Table 1: Studies considered by this report
 
 |Country      |Program Name                                  |Transfer Type |Project Reference  | Studies |
 |:------------|:---------------------------------------------|:-------------|:------------------|:--------|
-|Burkino Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkino Faso NCTPP |{cite}`BurkinoFaso_final`[^BurkinoFaso Health] {cite}`BurkinaFaso_School`[^BurkinoFaso Education]|
+|Burkina Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkina Faso NCTPP |{cite}`BurkinaFaso_final`[^BurkinaFaso-Health] {cite}`BurkinaFaso_School`[^BurkinaFaso-Education]|
 |Ghana        |Livelihood Empowerment Against Poverty (LEAP) |Both          |Ghana LEAP         |{cite}`Ghana_final`|
 |Kenya        |Hunger Safety Net Programme                   |UCT           |Kenya HSNP         |{cite}`Kenya_HSNP_final`|
-|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`[^Kenya Food] {cite}`HANDA201536`[^Kenya Empowerment]| 
+|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`[^Kenya-Food] {cite}`HANDA201536`[^Kenya-Empowerment]| 
 |Kenya        |Kenya GiveDirectly Experiment                 |UCT           |Kenya GD           |{cite}`KenyaGD_domvio`|
 |Kenya        |Kenya GiveDirectly UBI Experiment             |UCT           |Kenya UBI          |{cite}`Kenya_UBI` |
 |Lesotho      |Child Grant Programme                         |UCT           |Lesotho CGP        |{cite}`Lesotho_CGP`
@@ -44,10 +44,10 @@ Table 1: Studies considered by this report
 |Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite}`Zimbabwe_CCTP_Final`
 |Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |{cite}`Zimbabwe_HSCT_final`|
 
-[^Kenya Food]: This study covers nutrition and food security-related indices from the Kentya CT-OVC. 
-[^Kenya Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kentya CT-OVC.  
-[^BurkinoFaso Health]: This study covers health-related indices from the Burkino Faso NCTPP. 
-[^BurkinoFaso Education]: This study covers education-related indices from the Burkino Faso NCTPP.
+[^Kenya-Food]: This study covers nutrition and food security-related indices from the Kentya CT-OVC. 
+[^Kenya-Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kentya CT-OVC.  
+[^BurkinaFaso-Health]: This study covers health-related indices from the Burkina Faso NCTPP. 
+[^BurkinaFaso-Education]: This study covers education-related indices from the Burkina Faso NCTPP.
 
 ### Poverty 
 
@@ -139,7 +139,7 @@ The South African Old Age Pension only had significant impacts on Weight-for-hei
 Despite many cash transfers aiming to improve access to healthcare, there is little evidence that they increase household expenditure on health-related services.
 The Malawi SCTP reports significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer.
 However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure. 
-That said, there is some evidence from the Burkino Faso NCTTP that conditioning transfers on quarterly visits to the local health clinic for child growth monitoring for children under 6 (as well as 90% attendance for children 7-15) leads to greater healthcare service usage.
+That said, there is some evidence from the Burkina Faso NCTTP that conditioning transfers on quarterly visits to the local health clinic for child growth monitoring for children under 6 (as well as 90% attendance for children 7-15) leads to greater healthcare service usage.
 It found no effect for the unconditional transfer treatment arm but the conditional transfer increased the number of routine preventative health clinic visits by 0.43\*\* [1.03]
 
 There is similarly weak evidence of improvement across a range medium-term health outcomes.
@@ -176,7 +176,7 @@ There is some evidence that conditioning transfers on school attendance may indu
 The Tanzania TASAF, which required recipients aged 0-5 to attend a clinic 6 times per year and aged 7-15 years to be enrolled with 80% attendance, also found a 6 pp* increase in the proportion of children aged 0-18 years who had ever attended school, though there was no effect on current attendance.
 
 Some studies included both CCT and UCT arms, offering the opportunity to compare their impacts.
-The Burkino Faso NCTPP CCT arm, which required recipients aged 7-15 enroll and retain 90% attendance each quarter, increased the share of school days attended by recipient students by 13.4 pp\*\*\*, while its UCT arm found a null effect.
+The Burkina Faso NCTPP CCT arm, which required recipients aged 7-15 enroll and retain 90% attendance each quarter, increased the share of school days attended by recipient students by 13.4 pp\*\*\*, while its UCT arm found a null effect.
 Similarly, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*), there is no effect for unconditional transfers.
 Malawi's ZCTP also found that its CCT (which required 80% attendance) improved the fraction of days that students attended school by around 8 pp\*\* as well as varied student test scores by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes.
 Thus, there appears to be some evidence of stronger educational impacts where transfers are conditioned on attendance.
