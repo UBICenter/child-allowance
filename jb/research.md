@@ -44,8 +44,8 @@ Table 1: Studies considered by this report
 |Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite}`Zimbabwe_CCTP_Final`
 |Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |{cite}`Zimbabwe_HSCT_final`|
 
-[^Kenya-Food]: This study covers nutrition and food security-related indices from the Kentya CT-OVC. 
-[^Kenya-Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kentya CT-OVC.  
+[^Kenya-Food]: This study covers nutrition and food security-related indices from the Kenya CT-OVC. 
+[^Kenya-Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kenya CT-OVC.  
 [^BurkinaFaso-Health]: This study covers health-related indices from the Burkina Faso NCTPP. 
 [^BurkinaFaso-Education]: This study covers education-related indices from the Burkina Faso NCTPP.
 
@@ -97,7 +97,8 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 |Tanzania (TASAF) |             |            |17.9\*\*\* [42]   |[^Clothing]                      |
 |Zambia MCTG      |22.7\*\*\* [16]       |16.5\*\*\* [61]      |22.6\*\*\* [21]   |4.8\*\* [77]                  |
 |Zimbabwe HSCT    |26.1\*\*\* [37]      |1.3 [77]            |25.1\*\*\* [41]    |2.7 [78]                      |
-[^Clothing]: The study reports higher expenditure on child clothing
+
+[^Clothing]: The study reports higher expenditure on child clothing.
 
 
 ### Food security and nutrition
@@ -193,22 +194,26 @@ That said, there were some unusual results which highlight the weakness of evide
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
 [^Child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
-1. For economic activities the following age-specific thresholds are applied to identify child labour:
-* Ages 5-11: 1 any engagement in the week prior to the interview;
-* Ages 12-14: 14 hours or more in the week prior to the interview.
-* Ages 15-17: 43 hours or more in the week prior to the interview.
-For household chores (in combination with economic activities) the following age-specific
-thresholds are applied to identify child labour:
-* Age 5-14: 28 hours or more in the week prior to the interview;
-* Age 15-17: 43 hours or more in the week prior to the interview.
-2. Hazardous economic activities carried out in the year prior to the interview are considered to be
-child labour for all children under the age of 18. 
 
-It differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
-UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
-* Ages 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
-* Ages 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
-* Ages 15 to 17 years: At least 43 hours of economic work per week.
+    >1. For economic activities the following age-specific thresholds are applied to identify child labour:
+        * Ages 5-11: 1 any engagement in the week prior to the interview;
+        * Ages 12-14: 14 hours or more in the week prior to the interview.
+        * Ages 15-17: 43 hours or more in the week prior to the interview.
+    >
+    >2. For household chores (in combination with economic activities) the following age-specific
+    thresholds are applied to identify child labour:
+        * Age 5-14: 28 hours or more in the week prior to the interview;
+        * Age 15-17: 43 hours or more in the week prior to the interview.
+    >
+    >3. Hazardous economic activities carried out in the year prior to the interview are considered to be
+    child labour for all children under the age of 18. 
+    
+    This differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
+    UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
+
+    * Ages 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
+    * Ages 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
+    * Ages 15 to 17 years: At least 43 hours of economic work per week.
 
 ### Empowerment
 
