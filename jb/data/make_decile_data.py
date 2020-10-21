@@ -133,8 +133,8 @@ assert np.allclose(
                                     'spmwt')).mean(),
     atol=1e-5)
 
-# Calculate data for each state x funding cross.
 
+# Calculate data for each state x funding cross.
 def decile_maker(funding: str, state: bool):
     """
     Args:
@@ -160,11 +160,13 @@ def decile_maker(funding: str, state: bool):
     res = spmu2.groupby(groupby).apply(
         lambda x: mdf.weighted_mean(x, net, 'spmwt')).reset_index()
     # Rename and set columns for returning.
-    res.rename({decile: 'decile', 0: 'net_per_dollar_ca'}, axis=1, inplace=True)
+    res.rename({decile: 'decile', 0: 'net_per_dollar_ca'}, axis=1,
+               inplace=True)
     res['funding'] = funding
     if not state:
         res['state'] = 'US'
     return res
+
 
 all_deciles = pd.concat([
     decile_maker('deficit', True),
@@ -174,6 +176,7 @@ all_deciles = pd.concat([
     decile_maker('state', True),
     decile_maker('state', False)
 ])
+
 
 # Calculate children for deficit-funded amount and
 # current resources for percentage differences.
@@ -190,7 +193,7 @@ state_decile_resources.rename({'spm_resources_pp_decile_state': 'decile'},
 fed_decile_resources = spmu2.groupby(
     'spm_resources_pp_decile').apply(avg_res).reset_index()
 fed_decile_resources.rename({'spm_resources_pp_decile': 'decile'},
-                             axis=1, inplace=True)
+                            axis=1, inplace=True)
 fed_decile_resources['state'] = 'US'
 decile_resources = pd.concat([state_decile_resources, fed_decile_resources])
 decile_resources.rename({0: 'current_resources'}, axis=1, inplace=True)
