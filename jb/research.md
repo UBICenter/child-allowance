@@ -186,29 +186,29 @@ Thus, there appears to be some evidence of stronger educational impacts where tr
 ### Child labor
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor. 
-There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child labor].
+There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child-labor].
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
 For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
 That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities.
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
-[^Child labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
-    1. For economic activities the following age-specific thresholds are applied to identify child labour:
-     Ages 5-11: 1 any engagement in the week prior to the interview;
-     Age 12-14: 14 hours or more in the week prior to the interview.
-     Age 15-17: 43 hours or more in the week prior to the interview.
-    2. For household chores (in combination with economic activities) the following age-specific
-    thresholds are applied to identify child labour:
-     Age 5-14: 28 hours or more in the week prior to the interview;
-     Age 15-17: 43 hours or more in the week prior to the interview.
-    3. Hazardous economic activities carried out in the year prior to the interview are considered to be
-    child labour for all children under the age of 18. 
+[^Child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
+1. For economic activities the following age-specific thresholds are applied to identify child labour:
+* Ages 5-11: 1 any engagement in the week prior to the interview;
+* Ages 12-14: 14 hours or more in the week prior to the interview.
+* Ages 15-17: 43 hours or more in the week prior to the interview.
+For household chores (in combination with economic activities) the following age-specific
+thresholds are applied to identify child labour:
+* Age 5-14: 28 hours or more in the week prior to the interview;
+* Age 15-17: 43 hours or more in the week prior to the interview.
+2. Hazardous economic activities carried out in the year prior to the interview are considered to be
+child labour for all children under the age of 18. 
 
-    It differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
-    UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
-     Age 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
-     Age 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
-     Age 15 to 17 years: At least 43 hours of economic work per week.
+It differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
+UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
+* Ages 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
+* Ages 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
+* Ages 15 to 17 years: At least 43 hours of economic work per week.
 
 ### Empowerment
 
