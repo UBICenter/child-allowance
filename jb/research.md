@@ -118,9 +118,9 @@ Similarly, the proportion of people consuming more than one meal per day increas
 However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC.
 Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the number of meals that children are forced to skip as a result of economic pressures.
-The Uganda GiveDirectly program found a 45% reduction in meals skipped by children[^meals skipped] but the Lesotho CGP found no effect on the same metric.
+The Uganda GiveDirectly program found a 45% reduction in meals skipped by children[^meals-skipped] but the Lesotho CGP found no effect on the same metric.
 
-[^meals skipped]: While the duration over which meals were skipped was not reported, the study noted a -1.93\*\*\* [4.22] reduction in meals skipped by children.
+[^meals-skipped]: While the duration over which meals were skipped was not reported, the study noted a -1.93\*\*\* [4.22] reduction in meals skipped by children.
 
 Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value across a range of food security measures. The study found that cash transfers outperformed food transfers in increasing both individual and household indices of dietary diversity as well food consumption. 
 
