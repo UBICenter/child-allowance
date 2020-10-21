@@ -105,7 +105,8 @@ total_children = mdf.weighted_sum(spmu2, 'child', 'spmwt')
 fed_taxinc_per_child = total_taxinc / total_children
 fed_taxinc_per_child
 
-"""Since each dollar of child allowance equals the number of children,
+"""
+Since each dollar of child allowance equals the number of children,
 a SPM unit's tax per dollar of child allowance equals their taxable income
 divided by the overall taxable income per child.
 
@@ -118,6 +119,9 @@ spmu2['tax_per_dollar_ca_fed'] = spmu2.taxinc / fed_taxinc_per_child
 spmu2['net_per_dollar_ca_fed'] = spmu2.child - spmu2.tax_per_dollar_ca_fed
 spmu2['tax_per_dollar_ca_state'] = spmu2.taxinc / spmu2.state_taxinc_per_child
 spmu2['net_per_dollar_ca_state'] = spmu2.child - spmu2.tax_per_dollar_ca_state
+spmu2['tax_per_dollar_ca_deficit'] = 0
+spmu2['net_per_dollar_ca_deficit'] = spmu2.child
+
 
 # Check that it nets out, both overall and by decile.
 assert np.allclose(0,
@@ -129,57 +133,83 @@ assert np.allclose(
                                     'spmwt')).mean(),
     atol=1e-5)
 
-"""## Calculate data for each state
 
-Should have these columns:
-* state
-* fed/state funding
-* decile
-* net_per_dollar_ca
-"""
+# Calculate data for each state x funding cross.
+def decile_maker(funding: str, state: bool):
+    """
+    Args:
+        funding: Column representing funding (net_per_dollar_ca_*).
+        state: Whether to group by state.
 
-# Federal
-fed_deciles = spmu2.groupby(['spm_resources_pp_decile', 'state']).apply(
-    lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_fed',
-                                'spmwt')).to_frame().reset_index()
-fed_deciles['funding'] = 'federal'
-# State
-state_deciles = spmu2.groupby(
-    ['spm_resources_pp_decile_state', 'state']).apply(
-    lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_state',
-                                'spmwt')).to_frame().reset_index()
-state_deciles['funding'] = 'state'
-state_deciles.rename({'spm_resources_pp_decile_state':
-                      'spm_resources_pp_decile'}, axis=1, inplace=True)
+    Returns:
+        DataFrame with the columns:
+        * decile
+        * net_per_dollar_ca
+        * state ('US' if state is False)
+        * funding
+    """
+    # Use state decile for state-level calculation.
+    decile = 'spm_resources_pp_decile'
+    groupby = decile
+    if state:
+        decile += '_state'
+        groupby = [decile, 'state']
+    # Set column for net change.
+    net = 'net_per_dollar_ca_' + funding
+    # Run grouped calculation.
+    res = spmu2.groupby(groupby).apply(
+        lambda x: mdf.weighted_mean(x, net, 'spmwt')).reset_index()
+    # Rename and set columns for returning.
+    res.rename({decile: 'decile', 0: 'net_per_dollar_ca'}, axis=1,
+               inplace=True)
+    res['funding'] = funding
+    if not state:
+        res['state'] = 'US'
+    return res
 
-"""US with federal funding."""
 
-us_fed_deciles = spmu2.groupby(['spm_resources_pp_decile']).apply(
-    lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_fed',
-                                'spmwt')).to_frame().reset_index()
-us_fed_deciles['funding'] = 'federal'
-us_fed_deciles['state'] = 'US'
-us_state_deciles = spmu2.groupby(['spm_resources_pp_decile_state']).apply(
-    lambda x: mdf.weighted_mean(x, 'net_per_dollar_ca_state',
-                                'spmwt')).to_frame().reset_index()
-us_state_deciles['funding'] = 'state'
-us_state_deciles['state'] = 'US'
-us_state_deciles.rename({'spm_resources_pp_decile_state':
-                         'spm_resources_pp_decile'}, axis=1, inplace=True)
+all_deciles = pd.concat([
+    decile_maker('deficit', True),
+    decile_maker('deficit', False),
+    decile_maker('fed', True),
+    decile_maker('fed', False),
+    decile_maker('state', True),
+    decile_maker('state', False)
+])
 
-deciles_combined = pd.concat([fed_deciles, state_deciles, us_fed_deciles,
-                              us_state_deciles]).rename(
-    {0: 'net_per_dollar_ca_state'}, axis=1)
-deciles_combined
 
-"""Replicate for each monthly child allowance amount."""
+# Calculate children for deficit-funded amount and
+# current resources for percentage differences.
+def avg_res(x):
+    resources = mdf.weighted_sum(x, 'spmtotres', 'spmwt')
+    spmus = x.spmwt.sum()
+    return resources / spmus
 
+
+state_decile_resources = spmu2.groupby(
+    ['spm_resources_pp_decile_state', 'state']).apply(avg_res).reset_index()
+state_decile_resources.rename({'spm_resources_pp_decile_state': 'decile'},
+                              axis=1, inplace=True)
+fed_decile_resources = spmu2.groupby(
+    'spm_resources_pp_decile').apply(avg_res).reset_index()
+fed_decile_resources.rename({'spm_resources_pp_decile': 'decile'},
+                            axis=1, inplace=True)
+fed_decile_resources['state'] = 'US'
+decile_resources = pd.concat([state_decile_resources, fed_decile_resources])
+decile_resources.rename({0: 'current_resources'}, axis=1, inplace=True)
+
+all_deciles2 = all_deciles.merge(decile_resources, on=['decile', 'state'])
+
+# Replicate for each monthly child allowance amount.
 l = []
 for i in np.arange(0, 501, 25):
-    tmp = deciles_combined.copy(deep=True)
+    tmp = all_deciles2.copy(deep=True)
     tmp['monthly_ca'] = i
-    tmp['net_chg'] = i * 12 * tmp.net_per_dollar_ca_state
+    tmp['net_chg'] = i * 12 * tmp.net_per_dollar_ca
     l.append(tmp)
 ca_state_decile = pd.concat(l)
+
+ca_state_decile['pct_chg'] = (
+    100 * ca_state_decile.net_chg / ca_state_decile.current_resources)
 
 ca_state_decile.to_csv('deciles.csv', index=False)
