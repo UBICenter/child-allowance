@@ -105,7 +105,8 @@ total_children = mdf.weighted_sum(spmu2, 'child', 'spmwt')
 fed_taxinc_per_child = total_taxinc / total_children
 fed_taxinc_per_child
 
-"""Since each dollar of child allowance equals the number of children,
+"""
+Since each dollar of child allowance equals the number of children,
 a SPM unit's tax per dollar of child allowance equals their taxable income
 divided by the overall taxable income per child.
 
@@ -132,27 +133,7 @@ assert np.allclose(
                                     'spmwt')).mean(),
     atol=1e-5)
 
-"""## Calculate data for each state
-
-Should have these columns:
-* state
-* fed/state funding
-* decile
-* net_per_dollar_ca
-"""
-
-"""
-Datasets at the following grain:
-* Federal decile: fed, deficit
-* State decile: fed, state, deficit
-* State decile x state: state, deficit
-""" 
-"""
-Datasets at the following grain:
-* Federal decile: fed, deficit
-* State decile: fed, state, deficit
-* State decile x state: state, deficit
-""" 
+# Calculate data for each state x funding cross.
 
 def decile_maker(funding: str, state: bool):
     """
