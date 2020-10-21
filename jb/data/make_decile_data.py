@@ -170,7 +170,25 @@ us_state_deciles.rename({'spm_resources_pp_decile_state':
 deciles_combined = pd.concat([fed_deciles, state_deciles, us_fed_deciles,
                               us_state_deciles]).rename(
     {0: 'net_per_dollar_ca_state'}, axis=1)
-deciles_combined
+
+# Calculate current resources for percentage differences.
+def avg_res(x):
+    resources = mdf.weighted_sum(x, 'spmtotres', 'spmwt')
+    spmus = x.spmwt.sum()
+    return resources / spmus
+
+state_decile_resources = spmu2.groupby(
+    ['spm_resources_pp_decile', 'state']).apply(avg_res).to_frame().reset_index()
+fed_decile_resources = spmu2.groupby(['spm_resources_pp_decile']).apply(
+    avg_res).to_frame().reset_index()
+fed_decile_resources['state'] = 'US'
+decile_resources = pd.concat([state_decile_resources, fed_decile_resources])
+decile_resources.rename({0: 'current_resources'}, axis=1, inplace=True)
+
+# Merge in current resources.
+deciles_combined = deciles_combined.merge(
+    decile_resources, on=['state', 'spm_resources_pp_decile'])
+
 
 """Replicate for each monthly child allowance amount."""
 
@@ -181,5 +199,8 @@ for i in np.arange(0, 501, 25):
     tmp['net_chg'] = i * 12 * tmp.net_per_dollar_ca_state
     l.append(tmp)
 ca_state_decile = pd.concat(l)
+
+ca_state_decile['pct_chg'] = (
+    100 * ca_state_decile.net_chg / ca_state_decile.current_resources)
 
 ca_state_decile.to_csv('deciles.csv', index=False)
