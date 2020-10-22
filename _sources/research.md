@@ -23,10 +23,10 @@ Table 1: Studies considered by this report
 
 |Country      |Program Name                                  |Transfer Type |Project Reference  | Studies |
 |:------------|:---------------------------------------------|:-------------|:------------------|:--------|
-|Burkino Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkino Faso NCTPP |{cite}`BurkinoFaso_final`[^BurkinoFaso Health] {cite}`BurkinaFaso_School`[^BurkinoFaso Education]|
+|Burkina Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkina Faso NCTPP |{cite}`BurkinaFaso_final`[^BurkinaFaso-Health] {cite}`BurkinaFaso_School`[^BurkinaFaso-Education]|
 |Ghana        |Livelihood Empowerment Against Poverty (LEAP) |Both          |Ghana LEAP         |{cite}`Ghana_final`|
 |Kenya        |Hunger Safety Net Programme                   |UCT           |Kenya HSNP         |{cite}`Kenya_HSNP_final`|
-|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`[^Kenya Food] {cite}`HANDA201536`[^Kenya Empowerment]| 
+|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`[^Kenya-Food] {cite}`HANDA201536`[^Kenya-Empowerment]| 
 |Kenya        |Kenya GiveDirectly Experiment                 |UCT           |Kenya GD           |{cite}`KenyaGD_domvio`|
 |Kenya        |Kenya GiveDirectly UBI Experiment             |UCT           |Kenya UBI          |{cite}`Kenya_UBI` |
 |Lesotho      |Child Grant Programme                         |UCT           |Lesotho CGP        |{cite}`Lesotho_CGP`
@@ -44,10 +44,10 @@ Table 1: Studies considered by this report
 |Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite}`Zimbabwe_CCTP_Final`
 |Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |{cite}`Zimbabwe_HSCT_final`|
 
-[^Kenya Food]: This study covers nutrition and food security-related indices from the Kentya CT-OVC. 
-[^Kenya Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kentya CT-OVC.  
-[^BurkinoFaso Health]: This study covers health-related indices from the Burkino Faso NCTPP. 
-[^BurkinoFaso Education]: This study covers education-related indices from the Burkino Faso NCTPP.
+[^Kenya-Food]: This study covers nutrition and food security-related indices from the Kenya CT-OVC. 
+[^Kenya-Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kenya CT-OVC.  
+[^BurkinaFaso-Health]: This study covers health-related indices from the Burkina Faso NCTPP. 
+[^BurkinaFaso-Education]: This study covers education-related indices from the Burkina Faso NCTPP.
 
 ### Poverty 
 
@@ -97,7 +97,8 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 |Tanzania (TASAF) |             |            |17.9\*\*\* [42]   |[^Clothing]                      |
 |Zambia MCTG      |22.7\*\*\* [16]       |16.5\*\*\* [61]      |22.6\*\*\* [21]   |4.8\*\* [77]                  |
 |Zimbabwe HSCT    |26.1\*\*\* [37]      |1.3 [77]            |25.1\*\*\* [41]    |2.7 [78]                      |
-[^Clothing]: The study reports higher expenditure on child clothing
+
+[^Clothing]: The study reports higher expenditure on child clothing.
 
 
 ### Food security and nutrition
@@ -118,9 +119,9 @@ Similarly, the proportion of people consuming more than one meal per day increas
 However, the evidence on other measures of food security is less clear.
 For example, dietary diversity improved in the Ghana LEAP\*\*\* and Malawi SCTP\*\*\*, while null effects were found in the Kenya CT-OVC.
 Looking specifically at child outcomes, there is mixed evidence on whether transfers reduced the number of meals that children are forced to skip as a result of economic pressures.
-The Uganda GiveDirectly program found a 45% reduction in meals skipped by children[^meals skipped] but the Lesotho CGP found no effect on the same metric.
+The Uganda GiveDirectly program found a 45% reduction in meals skipped by children[^meals-skipped] but the Lesotho CGP found no effect on the same metric.
 
-[^meals skipped]: While the duration over which meals were skipped was not reported, the study noted a -1.93\*\*\* [4.22] reduction in meals skipped by children.
+[^meals-skipped]: While the duration over which meals were skipped was not reported, the study noted a -1.93\*\*\* [4.22] reduction in meals skipped by children.
 
 Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value across a range of food security measures. The study found that cash transfers outperformed food transfers in increasing both individual and household indices of dietary diversity as well food consumption. 
 
@@ -139,7 +140,7 @@ The South African Old Age Pension only had significant impacts on Weight-for-hei
 Despite many cash transfers aiming to improve access to healthcare, there is little evidence that they increase household expenditure on health-related services.
 The Malawi SCTP reports significantly higher utilization of healthcare services (and particularly curative services) on receipt of the transfer.
 However, the World Bank meta-analysis finds no significant divergence in mean expenditure on health services and both the Tanzania TASAF and Zimbabwe HSCT actually report decreased expenditure. 
-That said, there is some evidence from the Burkino Faso NCTTP that conditioning transfers on quarterly visits to the local health clinic for child growth monitoring for children under 6 (as well as 90% attendance for children 7-15) leads to greater healthcare service usage.
+That said, there is some evidence from the Burkina Faso NCTTP that conditioning transfers on quarterly visits to the local health clinic for child growth monitoring for children under 6 (as well as 90% attendance for children 7-15) leads to greater healthcare service usage.
 It found no effect for the unconditional transfer treatment arm but the conditional transfer increased the number of routine preventative health clinic visits by 0.43\*\* [1.03]
 
 There is similarly weak evidence of improvement across a range medium-term health outcomes.
@@ -176,7 +177,7 @@ There is some evidence that conditioning transfers on school attendance may indu
 The Tanzania TASAF, which required recipients aged 0-5 to attend a clinic 6 times per year and aged 7-15 years to be enrolled with 80% attendance, also found a 6 pp* increase in the proportion of children aged 0-18 years who had ever attended school, though there was no effect on current attendance.
 
 Some studies included both CCT and UCT arms, offering the opportunity to compare their impacts.
-The Burkino Faso NCTPP CCT arm, which required recipients aged 7-15 enroll and retain 90% attendance each quarter, increased the share of school days attended by recipient students by 13.4 pp\*\*\*, while its UCT arm found a null effect.
+The Burkina Faso NCTPP CCT arm, which required recipients aged 7-15 enroll and retain 90% attendance each quarter, increased the share of school days attended by recipient students by 13.4 pp\*\*\*, while its UCT arm found a null effect.
 Similarly, while enrollment increases for transfers conditional on child attendance (17.9 pp\*\*\*), there is no effect for unconditional transfers.
 Malawi's ZCTP also found that its CCT (which required 80% attendance) improved the fraction of days that students attended school by around 8 pp\*\* as well as varied student test scores by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes.
 Thus, there appears to be some evidence of stronger educational impacts where transfers are conditioned on attendance.
@@ -186,29 +187,33 @@ Thus, there appears to be some evidence of stronger educational impacts where tr
 ### Child labor
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor. 
-There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child labor].
+There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child-labor].
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
 For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
 That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities.
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
-[^Child labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
-    1. For economic activities the following age-specific thresholds are applied to identify child labour:
-     Ages 5-11: 1 any engagement in the week prior to the interview;
-     Age 12-14: 14 hours or more in the week prior to the interview.
-     Age 15-17: 43 hours or more in the week prior to the interview.
-    2. For household chores (in combination with economic activities) the following age-specific
-    thresholds are applied to identify child labour:
-     Age 5-14: 28 hours or more in the week prior to the interview;
-     Age 15-17: 43 hours or more in the week prior to the interview.
-    3. Hazardous economic activities carried out in the year prior to the interview are considered to be
-    child labour for all children under the age of 18. 
+[^Child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
 
-    It differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
+    >1. For economic activities the following age-specific thresholds are applied to identify child labour:
+        * Ages 5-11: 1 any engagement in the week prior to the interview;
+        * Ages 12-14: 14 hours or more in the week prior to the interview.
+        * Ages 15-17: 43 hours or more in the week prior to the interview.
+    >
+    >2. For household chores (in combination with economic activities) the following age-specific
+    thresholds are applied to identify child labour:
+        * Age 5-14: 28 hours or more in the week prior to the interview;
+        * Age 15-17: 43 hours or more in the week prior to the interview.
+    >
+    >3. Hazardous economic activities carried out in the year prior to the interview are considered to be
+    child labour for all children under the age of 18. 
+    
+    This differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
     UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
-     Age 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
-     Age 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
-     Age 15 to 17 years: At least 43 hours of economic work per week.
+
+    * Ages 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
+    * Ages 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
+    * Ages 15 to 17 years: At least 43 hours of economic work per week.
 
 ### Empowerment
 
