@@ -1,6 +1,6 @@
 - file: index
-- url: https://ubicenter.org
-  title: UBI Center home
+- file: simulation
 - file: research
 - file: more_resources
-- file: simulation
+- url: https://ubicenter.org
+  title: UBI Center home
