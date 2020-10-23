@@ -1,4 +1,6 @@
-# The impacts of cash transfers in sub-Saharan Africa
+# Empirical studies
+
+## Impacts of cash transfers in sub-Saharan Africa
 
 ### Introduction
 
