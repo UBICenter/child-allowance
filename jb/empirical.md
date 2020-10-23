@@ -1,6 +1,28 @@
 # Empirical studies
 
-## Impacts of cash transfers in sub-Saharan Africa
+Evidence from unconditional cash transfers (UCTs) shows that child poverty causes a range of problems in child development and health. These studies suggest that child allowances would significantly improve physical and mental health, education, and long-term outcomes like earnings and even longevity.
+
+This paper contains research from the United States and Canada, as well as from sub-Saharan Africa (SSA).
+As these sets of studies differ in context (developed vs. developing economies) and approach (SSA studies are more often randomized controlled trials), we organize them separately.
+The studies are 
+
+## United States and Canada
+
+### Health
+
+Cash transfers for children improve a range of health outcomes. 
+
+A study of Alaska's Permanent Fund Dividend, a UBI ranging from $1, 000 to $3, 000 per person per year since its creation in 1976, found that each additional $1, 000 in payments reduced child obesity by as much as 4.5 percentage points. A study of the Food Stamp Program (now Supplemental Nutrition Assistance Program, or SNAP) shows that these benefits persist: access to food stamps as children reduced adult obesity. (hoynes2016long). Since food stamps are treated as cash by most households (hoynes2009consumption), or may even shift consumption toward less healthy groceries like soda (whitmore2002food), these effects probably follow from a general increase in household resources, and would thus also apply to UCTs like child allowances. However, a study of payments to Eastern Cherokee households found that they increased weight among children from poor families (akee2013young).
+
+### Education
+
+A study of Earned Income Tax Credit reforms found that "a $1, 000 increase in income raises combined math and reading test scores by 6% of a standard deviation in the short-run." (dahl2012impact)  milligan2009child
+
+### Fertility
+
+By reducing the cost of childbearing, child benefits modestly increase fertility (births per female). In the US, a $1, 000 subsidy increases the probability of having a child in the following two years by 0.4 percent, an effect driven by the Earned Income Tax Credit and personal tax exemptions on low-income, married women in their 30s (mumford2017fertility). Canada's child benefit had a larger effect of 16.9 percent per C$1, 000, possibly due to its greater salience from being a standalone monthly program, while German child benefits only raised fertility among high-income parents considering a second child (riphahn2017fertility).
+
+## Sub-Saharan Africa
 
 ### Introduction
 
@@ -25,26 +47,26 @@ Table 1: Studies considered by this report
 
 |Country      |Program Name                                  |Transfer Type |Project Reference  | Studies |
 |:------------|:---------------------------------------------|:-------------|:------------------|:--------|
-|Burkina Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkina Faso NCTPP |{cite}`BurkinaFaso_final`[^BurkinaFaso-Health] {cite}`BurkinaFaso_School`[^BurkinaFaso-Education]|
-|Ghana        |Livelihood Empowerment Against Poverty (LEAP) |Both          |Ghana LEAP         |{cite}`Ghana_final`|
-|Kenya        |Hunger Safety Net Programme                   |UCT           |Kenya HSNP         |{cite}`Kenya_HSNP_final`|
-|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite}`CTOVC_food`[^Kenya-Food] {cite}`HANDA201536`[^Kenya-Empowerment]| 
-|Kenya        |Kenya GiveDirectly Experiment                 |UCT           |Kenya GD           |{cite}`KenyaGD_domvio`|
-|Kenya        |Kenya GiveDirectly UBI Experiment             |UCT           |Kenya UBI          |{cite}`Kenya_UBI` |
-|Lesotho      |Child Grant Programme                         |UCT           |Lesotho CGP        |{cite}`Lesotho_CGP`
-|Malawi       |Social Cash Transfer Programme                |UCT           |Malawi SCTP        |{cite}`Malawi_SCTP_final`|
-|Malawi       |Zomba Cash Transfer Programme                 |Both          |Malawi ZCTP        |{cite}`MZCTP`|
-|Rwanda       |Rwanda GiveDirectly Experiment                |UCT           |Rwanda GD          |{cite}`RwandaGD`|
-|South Africa |Child Support Grant and Foster Grant          |UCT           |South Africa CSG   |{cite}`SouthAfrica_CSG_final`|
-|South Africa |South Africa Old-Age Pension                  |Pension       |South Africa OAP   |{cite}`SA_Duflo`|
-|Tanzania     |Tanzania Social Action Fund                   |CCT           |Tanzania TASAF     |{cite}`Tanzania_TASAF_final`|
-|Uganda       |Social Assistance Grants for Empowerment: Vulnerable Family Support Grant      |UCT           |Uganda SAGE        |{cite}`Uganda_SAGE_final`|
-|Uganda       |WFP Karamoja cash transfer                    |CCT           |Uganda KWFP        |{cite}`Uganda_WFP_food`
-|Uganda       |Uganda GiveDirectly Experiment                |UCT           |Uganda GD          |{cite}`Uganda_GD_final`
-|Zambia       |Monze Cash Transfer Pilot                     |UCT           |Zambia MCTG        |{cite}`Zambia_MCTG_final`
-|Zambia       |Child Grant Programme                         |UCT           |Zambia CGP         |{cite}`Zambia_CGP_final` |
-|Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite}`Zimbabwe_CCTP_Final`
-|Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |{cite}`Zimbabwe_HSCT_final`|
+|Burkina Faso |Nahouri Cash Transfers Pilot Project          |Both          |Burkina Faso NCTPP |{cite} `BurkinaFaso_final` [^BurkinaFaso-Health] {cite} `BurkinaFaso_School` [^BurkinaFaso-Education]|
+|Ghana        |Livelihood Empowerment Against Poverty (LEAP) |Both          |Ghana LEAP         |{cite} `Ghana_final` |
+|Kenya        |Hunger Safety Net Programme                   |UCT           |Kenya HSNP         |{cite} `Kenya_HSNP_final` |
+|Kenya        |Orphans and Vulnerable Children Cash Transfer |UCT           |Kenya CT-OVC       |{cite} `CTOVC_food` [^Kenya-Food] {cite} `HANDA201536` [^Kenya-Empowerment]| 
+|Kenya        |Kenya GiveDirectly Experiment                 |UCT           |Kenya GD           |{cite} `KenyaGD_domvio` |
+|Kenya        |Kenya GiveDirectly UBI Experiment             |UCT           |Kenya UBI          |{cite} `Kenya_UBI` |
+|Lesotho      |Child Grant Programme                         |UCT           |Lesotho CGP        |{cite} `Lesotho_CGP`
+|Malawi       |Social Cash Transfer Programme                |UCT           |Malawi SCTP        |{cite} `Malawi_SCTP_final` |
+|Malawi       |Zomba Cash Transfer Programme                 |Both          |Malawi ZCTP        |{cite} `MZCTP` |
+|Rwanda       |Rwanda GiveDirectly Experiment                |UCT           |Rwanda GD          |{cite} `RwandaGD` |
+|South Africa |Child Support Grant and Foster Grant          |UCT           |South Africa CSG   |{cite} `SouthAfrica_CSG_final` |
+|South Africa |South Africa Old-Age Pension                  |Pension       |South Africa OAP   |{cite} `SA_Duflo` |
+|Tanzania     |Tanzania Social Action Fund                   |CCT           |Tanzania TASAF     |{cite} `Tanzania_TASAF_final` |
+|Uganda       |Social Assistance Grants for Empowerment: Vulnerable Family Support Grant      |UCT           |Uganda SAGE        |{cite} `Uganda_SAGE_final` |
+|Uganda       |WFP Karamoja cash transfer                    |CCT           |Uganda KWFP        |{cite} `Uganda_WFP_food`
+|Uganda       |Uganda GiveDirectly Experiment                |UCT           |Uganda GD          |{cite} `Uganda_GD_final`
+|Zambia       |Monze Cash Transfer Pilot                     |UCT           |Zambia MCTG        |{cite} `Zambia_MCTG_final`
+|Zambia       |Child Grant Programme                         |UCT           |Zambia CGP         |{cite} `Zambia_CGP_final` |
+|Zimbabwe     |Community-led Cash Transfer Program           |Both          |Zimbabwe CCTP      |{cite} `Zimbabwe_CCTP_Final`
+|Zimbabwe     |Harmonised Social Cash Transfer               |UCT           |Zimbabwe HSCT      |{cite} `Zimbabwe_HSCT_final` |
 
 [^Kenya-Food]: This study covers nutrition and food security-related indices from the Kenya CT-OVC. 
 [^Kenya-Empowerment]: This study covers youth pregnancy, marriage and a range of empowerment-related indicators from the Kenya CT-OVC.  
@@ -79,7 +101,6 @@ Table 2: Evidence from sub-Saharan Africa: Cash transfers reduce poverty
 |Zambia CGP    |-4.1\*\* [94]    |-8.4\*\* [60]    |-7.6\*\*  [43]           |
 |Zimbabwe HSCT |-0.5 [92]           |-0.0 [55]           |-0.2 [37]                   |
 
-
 ### Child material deprivation
 
 To determine whether increases in household income translate to improvements in the material well-being of children, many programs measure changes in child ownership of basic items, namely, a pair of shoes, a blanket and a spare set of clothing.
@@ -102,7 +123,6 @@ Table 3: Evidence from Sub-Saharan Africa: Cash transfers reduce child material 
 
 [^Clothing]: The study reports higher expenditure on child clothing.
 
-
 ### Food security and nutrition
 
 There is also some evidence that cash transfers improve nutrition of children and other household members.
@@ -111,7 +131,7 @@ Households that received a cash transfer tended to spend significantly more mone
 The change in food consumption as a percentage of the total transfer was high across most interventions.
 For example, a 2018 World Bank meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*), Malawi's SCTP (148%\*\*), and Kenya's CT-OVC (60%\*\*).
 On the other hand, some transfers--- most often smaller or irregular transfers--- had no impact on food consumption.
-Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta`. 
+Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite} `World_Bank_meta` . 
 
 This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
 The number of meals eaten per day unilaterally increased across the programs that measured it:
@@ -127,8 +147,8 @@ The Uganda GiveDirectly program found a 45% reduction in meals skipped by childr
 
 Evidence from the Uganda WFP program indicates that cash transfers may outperform food transfers of similar value across a range of food security measures. The study found that cash transfers outperformed food transfers in increasing both individual and household indices of dietary diversity as well food consumption. 
 
-
 ### Health
+
 While food security and nutrition are improved markedly by cash transfers, there is weaker evidence of an impact on child health outcomes. 
 Across child anthropomorphic outcomes, healthcare utilization, morbidity and mental health outcomes, there is only limited evidence that child health improves as a result of a cash transfer. 
 
@@ -155,7 +175,6 @@ There is interesting, though inconclusive, evidence of mental health impacts.
 Kenya GiveDirectly found a positive\*\*\* impact on a village-level psychological well-being index and the Kenya UBI found a significant decrease\*\*\* in depression on the CES scale.
 By contrast, the Zimbabwe HSCT found a weakly significant increase in depression\* but a highly significant improvement in subjective well-being\*\*\*, while the Malawi SCTP, Tanzania TASAF and Zambia MCTG found null effects. 
 
-
 ### Education
 
 There is some evidence that unconditional cash transfers improve indicators of educational attainment.  
@@ -169,9 +188,8 @@ In its totality, the evidence likely indicates that cash transfers cause a small
 
 On the intensive margin, there is some weak evidence that unconditional cash transfers increase school attendance.
 The Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by 13 pp\*\*\* [59%]. 
-However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. 
+However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite} `World_Bank_meta` . 
 The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
-
 
 ### Attendance Conditions
 
@@ -184,8 +202,6 @@ Similarly, while enrollment increases for transfers conditional on child attenda
 Malawi's ZCTP also found that its CCT (which required 80% attendance) improved the fraction of days that students attended school by around 8 pp\*\* as well as varied student test scores by roughly 0.15\*\*\* standard deviations each, while its UCT did not significantly improve these outcomes.
 Thus, there appears to be some evidence of stronger educational impacts where transfers are conditioned on attendance.
 
-
-
 ### Child labor
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor. 
@@ -193,19 +209,23 @@ There was limited consistency in the definition used to define child labor, with
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
 For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
 That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities.
-The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
+The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite} `World_Bank_meta` . 
 
 [^Child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
 
     >1. For economic activities the following age-specific thresholds are applied to identify child labour:
+
         * Ages 5-11: 1 any engagement in the week prior to the interview;
         * Ages 12-14: 14 hours or more in the week prior to the interview.
         * Ages 15-17: 43 hours or more in the week prior to the interview.
+
     >
     >2. For household chores (in combination with economic activities) the following age-specific
     thresholds are applied to identify child labour:
+
         * Age 5-14: 28 hours or more in the week prior to the interview;
         * Age 15-17: 43 hours or more in the week prior to the interview.
+
     >
     >3. Hazardous economic activities carried out in the year prior to the interview are considered to be
     child labour for all children under the age of 18. 
@@ -213,9 +233,9 @@ The absence of evidence is reflected in the World Bank meta-analysis, which foun
     This differs marginally from the standard UNICEF indicator used by the Lesotho CGP.
     UNICEF’s indicator similarly classes hazardous economic activities but the thresholds for economic and unpaid (household) labour are as follows:
 
-    * Ages 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
-    * Ages 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
-    * Ages 15 to 17 years: At least 43 hours of economic work per week.
+    - Ages 5 to 11 years: At least 1 hour of economic work or 21 hours of unpaid household services per week.
+    - Ages 12 to 14 years: At least 14 hours of economic work or 21 hours of unpaid household services per week.
+    - Ages 15 to 17 years: At least 43 hours of economic work per week.
 
 ### Empowerment
 
