@@ -13,6 +13,8 @@ As these sets of studies differ in context (developed vs. developing economies) 
 
 ### Health
 
+{cite}`aizer2016long` mothers pension program.
+
 Cash transfers for children improve a range of health outcomes. 
 
 While evidence is mixed, it points to child poverty causing obesity.
@@ -23,11 +25,19 @@ However, a study of payments to Eastern Cherokee households found that they incr
 
 ### Child development
 
-When Manitoba, Canada, increased its child benefit in x, researchers found that the change improved motor and social development among children ages 0 to 3, and reduced aggression and anxiety among children ages 4-5, especially among girls {cite}`milligan2009child`.
+When Manitoba, Canada, increased its child benefit in 2001, researchers found that the change improved motor and social development among children ages 0 to 3, and reduced aggression and anxiety among children ages 4-5, especially among girls {cite}`milligan2009child`.
+
+A meta-analysis of 34 studies isolating income changes in OECD countries found that an income increase of \$1,000 improved children's cognitive outcomes by 5 to 27 percent of a standard deviation {cite}`cooper2017does`.
+It also identifies studies showing that income improves maternal health and well-being, which could be a factor in children's development.
 
 ### Education
 
-A study of Earned Income Tax Credit reforms found that "a \$1,000 increase in income raises combined math and reading test scores by 6% of a standard deviation in the short-run." {cite}`dahl2012impact`
+A study of Earned Income Tax Credit reforms found that "a \$1,000 increase in income raises combined math and reading test scores by 6 percent of a standard deviation in the short-run." {cite}`dahl2012impact`
+Simil
+
+The above-mentioned OECD meta-analysis associated a \$1,000 income increase with school performance gains ranging between 5 and 17 percent of a standard deviation.[^oecd-school]
+
+[^oecd-school]: Based on randomized controlled trials and quasi-experiments listed in Table 7; one study found a 23 percent performance increase per \$1,000 among boys.
 
 ### Fertility
 
@@ -54,7 +64,9 @@ This report considers 20 programs spanning 11 countries:
 13 pure unconditional cash transfers (UCTs), 
 2 pure conditional cash transfers (CCTs), 
 4 programs involving independent treatment arms that included both CCTs and UCTs, and one old age pension.
-Table 1 shows the program title, country, conditionality, and a short-hand name by which we refer to each program throughout the report. While the requirements put upon recipients of individual conditional cash transfers are detailed under their associated outcomes, in general, they tend to include any of: regular attendance at health checkups, enrolment in health insurance and school attendance. 
+Table 1 shows the program title, country, conditionality, and a short-hand name by which we refer to each program throughout the report.
+While the requirements put upon recipients of individual conditional cash transfers are detailed under their associated outcomes, in general, they tend to include any of:
+regular attendance at health checkups, enrollment in health insurance and school attendance. 
 
 Table 1: Studies considered by this report
 
