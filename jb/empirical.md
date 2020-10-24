@@ -1,10 +1,13 @@
 # Empirical studies
 
-Evidence from unconditional cash transfers (UCTs) shows that child poverty causes a range of problems in child development and health. These studies suggest that child allowances would significantly improve physical and mental health, education, and long-term outcomes like earnings and even longevity.
+Researchers have studied family cash assistance programs across a range of settings and designs, from randomized controlled trials in Ghana to decades-long follow-ups of Americans born in the early 20th century.
+
+The results consistently find that cash benefits to families improve children's well-being, across indicators of physical and mental health, education, and long-term outcomes like earnings and even longevity.
+That is, child poverty *causes* problems in childhood and adulthood, and policies that reduce child poverty,
+such as child allowances, would address these problems to a large degree.
 
 This paper contains research from the United States and Canada, as well as from sub-Saharan Africa (SSA).
-As these sets of studies differ in context (developed vs. developing economies) and approach (SSA studies are more often randomized controlled trials), we organize them separately.
-The studies are 
+As these sets of studies differ in context (developed vs. developing economies) and approach (SSA studies are more often randomized controlled trials), we organize them separately, beginning with the U.S. and Canada.
 
 ## United States and Canada
 
@@ -12,15 +15,25 @@ The studies are
 
 Cash transfers for children improve a range of health outcomes. 
 
-A study of Alaska's Permanent Fund Dividend, a UBI ranging from $1, 000 to $3, 000 per person per year since its creation in 1976, found that each additional $1, 000 in payments reduced child obesity by as much as 4.5 percentage points. A study of the Food Stamp Program (now Supplemental Nutrition Assistance Program, or SNAP) shows that these benefits persist: access to food stamps as children reduced adult obesity. (hoynes2016long). Since food stamps are treated as cash by most households (hoynes2009consumption), or may even shift consumption toward less healthy groceries like soda (whitmore2002food), these effects probably follow from a general increase in household resources, and would thus also apply to UCTs like child allowances. However, a study of payments to Eastern Cherokee households found that they increased weight among children from poor families (akee2013young).
+While evidence is mixed, it points to child poverty causing obesity.
+A study of Alaska's Permanent Fund Dividend, a UBI ranging from \$1, 000 to \$3, 000 per person per year since its creation in 1976, found that each additional \$1,000 in payments reduced child obesity by as much as 4.5 percentage points.
+Research on the Food Stamp Program (now Supplemental Nutrition Assistance Program, or SNAP) shows that these benefits persist: access to food stamps as children reduced adult obesity {cite}`hoynes2016long`.
+Since food stamps are treated as cash by most households {cite}`hoynes2009consumption`, or may even shift consumption toward less healthy groceries like soda {cite}`whitmore2002food`, these effects probably follow from a general increase in household resources, and would thus also apply to UCTs like child allowances.
+However, a study of payments to Eastern Cherokee households found that they increased weight among children from poor families {cite}`akee2013young`.
+
+### Child development
+
+When Manitoba, Canada, increased its child benefit in x, researchers found that the change improved motor and social development among children ages 0 to 3, and reduced aggression and anxiety among children ages 4-5, especially among girls {cite}`milligan2009child`.
 
 ### Education
 
-A study of Earned Income Tax Credit reforms found that "a $1, 000 increase in income raises combined math and reading test scores by 6% of a standard deviation in the short-run." (dahl2012impact)  milligan2009child
+A study of Earned Income Tax Credit reforms found that "a \$1,000 increase in income raises combined math and reading test scores by 6% of a standard deviation in the short-run." {cite}`dahl2012impact`
 
 ### Fertility
 
-By reducing the cost of childbearing, child benefits modestly increase fertility (births per female). In the US, a $1, 000 subsidy increases the probability of having a child in the following two years by 0.4 percent, an effect driven by the Earned Income Tax Credit and personal tax exemptions on low-income, married women in their 30s (mumford2017fertility). Canada's child benefit had a larger effect of 16.9 percent per C$1, 000, possibly due to its greater salience from being a standalone monthly program, while German child benefits only raised fertility among high-income parents considering a second child (riphahn2017fertility).
+By reducing the cost of childbearing, child benefits modestly increase fertility (births per female).
+In the US, a \$1, 000 subsidy increases the probability of having a child in the following two years by 0.4 percent, an effect driven by the Earned Income Tax Credit and personal tax exemptions on low-income, married women in their 30s {cite}`mumford2017fertility`.
+Canada's child benefit had a larger effect of 16.9 percent per C\$1, 000, possibly due to its greater salience from being a standalone monthly program, while German child benefits only raised fertility among high-income parents considering a second child {cite}`riphahn2017fertility`.
 
 ## Sub-Saharan Africa
 
