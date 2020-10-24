@@ -21,13 +21,14 @@ They also calculated that the plan would cost \$91 billion per year, cut overall
 
 These results align with the  National Academies of Science published a [600-plus-page report](https://www.nap.edu/catalog/25246/a-roadmap-to-reducing-child-poverty) on child poverty in 2019.
 They summarized the research on effects of child poverty, and compared policy options for addressing it.
-They found that a \$3,000 per child per year child allowance would reduce child poverty more than the other 19 options they considered.
+They found that a \$3,000 per child per year child allowance would reduce child poverty more than the other 19 options they considered.[^nas]
 
-They simulated that a child allowance would reduce earnings by \$3.9 billion per year and jobs by nearly 100,000."
-References income elasticities from Blundell and Macurdy (1999), which show larger effects than more recent reviews like CBO.
-Replaced CTC and child exemption, and phased out between 300 and 400 percent of the poverty line.
-Not taxable, not counted for means-tested benefits.
-Table 5-2
+[^nas]:NAS simulated that a child allowance would reduce earnings by \$3.9 billion per year and jobs by nearly 100,000.
+However, this references income elasticities from [Blundell and Macurdy (1999)](https://www.sciencedirect.com/science/article/pii/S1573446399030084?casa_token=ozmnhDP82VkAAAAA:EesqpseGl3CFDHYXClIfetGXMx0feDteIMhvwFmFZJZ57BfOhi7PM-ViABDNFr93uYXq38D-FJY), which show larger effects than more recent reviews like the [McClelland and Mok (2012)](https://www.cbo.gov/publication/43675) from the Congressional Budget Office. NAS's simulation also replaced CTC and child exemption, and phased out between 300 and 400 percent of the poverty line, while making the child allowance non-taxable and non-countable for means-tested benefits.
+
+Democrats are effectively including the American Family Act in its pandemic recovery plans.
+The [HEROES Act](https://www.speaker.gov/heroesact), passed by House Democrats as a follow-up to the CARES Act, includes a policy that matches the AFA, except that it is only for 2021 (tax year 2020).
+Joe Biden proposed the same in his [tax plan](https://joebiden.com/two-tax-policies), "for 2021 and then as long as economic conditions require." Elaine Maag at the Tax Policy Center [found](https://www.taxpolicycenter.org/taxvox/expanding-child-tax-credit-full-refundability-and-larger-credit) that the bottom quintile of families with children would receive about a third of the benefits from this part of the HEROES Act, with its full refundability driving most of this progressivity.
 
 ## Other countries
 
