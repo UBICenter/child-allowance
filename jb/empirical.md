@@ -157,8 +157,8 @@ Households that received a cash transfer tended to spend significantly more mone
 
 The change in food consumption as a percentage of the total transfer was high across most interventions.
 For example, a 2018 World Bank meta-analysis found that the cash transfer elasticity of food consumption was high across Zambia's CGP (110%\*\*), Malawi's SCTP (148%\*\*), and Kenya's CT-OVC (60%\*\*).
-On the other hand, some transfers--- most often smaller or irregular transfers--- had no impact on food consumption.
-Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta` . 
+On the other hand, some transfers---most often smaller or irregular transfers---had no impact on food consumption.
+Across all of the meta-analysis subjects, for each dollar transferred, average household food consumption increased by 36 cents\*\* {cite}`World_Bank_meta`. 
 
 This increase in household food consumption is reflected in more concrete measures of nutritional outcomes for recipient households.
 The number of meals eaten per day unilaterally increased across the programs that measured it:
@@ -215,7 +215,7 @@ In its totality, the evidence likely indicates that cash transfers cause a small
 
 On the intensive margin, there is some weak evidence that unconditional cash transfers increase school attendance.
 The Malawi SCTP raised regular attendance (school attendance without withdrawl from school for two or more consecutive weeks) by 13 pp\*\*\* [59%]. 
-However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta` . 
+However, most individual studies, as well as a World Bank meta-analysis, arrived at null attendance results {cite}`World_Bank_meta`. 
 The programs reported similarly mixed results for the number of grades completed by children (grade attainment).
 
 ### Attendance Conditions
@@ -236,7 +236,7 @@ There was limited consistency in the definition used to define child labor, with
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
 For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
 That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities.
-The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta` . 
+The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
 [^Child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
 
