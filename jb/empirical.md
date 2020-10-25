@@ -20,7 +20,7 @@ The program "resulted in a significant 50 percent decrease in under-nutrition, a
 By comparing these results to other research on mortality and being underweight {cite}`flegal2005excess`, income {cite}`deaton2001mortality`, and education {cutler2006education}`cutler2006education`, the authors establish that education and income explain 75 to 95 percent of the longevity increase, while the underweight channel explains a small share.
 
 Nutrition can sometimes have mixed benefits on outcomes like obesity, which most but not all evidence suggests is a consequence of poverty.
-A study of Alaska's Permanent Fund Dividend, a UBI ranging from \$1, 000 to \$3, 000 per person per year since its creation in 1976, found that each additional \$1,000 in payments reduced child obesity by as much as 4.5 percentage points.
+A study of Alaska's Permanent Fund Dividend, a UBI ranging from \$1, 000 to \$3, 000 per person per year (including children) since its creation in 1976, found that each additional \$1,000 in payments reduced child obesity by as much as 4.5 percentage points.
 Research on the Food Stamp Program (now Supplemental Nutrition Assistance Program, or SNAP) shows that these benefits persist: access to food stamps as children reduced adult obesity {cite}`hoynes2016long`.
 Since food stamps are treated as cash by most households {cite}`hoynes2009consumption`, or may even shift consumption toward less healthy groceries like soda {cite}`whitmore2002food`, these effects probably follow from a general increase in household resources, and would thus also apply to UCTs like child allowances.
 However, a study of payments to Eastern Cherokee households found that they increased weight among children from poor families {cite}`akee2013young`.

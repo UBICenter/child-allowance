@@ -32,4 +32,18 @@ Joe Biden proposed the same in his [tax plan](https://joebiden.com/two-tax-polic
 
 ## Other countries
 
-Child benefits
+Many OECD countries have unconditional child allowances, and many other countries also have conditional cash transfers to low-income families.
+
+These payments are generally monthly, and compared to the \$2,000 USD maximum US Child Tax Credit, range from \$1,340 USD per year in [Finland](https://www.kela.fi/web/en/child-benefit-amount-and-payment#:~:text=A%20family%20has%20three%20children,benefit%20is%20tax%2Dfree%20income.) to \$5,150 in [Canada](https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-we-calculate-your-ccb.html).
+Other amounts include \$1,820 in [Denmark](https://ec.europa.eu/social/main.jsp?catId=1107&langId=en&intPageId=4485#:~:text=If%20you%20and%20your%20child,for%20child%20and%20youth%20benefit.), 
+\$1,770 in [Sweden](https://www.forsakringskassan.se/privatpers/foralder/nar_barnet_ar_fott/barnbidrag/!ut/p/z0/fYzLDoIwEAC_puctqNwJKD4OxpAo9tIUKaRKtmW7IX6-6Ad4m0kmAwoaUGhmNxh2Hs24-F1ler0vi6Qq5Om8qUuZZ4dLcq236S5dQW0RjqD-R8vFPadJ5aAeHtm-GZofIEerycbgMbrZChnIzYaDpShk78mMnSUh0ZBuDaFlvVDvmYX8eus6MgOEV3X7AGdh2ls!/),
+\$1,990 in [Ireland](https://www.citizensinformation.ie/en/social_welfare/social_welfare_payments/social_welfare_payments_to_families_and_children/child_benefit.html), and
+\$2,900 in [Germany](https://www.arbeitsagentur.de/datei/kg2-e-merkblattkindergeld_ba014317.pdf).
+
+In some countries, the amount per child rises with the number of children.
+For example, Finland's per-child child allowance increases for every child up to the fifth, where it nearly doubles compared to the first.
+Finland and Sweden also raise the amount per child for larger families.
+
+While some OECD countries, such as Denmark and Canada, phase out child allowances for high earners, we did not identify any that phased their benefits *in* with income, as the US does.
+
+Partly as a result of these policies, each of these countries has a [smaller share](https://www.oecd.org/els/family/Poor-children-in-rich-countries-Policy-brief-2018.pdf) of children living in households below 50 percent of median income than the US does.
