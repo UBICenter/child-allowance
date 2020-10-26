@@ -34,8 +34,8 @@ It also identifies studies showing that income improves maternal health and well
 
 ### Education
 
-A study of Earned Income Tax Credit reforms found that "a \$1,000 increase in income raises combined math and reading test scores by 6 percent of a standard deviation in the short-run." {cite}`dahl2012impact`
-Simil
+A study of Earned Income Tax Credit reforms found that "a \$1,000 increase in income raises combined math and reading test scores by 6 percent of a standard deviation in the short-run" {cite}`dahl2012impact`.
+Similarly, research of Canadian child benefit reforms found that C\$1,000 in benefits raised math and vocabulary scores by 7.4 and 6.8 percent of a standard deviation, respectively {cite}`milligan2011child`.
 
 The above-mentioned OECD meta-analysis associated a \$1,000 income increase with school performance gains ranging between 5 and 17 percent of a standard deviation.[^oecd-school]
 
