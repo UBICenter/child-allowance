@@ -17,7 +17,7 @@ In 1911, the US government established its first welfare program, the Mother's P
 Male children of mothers accepted for the US Mother's Pension Program lived one year longer than male children of mothers who were rejected after initial acceptance {cite}`aizer2016long`.
 This study also reported other medium-term outcomes, which can help estimate the effects of other cash transfer results for which mortality data is not yet reliably available.
 The program "resulted in a significant 50 percent decrease in under-nutrition, a 13 percent increase in income, and an increase of 0.4 years of school among young adults."
-By comparing these results to other research on mortality and being underweight {cite}`flegal2005excess`, income {cite}`deaton2001mortality`, and education {cutler2006education}`cutler2006education`, the authors establish that education and income explain 75 to 95 percent of the longevity increase, while the underweight channel explains a small share.
+By comparing these results to other research on mortality and being underweight {cite}`flegal2005excess`, income {cite}`deaton2001mortality`, and education {cite}`cutler2006education`, the authors establish that education and income explain 75 to 95 percent of the longevity increase, while the underweight channel explains a small share.
 
 Nutrition can sometimes have mixed benefits on outcomes like obesity, which most but not all evidence suggests is a consequence of poverty.
 A study of Alaska's Permanent Fund Dividend, a UBI ranging from \$1, 000 to \$3, 000 per person per year (including children) since its creation in 1976, found that each additional \$1,000 in payments reduced child obesity by as much as 4.5 percentage points.
