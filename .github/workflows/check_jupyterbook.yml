@@ -2,7 +2,7 @@ name: Test that Jupyter Book builds
 on: [push, pull_request]
 jobs:
   build-and-deploy:
-    if: github.repository == 'UBICenter/childallowance'
+    if: github.repository == 'UBICenter/child-allowance'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
