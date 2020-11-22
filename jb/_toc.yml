@@ -2,6 +2,6 @@
 - file: simulation
 - file: empirical
 - file: policies
-- file: more_resources
+- file: more-resources
 - url: https://ubicenter.org
   title: UBI Center home
