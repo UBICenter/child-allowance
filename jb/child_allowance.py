@@ -1,24 +1,19 @@
-# 1. Gov replace childcare costs v flat transfer
-# 2. Gov pay state-based costs of childcare v flat transfer
+# Roadmap:
+# Get raw data from IPUMS and save to jb/data
+# Use GESTFIPS state identifier (column) to identify
+# State-based heterogeneity in first simulation
+# Calculate Gini Coefficient using microdf
+# Improve these initial estimates by averaging over 3 years
+# Look at by-decile code used in child allowance simulation
+# Replicate for this analysis
+# Do exploratory analysis on
+# Attempt 2nd analysis when data from CAP is provided
 
-# TO DO: Work out states:'GESTFIPS' by geting raw
-# data from IPUMS rather than Max's repo
-#### EMAIL BROOKINGS
-#### roadmap:
-### Poverty by state
-### Do other
-### Inequality
-### By decile inequality
-
-### Swap to IPUMS data for the 3 years
-### Hispanic status
-### Age
-### Weight
-### SPM - SPMID, SPMWEIGHT, TOTRes, POV Threshold
-### Grab childcare expenses column
-### Housing costs - Geo adjust for local area 
-### (SPM unit housing multiplier)
-
+# Data to pull from IPUMS:
+# Person-level - Hispanic status/race identifiers, Age, Weight
+# SPM-level - CCare Exp, SPMID, SPMWEIGHT, TOTRes, POVThreshold
+# See what housing cost data is available (should be geo code
+# adjustments for different costs - SPM unit housing multiplier
 
 # Links:
 # https://github.com/MaxGhenis/datarepo/blob/master/pppub20.csv.gz
@@ -33,9 +28,18 @@ import pandas as pd
 import numpy as np
 import us
 
-# Read in census data and create a copy for manipulation
+# Read in census data and specify columns for use
 raw = pd.read_csv(
-    "https://github.com/MaxGhenis/datarepo/raw/master/pppub20.csv.gz"
+    "https://github.com/MaxGhenis/datarepo/raw/master/pppub20.csv.gz",
+    usecols=[
+        "A_AGE",
+        "SPM_ID",
+        "SPM_WEIGHT",
+        "SPM_TOTVAL",
+        "SPM_POVTHRESHOLD",
+        "SPM_CHILDCAREXPNS",
+        "MARSUPWT",
+    ],
 )
 
 # Create a copy of the raw dataset and make column names non-capitalized
@@ -58,13 +62,14 @@ spmu_cols = [
     "spm_povthreshold",
     "spm_childcarexpns",
 ]
+
 spmu = pd.DataFrame(
     person.groupby(spmu_cols)[
         ["child_6", "infant", "toddler", "preschool", "person"]
     ].sum()
 ).reset_index()
 
-# Calculate total cost of transfers, weight number of children
+# Calculate total cost of transfers, and total number of children
 program_cost = mdf.weighted_sum(spmu, "spm_childcarexpns", "spm_weight")
 person["total_child_6"] = mdf.weighted_sum(spmu, "child_6", "spm_weight")
 
@@ -72,42 +77,51 @@ person["total_child_6"] = mdf.weighted_sum(spmu, "child_6", "spm_weight")
 spmu_replace_cost = person.copy(deep=True)
 spmu_flat_transfer = person.copy(deep=True)
 
-# Generate simulation-level flags to separate datasets
-spmu_replace_cost["replace_cost"] = True
-spmu_flat_transfer["replace_cost"] = False
+# Generate simulation-level flags to separate datasets,
+# 0 = base case, 1 = cost replacement design, 2 = flat transfer
+person["sim_flag"] = 1
+spmu_replace_cost["sim_flag"] = 2
+spmu_flat_transfer["sim_flag"] = 3
 
 # Append dataframes
-spmu = pd.concat([spmu_replace_cost, spmu_flat_transfer], ignore_index=True)
+spmu = pd.concat([person, spmu_replace_cost, spmu_flat_transfer], 
+    ignore_index=True)
 
 # Calculate transfer size to individual SPM units
 spmu["flat_transfer"] = program_cost / spmu.total_child_6
 
-# Simulate new income given 1. childcare cost subsidy to household 
-# equal to childcare expenditure
-# or 2. flat allowance of equal value using replace_cost flag.
+# Simulate new income using replace_cost flag to identify base and 2 policies:
+# 0. base case
+spmu.loc[spmu["sim_flag"] == 0, "new_inc"] = spmu.spm_totval
 
-spmu.loc[spmu["replace_cost"] == True, "new_inc"] = (
+# 1. childcare cost subsidy to household equal to childcare expenditure
+# (cost replacement)
+spmu.loc[spmu["sim_flag"] == 1, "new_inc"] = (
     spmu.spm_totval + spmu.spm_childcarexpns
 )
-spmu.loc[spmu["replace_cost"] == False, "new_inc"] = (
-    spmu.spm_totval + spmu.flat_transfer
-)
+
+# 2. flat allowance per child of equal total value
+spmu.loc[spmu["sim_flag"] == 2, "new_inc"] = spmu.spm_totval + spmu.flat_transfer
 
 # Create poverty flags on simulated incomes
 spmu["poverty_flag"] = spmu.new_inc < spmu.spm_povthreshold
 
-# Disaggregate to person level by merging on
-
 # Construct dataframe to disaggregate poverty flag to person level
-person = person.merge(spmu[["spm_id", "poverty_flag", "replace_cost"]], on=["spm_id"])
+person = person.merge(spmu[["spm_id", "poverty_flag", "sim_flag"]], on=["spm_id"])
 
-# summation across poverty_flag using person level weights for sim 1
-poverty_rate_replace = person.loc[spmu["replace_cost"] == True, "pov_rt_replace"] = (
+# summation across poverty_flag using person level weights for each policy
+poverty_rate_base = person.loc[spmu["sim_flag"] == 0, "pov_rt_base"] = (
+    mdf.weighted_mean(person, "poverty_flag", "marsupwt"
+)
+poverty_rate_replace = person.loc[spmu["sim_flag"] == 1, "pov_rt_replace"] = (
+    mdf.weighted_mean(person, "poverty_flag", "marsupwt"
+)
+poverty_rate_flat = person.loc[spmu["sim_flag"] == 2, "pov_rt_flat"] = (
     mdf.weighted_mean(person, "poverty_flag", "marsupwt"
 )
 
-# summation across poverty_flag using person level weights for sim 2
-poverty_rate_flat = person.loc[spmu["replace_cost"] == True, "pov_rt_replace"] = (
-    mdf.weighted_mean(person, "poverty_flag", "marsupwt"
-)
-
+# Construct first differences and % changes
+dif_poverty_rate_replace = poverty_rate_base - poverty_rate_replace
+p_dif_poverty_rate_replace = dif_poverty_rate_replace / poverty_rate_base
+dif_poverty_rate_flat = poverty_rate_base - poverty_rate_flat
+p_dif_poverty_rate_flat = dif_poverty_rate_flat / poverty_rate_base
