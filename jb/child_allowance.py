@@ -79,13 +79,14 @@ spmu_flat_transfer = person.copy(deep=True)
 
 # Generate simulation-level flags to separate datasets,
 # 0 = base case, 1 = cost replacement design, 2 = flat transfer
-person["sim_flag"] = 1
-spmu_replace_cost["sim_flag"] = 2
-spmu_flat_transfer["sim_flag"] = 3
+person["sim_flag"] = 0
+spmu_replace_cost["sim_flag"] = 1
+spmu_flat_transfer["sim_flag"] = 2
 
 # Append dataframes
-spmu = pd.concat([person, spmu_replace_cost, spmu_flat_transfer], 
-    ignore_index=True)
+spmu = pd.concat(
+    [person, spmu_replace_cost, spmu_flat_transfer], ignore_index=True
+)
 
 # Calculate transfer size to individual SPM units
 spmu["flat_transfer"] = program_cost / spmu.total_child_6
@@ -101,24 +102,27 @@ spmu.loc[spmu["sim_flag"] == 1, "new_inc"] = (
 )
 
 # 2. flat allowance per child of equal total value
-spmu.loc[spmu["sim_flag"] == 2, "new_inc"] = spmu.spm_totval + spmu.flat_transfer
+spmu.loc[spmu["sim_flag"] == 2, "new_inc"] = (
+    spmu.spm_totval + spmu.flat_transfer
+)
 
 # Create poverty flags on simulated incomes
 spmu["poverty_flag"] = spmu.new_inc < spmu.spm_povthreshold
 
 # Construct dataframe to disaggregate poverty flag to person level
-person = person.merge(spmu[["spm_id", "poverty_flag", "sim_flag"]], on=["spm_id"])
+person = person.merge(
+    spmu[["spm_id", "poverty_flag", "sim_flag"]], on=["spm_id"]
+)
 
 # summation across poverty_flag using person level weights for each policy
-poverty_rate_base = person.loc[spmu["sim_flag"] == 0, "pov_rt_base"] = (
-    mdf.weighted_mean(person, "poverty_flag", "marsupwt"
+sim_flag_0 = person.loc[person.sim_flag == 0]
+poverty_rate_base = mdf.weighted_mean(sim_flag_0, "poverty_flag", "marsupwt")
+sim_flag_1 = person.loc[person.sim_flag == 1]
+poverty_rate_replace = mdf.weighted_mean(
+    sim_flag_1, "poverty_flag", "marsupwt"
 )
-poverty_rate_replace = person.loc[spmu["sim_flag"] == 1, "pov_rt_replace"] = (
-    mdf.weighted_mean(person, "poverty_flag", "marsupwt"
-)
-poverty_rate_flat = person.loc[spmu["sim_flag"] == 2, "pov_rt_flat"] = (
-    mdf.weighted_mean(person, "poverty_flag", "marsupwt"
-)
+sim_flag_2 = person.loc[person.sim_flag == 2]
+poverty_rate_flat = mdf.weighted_mean(sim_flag_2, "poverty_flag", "marsupwt")
 
 # Construct first differences and % changes
 dif_poverty_rate_replace = poverty_rate_base - poverty_rate_replace
