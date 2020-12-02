@@ -1,5 +1,3 @@
-## Simflag - label rather than number.
-## Rename the index
 ## Calculate largest differences in the poverty rate by simulation by state.
 ## Interested in child poverty as well.
 ## How much does child allowance compare to child care
@@ -8,10 +6,10 @@
 ## % change in poverty/child poverty.
 ## In which states do childcare expenses push the most kids/adults into poverty.
 
-# Commits - 1. Immediate - put in the changed dataset: INCLUDE HISPANIC; DROP THE MONTHLY SAMPLES.
-# 2. Calculate largest differences in the poverty rate by simulation by state.
-# 3. Do this in a second commit: Construct function to turn race into these 4 buckets.
+# 1. Calculate largest differences in the poverty rate by simulation by state.
+# 2. Do this in a second commit: Construct function to turn race into these 4 buckets:
 # BLACK HISPANIC White-non-hispanic other-non-hispanic
+##### CHANGES TO THE RACE DELINIATIONS?
 
 # Preamble and read data
 import microdf as mdf
@@ -21,7 +19,7 @@ import us
 
 # Read in census data and specify columns for use
 raw = pd.read_csv(
-    "C:\\Users\\John Walker\\Downloads\\cps_00002.csv.gz",
+    "wsl$\\Ubuntu\\home\\johnwalker\\childallowance\\jb\\datacps_00003.csv.gz",
     usecols=[
         "YEAR",
         "MONTH",
@@ -29,6 +27,7 @@ raw = pd.read_csv(
         "AGE",
         "SEX",
         "RACE",
+        "HISPAN",
         "SPMWT",
         "SPMFTOTVAL",
         "SPMTOTRES",
@@ -52,6 +51,18 @@ person_1["toddler"] = person_1.age.between(1, 2)
 person_1["preschool"] = person_1.age.between(3, 5)
 person_1["person"] = 1
 
+# Redefine race categories
+person_1.race = person_1.race.replace(
+    {
+        100: "White",
+        200: "Black",
+        300: "American First Nations",
+        651: "Asian",
+        651: "Hawaiian/Pacific Islander",
+    }
+)
+
+# Define data collected at the SPM unit level
 spmu_cols = [
     "spmfamunit",
     "spmwt",
@@ -118,9 +129,18 @@ poverty_rate_race = (
     .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
     .reset_index()
 )
+poverty_rate_hispan = (
+    person.groupby(["sim_flag", "hispan"])
+    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
+    .reset_index()
+)
 poverty_rate_state = (
     person.groupby(["sim_flag", "statefip"])
     .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
     .reset_index()
 )
 poverty_rate.rename({0: "poverty_rate"}, axis=1, inplace=True)
+poverty_rate_sex.rename({0: "poverty_rate"}, axis=1, inplace=True)
+poverty_rate_race.rename({0: "poverty_rate"}, axis=1, inplace=True)
+poverty_rate_hispan.rename({0: "poverty_rate"}, axis=1, inplace=True)
+poverty_rate_state.rename({0: "poverty_rate"}, axis=1, inplace=True)
