@@ -33,7 +33,6 @@ raw = pd.read_csv(
 # Create a copy of the raw dataset and make column names non-capitalized
 # for readability
 person = raw.copy(deep=True)
-person = person[~person.ASECWT.isnull()]
 person.columns = person.columns.str.lower()
 
 # Asec weights are year-person units, and we average over 3 years,
@@ -53,7 +52,6 @@ person.race.mask(
 )
 person.race.mask(person.race == 100, "White", inplace=True)
 person.race.mask(person.race == 200, "Black", inplace=True)
-person.race.mask(person.race == 999, "Race unknown", inplace=True)
 
 # Redefine hispanic categories
 person.hispan.mask(
@@ -86,8 +84,7 @@ person.race_hispan.mask(
 person.race_hispan.mask(person.hispan == "Hispanic", "Hispanic", inplace=True)
 
 # Relabel sex categories
-person["sex"].mask(person["sex"] == 1, "Male", inplace=True)
-person["sex"].mask(person["sex"] == 2, "Female", inplace=True)
+person["female"] = person.sex == 2
 
 # Create State categories
 person["state"] = (
@@ -97,7 +94,7 @@ person["state"] = (
 )
 
 # Define data collected at the SPM unit level
-spmu_cols = [
+SPMU_COLS = [
     "spmfamunit",
     "spmwt",
     "spmftotval",
@@ -108,21 +105,26 @@ spmu_cols = [
 ]
 
 spmu = pd.DataFrame(
-    person.groupby(spmu_cols)[
+    person.groupby(SPMU_COLS)[
         ["child_6", "infant", "toddler", "preschool", "person"]
     ].sum()
 ).reset_index()
 
+SPMU_AGG_COLS = ["child_6", "infant", "toddler", "preschool", "person"]
+spmu = person.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
+spmu.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
+spmu.reset_index(inplace=True)
+
 # Calculate total cost of transfers, and total number of children
 program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
-total_child_6 = mdf.weighted_sum(spmu, "child_6", "spmwt")
+total_child_6 = mdf.weighted_sum(spmu, "spmu_child_6", "spmwt")
 childallowance = program_cost / total_child_6
 
 # Create copies of the dataset in which to simulate the policies
 spmu_replace_cost = spmu.copy(deep=True)
 spmu_flat_transfer = spmu.copy(deep=True)
 
-# Generate simulation-level flags to separate datasets,
+# Generate scenario flags to separate datasets,
 # 0 = base case, 1 = cost replacement design, 2 = flat transfer
 spmu["sim_flag"] = "baseline"
 spmu_replace_cost["sim_flag"] = "cc_replacement"
@@ -132,7 +134,7 @@ spmu_flat_transfer["sim_flag"] = "child_allowance"
 spmu_replace_cost.spmftotval += spmu_replace_cost.spmchxpns
 
 spmu_flat_transfer["childallowance"] = (
-    childallowance * spmu_flat_transfer.child_6
+    childallowance * spmu_flat_transfer.spmu_child_6
 )
 spmu_flat_transfer.spmftotval += spmu_flat_transfer.childallowance
 
