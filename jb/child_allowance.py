@@ -115,7 +115,8 @@ spmu = pd.DataFrame(
 
 # Calculate total cost of transfers, and total number of children
 program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
-spmu["total_child_6"] = mdf.weighted_sum(spmu, "child_6", "spmwt")
+total_child_6 = mdf.weighted_sum(spmu, "child_6", "spmwt")
+childallowance = program_cost / total_child_6
 
 # Create copies of the dataset in which to simulate the policies
 spmu_replace_cost = spmu.copy(deep=True)
@@ -129,9 +130,11 @@ spmu_flat_transfer["sim_flag"] = "child_allowance"
 
 # Caluclate new income by simulation
 spmu_replace_cost.spmftotval += spmu_replace_cost.spmchxpns
-spmu_flat_transfer.spmftotval += (
-    program_cost / spmu_flat_transfer.total_child_6
+
+spmu_flat_transfer["childallowance"] = (
+    childallowance * spmu_flat_transfer.child_6
 )
+spmu_flat_transfer.spmftotval += spmu_flat_transfer.childallowance
 
 # Append dataframes
 spmu_sim = pd.concat(
@@ -140,9 +143,6 @@ spmu_sim = pd.concat(
 
 # Create poverty flags on simulated incomes
 spmu_sim["poverty_flag"] = spmu_sim.spmftotval < spmu_sim.spmthresh
-spmu_sim["poverty_flag_child"] = (spmu_sim.spmftotval < spmu_sim.spmthresh) & (
-    spmu_sim.child_6 == 1
-)
 
 # Calculate per person spmftotval (resources)
 spmu_sim["resources_pp"] = spmu_sim.spmftotval / spmu_sim.person
@@ -152,10 +152,9 @@ person_sim = person.drop("spmftotval", axis=1).merge(
     spmu_sim[
         [
             "spmfamunit",
-            "poverty_flag",
-            "poverty_flag_child",
-            "sim_flag",
             "year",
+            "poverty_flag",
+            "sim_flag",
             "spmftotval",
             "resources_pp",
         ]
@@ -167,11 +166,6 @@ person_sim = person.drop("spmftotval", axis=1).merge(
 poverty_rate = (
     person_sim.groupby(["sim_flag"])
     .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-    .reset_index()
-)
-poverty_rate_child = (
-    person_sim.groupby(["sim_flag"])
-    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag_child", "asecwt"))
     .reset_index()
 )
 poverty_rate_sex = (
@@ -186,6 +180,14 @@ poverty_rate_race_hispan = (
 )
 poverty_rate_state = (
     person_sim.groupby(["sim_flag", "state"])
+    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
+    .reset_index()
+)
+
+# Child poverty rate
+poverty_rate_child = (
+    person_sim[person_sim.child_6]
+    .groupby(["sim_flag"])
     .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
     .reset_index()
 )
