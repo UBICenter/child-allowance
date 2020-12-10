@@ -47,41 +47,39 @@ person["preschool"] = person.age.between(3, 5)
 person["person"] = 1
 
 # Redefine race categories
-person.race.mask(
-    person.race.between(200, 999, inclusive=False), "Other", inplace=True
-)
-person.race.mask(person.race == 100, "White", inplace=True)
-person.race.mask(person.race == 200, "Black", inplace=True)
+person["race_group"] = "Other"
+person.race_group.mask(person.race == 100, "White", inplace=True)
+person.race_group.mask(person.race == 200, "Black", inplace=True)
+person.race_group.mask(person.race == 999, "Race unknown", inplace=True)
 
 # Redefine hispanic categories
-person.hispan.mask(
+person["hispan_group"] = "Hispanic status unknown"
+person.hispan_group.mask(
     person.hispan.between(100, 612, inclusive=True), "Hispanic", inplace=True
 )
-person.hispan.mask(person.hispan == 0, "Not Hispanic", inplace=True)
-person.hispan.mask(
-    (person.hispan != "Hispanic") & (person.hispan != "Not Hispanic"),
-    "Hispanic status unknown",
-    inplace=True,
-)
+person.hispan_group.mask(person.hispan == 0, "Not Hispanic", inplace=True)
+
 
 # Combine race + hispanic categories
 person["race_hispan"] = "Other or Unknown"
 person.race_hispan.mask(
-    (person.race == "White") & (person.hispan == "Not Hispanic"),
+    (person.race_group == "White") & (person.hispan_group == "Not Hispanic"),
     "White non-Hispanic",
     inplace=True,
 )
 person.race_hispan.mask(
-    (person.race == "Black") & (person.hispan == "Not Hispanic"),
+    (person.race_group == "Black") & (person.hispan_group == "Not Hispanic"),
     "Black",
     inplace=True,
 )
 person.race_hispan.mask(
-    (person.race == "Other") & (person.hispan == "Not Hispanic"),
+    (person.race_group == "Other") & (person.hispan_group == "Not Hispanic"),
     "Other non-Hispanic",
     inplace=True,
 )
-person.race_hispan.mask(person.hispan == "Hispanic", "Hispanic", inplace=True)
+person.race_hispan.mask(
+    person.hispan_group == "Hispanic", "Hispanic", inplace=True
+)
 
 # Relabel sex categories
 person["female"] = person.sex == 2
@@ -147,7 +145,7 @@ spmu_sim = pd.concat(
 spmu_sim["poverty_flag"] = spmu_sim.spmftotval < spmu_sim.spmthresh
 
 # Calculate per person spmftotval (resources)
-spmu_sim["resources_pp"] = spmu_sim.spmftotval / spmu_sim.person
+spmu_sim["resources_pp"] = spmu_sim.spmftotval / spmu_sim.spmu_person
 
 # Construct dataframe to disaggregate poverty flag to person level
 person_sim = person.drop("spmftotval", axis=1).merge(
@@ -164,48 +162,46 @@ person_sim = person.drop("spmftotval", axis=1).merge(
     on=["spmfamunit", "year"],
 )
 
-# Consider sex, race, state heterogeneity
-poverty_rate = (
-    person_sim.groupby(["sim_flag"])
-    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-    .reset_index()
-)
-poverty_rate_sex = (
-    person_sim.groupby(["sim_flag", "sex"])
-    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-    .reset_index()
-)
-poverty_rate_race_hispan = (
-    person_sim.groupby(["sim_flag", "race_hispan"])
-    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-    .reset_index()
-)
-poverty_rate_state = (
-    person_sim.groupby(["sim_flag", "state"])
-    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-    .reset_index()
-)
+# Define a function to calculate poverty rates
+def pov(groupby, data=person_sim):
+    return (
+        data.groupby(groupby)
+        .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
+        .reset_index()
+    )
+
+
+# Function to be simplified with microdf update to:
+# `return mdf.weighted_mean(data, "poverty_flag", "asecwt",groupby)
+# .reset_index()`
+
+# Poverty rate and demographic-based heterogenous poverty rates
+poverty_rate = pov("sim_flag")
+poverty_rate_sex = pov(["sim_flag", "sex"])
+poverty_rate_race_hispan = pov(["sim_flag", "race_hispan"])
+poverty_rate_state = pov(["sim_flag", "state"])
 
 # Child poverty rate
-poverty_rate_child = (
-    person_sim[person_sim.child_6]
-    .groupby(["sim_flag"])
-    .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-    .reset_index()
-)
+poverty_rate_child = pov("sim_flag", person_sim[person_sim.child_6])
 
-# Rename constructed poverty_rate
-poverty_rate.rename({0: "poverty_rate"}, axis=1, inplace=True)
-poverty_rate_sex.rename({0: "poverty_rate"}, axis=1, inplace=True)
-poverty_rate_race_hispan.rename({0: "poverty_rate"}, axis=1, inplace=True)
-poverty_rate_state.rename({0: "poverty_rate"}, axis=1, inplace=True)
+# Rename constructed poverty_rates
+poverty_rates = [
+    poverty_rate,
+    poverty_rate_sex,
+    poverty_rate_race_hispan,
+    poverty_rate_race_hispan,
+    poverty_rate_state,
+    poverty_rate_child,
+]
+for i in poverty_rates:
+    i.rename({0: "poverty_rate"}, axis=1, inplace=True)
 
-# Construct poverty percentage changes
+# Create pivot table to interpret state-based poverty effects
 state = poverty_rate_state.pivot_table(
     values="poverty_rate", index="state", columns="sim_flag"
 )
 
-
+# Construct poverty percentage changes
 def percent_change(base, new):
     return 100 * (new - base) / new
 
