@@ -50,36 +50,23 @@ person["person"] = 1
 person["race_group"] = "Other"
 person.race_group.mask(person.race == 100, "White", inplace=True)
 person.race_group.mask(person.race == 200, "Black", inplace=True)
-person.race_group.mask(person.race == 999, "Race unknown", inplace=True)
 
 # Redefine hispanic categories
-person["hispan_group"] = "Hispanic status unknown"
-person.hispan_group.mask(
-    person.hispan.between(100, 612, inclusive=True), "Hispanic", inplace=True
-)
-person.hispan_group.mask(person.hispan == 0, "Not Hispanic", inplace=True)
-
+person["hispanic"] = person.hispan.between(100, 612, inclusive=True)
 
 # Combine race + hispanic categories
-person["race_hispan"] = "Other or Unknown"
+person["race_hispan"] = "Other non-Hispanic"
 person.race_hispan.mask(
-    (person.race_group == "White") & (person.hispan_group == "Not Hispanic"),
+    (person.race_group == "White") & ~person.hispanic,
     "White non-Hispanic",
     inplace=True,
 )
 person.race_hispan.mask(
-    (person.race_group == "Black") & (person.hispan_group == "Not Hispanic"),
-    "Black",
+    (person.race_group == "Black") & ~person.hispanic,
+    "Black non-Hispanic",
     inplace=True,
 )
-person.race_hispan.mask(
-    (person.race_group == "Other") & (person.hispan_group == "Not Hispanic"),
-    "Other non-Hispanic",
-    inplace=True,
-)
-person.race_hispan.mask(
-    person.hispan_group == "Hispanic", "Hispanic", inplace=True
-)
+person.race_hispan.mask(person.hispanic, "Hispanic", inplace=True)
 
 # Relabel sex categories
 person["female"] = person.sex == 2
