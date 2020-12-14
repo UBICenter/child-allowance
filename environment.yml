@@ -5,6 +5,8 @@ dependencies:
 - pandas
 - numpy
 - pip
+# Per https://github.com/executablebooks/jupyter-book/issues/1137:
+- sphinxcontrib-bibtex==1.0.0
 - pip:
   - jupyter-book
   - "git+https://github.com/MaxGhenis/microdf.git"
