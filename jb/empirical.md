@@ -47,6 +47,9 @@ By reducing the cost of childbearing, child benefits modestly increase fertility
 In the US, a \$1,000 subsidy increases the probability of having a child in the following two years by 0.4 percent, an effect driven by the Earned Income Tax Credit and personal tax exemptions on low-income, married women in their 30s {cite}`mumford2017fertility`.
 Canada's child benefit had a larger effect of 16.9 percent per C\$1,000, possibly due to its greater salience from being a standalone monthly program, while German child benefits only raised fertility among high-income parents considering a second child {cite}`riphahn2017fertility`.
 
+As of 2016, women in the US report wanting an average of 2.7 children, yet they are having only 1.8 children---the largest gap in 40 years {cite}`stone2018`.
+This suggests that additional fertility from child allowances would be welfare-enhancing.
+
 ## Sub-Saharan Africa
 
 ### Introduction
