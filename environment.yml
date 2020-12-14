@@ -1,4 +1,6 @@
 name: childallowance
+channels:
+- conda-forge
 dependencies:
 - python
 - plotly
