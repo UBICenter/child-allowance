@@ -11,7 +11,8 @@ import us
 
 # Read in census data and specify columns for use
 raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz",
+    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",
+    compression="gzip",
     usecols=[
         "YEAR",
         "MONTH",
