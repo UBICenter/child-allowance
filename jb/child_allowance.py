@@ -1,8 +1,3 @@
-# Roadmap:
-# Comparison to other potential policies
-# Replicate plotly code from the child allowance for JB
-# Move to second simulation
-
 # Preamble and read data
 import microdf as mdf
 import pandas as pd
@@ -10,8 +5,9 @@ import numpy as np
 import us
 
 # Read in census data and specify columns for use
-raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz",
+person_raw = pd.read_csv(
+    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
+    compression="gzip",
     usecols=[
         "YEAR",
         "MONTH",
@@ -32,7 +28,7 @@ raw = pd.read_csv(
 
 # Create a copy of the raw dataset and make column names non-capitalized
 # for readability
-person = raw.copy(deep=True)
+person = person_raw.copy(deep=True)
 person.columns = person.columns.str.lower()
 
 # Asec weights are year-person units, and we average over 3 years,
@@ -109,8 +105,7 @@ childallowance = program_cost / total_child_6
 spmu_replace_cost = spmu.copy(deep=True)
 spmu_flat_transfer = spmu.copy(deep=True)
 
-# Generate scenario flags to separate datasets,
-# 0 = base case, 1 = cost replacement design, 2 = flat transfer
+# Generate scenario flags to separate datasets
 spmu["sim_flag"] = "baseline"
 spmu_replace_cost["sim_flag"] = "cc_replacement"
 spmu_flat_transfer["sim_flag"] = "child_allowance"
@@ -150,32 +145,25 @@ person_sim = person.drop("spmftotval", axis=1).merge(
 )
 
 # Define a function to calculate poverty rates
-def pov(groupby, data=person_sim):
-    return (
-        data.groupby(groupby)
-        .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-        .reset_index()
+def pov(data, group):
+    return pd.DataFrame(
+        mdf.weighted_mean(data, "poverty_flag", "asecwt", groupby=group)
     )
 
 
-# Function to be simplified with microdf update to:
-# `return mdf.weighted_mean(data, "poverty_flag", "asecwt",groupby)
-# .reset_index()`
-
-# Poverty rate and demographic-based heterogenous poverty rates
-poverty_rate = pov("sim_flag")
-poverty_rate_sex = pov(["sim_flag", "sex"])
-poverty_rate_race_hispan = pov(["sim_flag", "race_hispan"])
-poverty_rate_state = pov(["sim_flag", "state"])
+# Poverty rate and state/demographic-based heterogenous poverty rates
+poverty_rate = pov(person_sim, "sim_flag")
+poverty_rate_state = pov(person_sim, ["sim_flag", "state"])
+poverty_rate_sex = pov(person_sim, ["sim_flag", "sex"])
+poverty_rate_race_hispan = pov(person_sim, ["sim_flag", "race_hispan"])
 
 # Child poverty rate
-poverty_rate_child = pov("sim_flag", person_sim[person_sim.child_6])
+poverty_rate_child = pov(person_sim[person_sim.child_6], "sim_flag")
 
 # Rename constructed poverty_rates
 poverty_rates = [
     poverty_rate,
     poverty_rate_sex,
-    poverty_rate_race_hispan,
     poverty_rate_race_hispan,
     poverty_rate_state,
     poverty_rate_child,
@@ -183,39 +171,90 @@ poverty_rates = [
 for i in poverty_rates:
     i.rename({0: "poverty_rate"}, axis=1, inplace=True)
 
+"""
+The following code creates a pivot table to examine in detail
+the impacts of each policy on state-based outcomes. The procedure
+is replicable for any of the demographics of interest.
+"""
+
+
+# Define percentage change functions
+def pp_change(base, new):
+    return new - base
+
+
+def percent_change(pp_change, old):
+    return 100 * pp_change / old
+
+
+# Define function to generate gini coefficients
+def gin(data, group):
+    return pd.DataFrame(
+        data.groupby(group).apply(
+            lambda x: mdf.gini(x, "spmftotval", "asecwt")
+        )
+    )
+
+
+# Gini coefficients and state/demographic-based heterogenous gini coefficients
+gini = gin(person_sim, "sim_flag")
+gini_state = gin(person_sim, ["sim_flag", "state"])
+gini_sex = gin(person_sim, ["sim_flag", "sex"])
+gini_race_hispan = gin(person_sim, ["sim_flag", "race_hispan"])
+gini_child = gin(person_sim[person_sim.child_6], "sim_flag")
+
+# Rename constructed gini coefficients
+ginis = [
+    gini,
+    gini_state,
+    gini_sex,
+    gini_race_hispan,
+    gini_child,
+]
+for i in ginis:
+    i.rename({0: "gini_coefficient"}, axis=1, inplace=True)
+
+
 # Create pivot table to interpret state-based poverty effects
-state = poverty_rate_state.pivot_table(
+state_pov = poverty_rate_state.pivot_table(
     values="poverty_rate", index="state", columns="sim_flag"
 )
+# Create pivot table to interpret state-based gini effects
+state_gini = gini_state.pivot_table(
+    values="gini_coefficient", index="state", columns="sim_flag"
+)
 
-# Construct poverty percentage changes
-def percent_change(base, new):
-    return 100 * (new - base) / new
+"""
+Construct percentage changes in defined metrics
+"""
 
-
-state["poverty_change_cc"] = percent_change(
+# Generate state-based poverty rate percentage changes
+state_pov["poverty_change_cc"] = pp_change(
     state.baseline, state.cc_replacement
 )
-state["poverty_change_flat"] = percent_change(
+state_pov["poverty_change_flat"] = pp_change(
     state.baseline, state.child_allowance
 )
-
-# Gini coefficients
-mdf.gini(person_sim, "spmftotval", "asecwt")
-mdf.gini(person_sim, "resources_pp", "asecwt")
-person_sim.groupby("sim_flag").apply(
-    lambda x: mdf.gini(x, "spmftotval", "asecwt")
+state_pov["poverty_change_%_cc"] = percent_change(
+    state_pov.poverty_change_cc, state.baseline
 )
-person_sim.groupby("sim_flag").apply(
-    lambda x: mdf.gini(x, "resources_pp", "asecwt")
+state_pov["poverty_change_%_flat"] = percent_change(
+    state_pov.poverty_change_flat, state.baseline
 )
 
-# Re-arrange by poverty rate
-state.sort_values(by="poverty_change_flat", ascending=False)
+# Construct state-based gini coefficient percentage changes
+state_gini["gini_change_cc"] = pp_change(state.baseline, state.cc_replacement)
+state_gini["gini_change_flat"] = pp_change(
+    state.baseline, state.child_allowance
+)
+state_gini["gini_change_%_cc"] = percent_change(
+    state_gini.gini_change_cc, state.baseline
+)
+state_gini["gini_change_%_flat"] = percent_change(
+    state_gini.gini_change_flat, state.baseline
+)
 
-# Interesting findings:
-# Flat transfer: Roughly 10* the impact on poverty and gini coefficient
-# compared to the childcare provision equivalent policy (paying costs)
-# The poverty change is much larger for female-identifying people.
-# The poverty change for the flat transfer is largest for Black and
-# Hispanic populations ~3%, lower for White ~1.2%, and other non-hispanic ~1.8%.
+# Re-arrange and present pivot tables, descending by % change
+# in poverty rate
+state_pov.sort_values(by="poverty_change_%_flat", ascending=True)
+state_gini.sort_values(by="gini_change_%_flat", ascending=True)
