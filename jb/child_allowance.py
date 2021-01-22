@@ -4,6 +4,11 @@ import pandas as pd
 import numpy as np
 import us
 
+"""
+Load this locally (should also be able to skip compression="gzip" after doing so
+Explain load this locally
+"""
+
 # Read in census data and specify columns for use
 person_raw = pd.read_csv(
     "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
@@ -179,10 +184,6 @@ is replicable for any of the demographics of interest.
 
 
 # Define percentage change functions
-def pp_change(base, new):
-    return new - base
-
-
 def percent_change(pp_change, old):
     return 100 * pp_change / old
 
@@ -199,21 +200,14 @@ def gin(data, group):
 # Gini coefficients and state/demographic-based heterogenous gini coefficients
 gini = gin(person_sim, "sim_flag")
 gini_state = gin(person_sim, ["sim_flag", "state"])
-gini_sex = gin(person_sim, ["sim_flag", "sex"])
-gini_race_hispan = gin(person_sim, ["sim_flag", "race_hispan"])
-gini_child = gin(person_sim[person_sim.child_6], "sim_flag")
 
 # Rename constructed gini coefficients
 ginis = [
     gini,
     gini_state,
-    gini_sex,
-    gini_race_hispan,
-    gini_child,
 ]
 for i in ginis:
     i.rename({0: "gini_coefficient"}, axis=1, inplace=True)
-
 
 # Create pivot table to interpret state-based poverty effects
 state_pov = poverty_rate_state.pivot_table(
@@ -229,17 +223,11 @@ Construct percentage changes in defined metrics
 """
 
 # Generate state-based poverty rate percentage changes
-state_pov["poverty_change_cc"] = pp_change(
-    state.baseline, state.cc_replacement
-)
-state_pov["poverty_change_flat"] = pp_change(
-    state.baseline, state.child_allowance
-)
-state_pov["poverty_change_%_cc"] = percent_change(
-    state_pov.poverty_change_cc, state.baseline
-)
-state_pov["poverty_change_%_flat"] = percent_change(
-    state_pov.poverty_change_flat, state.baseline
+state_pov["poverty_change_cc"] = state.baseline - state.cc_replacement
+state_pov["poverty_change_flat"] = state.baseline, state.child_allowance
+state_pov["poverty_change_%_cc"] = state_pov.poverty_change_cc - state.baseline
+state_pov["poverty_change_%_flat"] = (
+    state_pov.poverty_change_flat - state.baseline
 )
 
 # Construct state-based gini coefficient percentage changes
@@ -247,10 +235,10 @@ state_gini["gini_change_cc"] = pp_change(state.baseline, state.cc_replacement)
 state_gini["gini_change_flat"] = pp_change(
     state.baseline, state.child_allowance
 )
-state_gini["gini_change_%_cc"] = percent_change(
+state_gini["gini_change_pc_cc"] = percent_change(
     state_gini.gini_change_cc, state.baseline
 )
-state_gini["gini_change_%_flat"] = percent_change(
+state_gini["gini_change_pc_flat"] = percent_change(
     state_gini.gini_change_flat, state.baseline
 )
 
