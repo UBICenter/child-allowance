@@ -31,8 +31,6 @@ The Niskanen Center [estimated the poverty impact](https://www.niskanencenter.or
 
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRurbf8SIZ9FNptyJt4TpeSoXfHbWJnqhja89b4XhHAewtnDEVnYQzwb1rdorwqzzEf8WPGI1GPK1PL/pubchart?oid=1618008061&amp;format=interactive"></iframe>
 
-The replaced welfare programs are not designed to reach the poorest Americans
-
 What explains such large antipoverty effects? Chiefly, filling in the CTC's exclusion of the poorest children. This exclusion is [by design](https://www.taxpolicycenter.org/briefing-book/what-child-tax-credit), since only part of the credit is refundable (i.e., benefits families who don't owe taxes), and the refundable part phases in with income. 
 
 ![Child Tax Credit schedule](https://www.taxpolicycenter.org/sites/default/files/styles/original_optimized/public/book_images/3.4.1.1.png?itok=Vba42ckx)
