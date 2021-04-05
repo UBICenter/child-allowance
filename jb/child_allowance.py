@@ -110,7 +110,7 @@ spmu["sim_flag"] = "baseline"
 spmu_replace_cost["sim_flag"] = "cc_replacement"
 spmu_flat_transfer["sim_flag"] = "child_allowance"
 
-# Caluclate new income by simulation
+# Calculate new income by simulation
 spmu_replace_cost.spmftotval += spmu_replace_cost.spmchxpns
 
 spmu_flat_transfer["childallowance"] = (
@@ -144,117 +144,4 @@ person_sim = person.drop("spmftotval", axis=1).merge(
     on=["spmfamunit", "year"],
 )
 
-# Define a function to calculate poverty rates
-def pov(data, group):
-    return pd.DataFrame(
-        mdf.weighted_mean(data, "poverty_flag", "asecwt", groupby=group)
-    )
-
-
-# Poverty rate and state/demographic-based heterogenous poverty rates
-poverty_rate = pov(person_sim, "sim_flag")
-poverty_rate_state = pov(person_sim, ["sim_flag", "state"])
-poverty_rate_sex = pov(person_sim, ["sim_flag", "sex"])
-poverty_rate_race_hispan = pov(person_sim, ["sim_flag", "race_hispan"])
-
-# Child poverty rate
-poverty_rate_child = pov(person_sim[person_sim.child_6], "sim_flag")
-
-# Rename constructed poverty_rates
-poverty_rates = [
-    poverty_rate,
-    poverty_rate_sex,
-    poverty_rate_race_hispan,
-    poverty_rate_state,
-    poverty_rate_child,
-]
-for i in poverty_rates:
-    i.rename({0: "poverty_rate"}, axis=1, inplace=True)
-
-"""
-The following code creates a pivot table to examine in detail
-the impacts of each policy on state-based outcomes. The procedure
-is replicable for any of the demographics of interest.
-"""
-
-
-# Define percentage change functions
-def pp_change(base, new):
-    return new - base
-
-
-def percent_change(pp_change, old):
-    return 100 * pp_change / old
-
-
-# Define function to generate gini coefficients
-def gin(data, group):
-    return pd.DataFrame(
-        data.groupby(group).apply(
-            lambda x: mdf.gini(x, "spmftotval", "asecwt")
-        )
-    )
-
-
-# Gini coefficients and state/demographic-based heterogenous gini coefficients
-gini = gin(person_sim, "sim_flag")
-gini_state = gin(person_sim, ["sim_flag", "state"])
-gini_sex = gin(person_sim, ["sim_flag", "sex"])
-gini_race_hispan = gin(person_sim, ["sim_flag", "race_hispan"])
-gini_child = gin(person_sim[person_sim.child_6], "sim_flag")
-
-# Rename constructed gini coefficients
-ginis = [
-    gini,
-    gini_state,
-    gini_sex,
-    gini_race_hispan,
-    gini_child,
-]
-for i in ginis:
-    i.rename({0: "gini_coefficient"}, axis=1, inplace=True)
-
-
-# Create pivot table to interpret state-based poverty effects
-state_pov = poverty_rate_state.pivot_table(
-    values="poverty_rate", index="state", columns="sim_flag"
-)
-# Create pivot table to interpret state-based gini effects
-state_gini = gini_state.pivot_table(
-    values="gini_coefficient", index="state", columns="sim_flag"
-)
-
-"""
-Construct percentage changes in defined metrics
-"""
-
-# Generate state-based poverty rate percentage changes
-state_pov["poverty_change_cc"] = pp_change(
-    state.baseline, state.cc_replacement
-)
-state_pov["poverty_change_flat"] = pp_change(
-    state.baseline, state.child_allowance
-)
-state_pov["poverty_change_%_cc"] = percent_change(
-    state_pov.poverty_change_cc, state.baseline
-)
-state_pov["poverty_change_%_flat"] = percent_change(
-    state_pov.poverty_change_flat, state.baseline
-)
-
-# Construct state-based gini coefficient percentage changes
-state_gini["gini_change_cc"] = pp_change(state.baseline, state.cc_replacement)
-state_gini["gini_change_flat"] = pp_change(
-    state.baseline, state.child_allowance
-)
-state_gini["gini_change_%_cc"] = percent_change(
-    state_gini.gini_change_cc, state.baseline
-)
-state_gini["gini_change_%_flat"] = percent_change(
-    state_gini.gini_change_flat, state.baseline
-)
-
-# Re-arrange and present pivot tables, descending by % change
-# in poverty rate
-state_pov.sort_values(by="poverty_change_%_flat", ascending=True)
-state_gini.sort_values(by="gini_change_%_flat", ascending=True)
+person_sim.to_csv(compression="gzip")

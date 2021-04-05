@@ -15,6 +15,12 @@ import pandas as pd
 import numpy as np
 import us
 
+"""
+TODO: Read following in locally using jb/data/cps_00003.csv.gz after 
+specifying the working directory correctly to jb (i.e. run the script
+in the folder)
+"""
+
 # Read in census data and specify columns for use
 person_raw = pd.read_csv(
     "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
@@ -24,6 +30,7 @@ person_raw = pd.read_csv(
         "STATEFIP",
         "AGE",
         "SEX",
+        "ASECWT",
         "SPMWT",
         "SPMFTOTVAL",
         "SPMTOTRES",
@@ -98,12 +105,12 @@ person["female"] = person.sex == 2
 #)
 
 costs = pd.read_csv(
-    "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv", # noqa
+    "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv",
 )
 
 # Merge datasets to calculate per-child cost
 # Creates two rows per person (base and high quality, different costs)
-person_costs = person.merge(
+person_quality = person.merge(
     costs[
         [
             "state",
@@ -117,7 +124,18 @@ person_costs = person.merge(
 )
 
 # Set over_5 cost of childcare to 0
-person_costs.loc[(person_costs.age_cat == "over_5"), "cost"] = 0
+person_quality.loc[(person_quality.age_cat == "over_5"), "cost"] = 0
+
+# Calculate total cost and number of children by age_cat 
+def tot_num_cost(group):
+    return mdf.weighted_sum(person_quality,["cost", "person"],"asecwt",groupby=group).reset_index()
+
+#  Calculate cost for all children
+num_cost = tot_num_cost(["age_cat", "high_quality"])
+
+# Calculate cost per child
+num_cost["cost_per_child"] = num_cost.cost/num_cost.person
+person_quality = person_quality.merge(num_cost[["age_cat","high_quality","cost_per_child"]], on=["age_cat", "high_quality"])
 
 # Define data collected at the SPM unit level
 SPMU_COLS = [
@@ -131,16 +149,17 @@ SPMU_COLS = [
 ]
 
 # Define columns to be aggregated at SPMU level
-SPMU_AGG_COLS = ["child_6", "infant", "toddler", "preschool", "person", "cost"]
+SPMU_AGG_COLS = ["child_6", "infant", "toddler", "preschool", "person", "cost", "cost_per_child"]
 
 # Aggregate at SPMU level by high_quality (cost)
-spmu_quality = person_costs.groupby(SPMU_COLS + ["high_quality", "state"])[
+spmu_quality = person_quality.groupby(SPMU_COLS + ["high_quality", "state"])[
     SPMU_AGG_COLS
 ].sum()
 spmu_quality.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu_quality.reset_index(inplace=True)
 
 """
+We are assuming 100% takeup rate.
 Here, we simulate two policy extremes twice, using both a) base quality 
 and b) high quality to determine total program cost:
 1) a flat transfer by state equal to the average state-based cost of childcare
@@ -150,20 +169,25 @@ household number of children; and
 household. 
 """
 
-# Calculate total cost of transfers on US average by age_cat
-program_cost_low_US = mdf.weighted_sum(
-    spmu_quality[spmu_quality.high_quality == 0],
-    "spmu_cost",
-    "spmwt",
-    group_by="age_cat",
-)
+# Create copies of the dataset in which to simulate the policies
+spmu_quality_state = spmu_quality.copy(deep=True)
+spmu_quality_us = spmu_quality.copy(deep=True)
 
-program_cost_high_US = mdf.weighted_sum(
-    spmu_quality[spmu_quality.high_quality == 1],
-    "spmu_cost",
-    "spmwt",
-    group_by="age_cat",
-)
+# Generate scenario flags to separate datasets
+spmu_quality_state["sim_flag"] = "state"
+spmu_quality_us["sim_flag"] = "US"
+
+# Calculate cost of the policies
+"""
+Does the following weighting make sense so sum by age group?
+"""
+tot_cost = mdf.weighted_sum(spmu_quality,"spmu_cost_per_child",["spmwt","toddler","infant","preschooler"],groupby="high_quality")
+
+# Need total cost by infants v toddlers etc.
+spmu_quality_state.spmftotval += spmu_quality_state.spmu_cost_per_child
+spmu_quality_state.spmftotval += tot_cost
+
+# Calculate number of children per household 
 
 # Define function to calculate state-based program cost
 def state_cost(age, qual):
@@ -182,13 +206,6 @@ program_cost_low_state_inf = state_cost(infant, 0)
 program_cost_low_state_tod = state_cost(toddler, 0)
 program_cost_low_state_pre = state_cost(preschool, 0)
 
-# Create copies of the dataset in which to simulate the policies
-spmu_quality_state = spmu_quality.copy(deep=True)
-spmu_quality_us = spmu_quality.copy(deep=True)
-
-# Generate scenario flags to separate datasets
-spmu_quality_state["sim_flag"] = "state"
-spmu_quality_us["sim_flag"] = "US"
 
 ##### GROUP BY AGE CAT AND STATE FOR STATE LEVEL
 ### FOR US SET state == "United States"
