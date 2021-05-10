@@ -15,12 +15,6 @@ import pandas as pd
 import numpy as np
 import us
 
-"""
-TODO: Read following in locally using jb/data/cps_00003.csv.gz after 
-specifying the working directory correctly to jb (i.e. run the script
-in the folder)
-"""
-
 # Read in census data and specify columns for use
 person_raw = pd.read_csv(
     "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
@@ -98,12 +92,6 @@ person.race_hispan.mask(person.hispanic, "Hispanic", inplace=True)
 # Relabel sex categories
 person["female"] = person.sex == 2
 
-# Read in cost data
-#costs = pd.read_csv(
-#    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/CCare_cost.csv?raw=true",  # noqa
-#    compression="gzip",
-#)
-
 costs = pd.read_csv(
     "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv",
 )
@@ -179,9 +167,12 @@ spmu_quality_us["sim_flag"] = "US"
 
 # Calculate cost of the policies
 """
-Does the following weighting make sense so sum by age group?
+TO DO: EDIT FROM HERE
+
+Does the following weighting make sense to sum by age group?
 """
-tot_cost = mdf.weighted_sum(spmu_quality,"spmu_cost_per_child",["spmwt","toddler","infant","preschooler"],groupby="high_quality")
+
+tot_cost = mdf.weighted_sum(spmu_quality,"spmu_cost_per_child",["spmwt","spmu_toddler","spmu_infant","spmu_preschool"],groupby="high_quality")
 
 # Need total cost by infants v toddlers etc.
 spmu_quality_state.spmftotval += spmu_quality_state.spmu_cost_per_child
@@ -209,6 +200,7 @@ program_cost_low_state_pre = state_cost(preschool, 0)
 
 ##### GROUP BY AGE CAT AND STATE FOR STATE LEVEL
 ### FOR US SET state == "United States"
+
 # Calculate total number of children
 total_child_6 = mdf.weighted_sum(
     spmu_quality[spmu_quality.high_quality], "spmu_child_6", "spmwt"
@@ -248,3 +240,11 @@ mdf.weighted_sum.groupby(
 
 # Groupby age_cat and highquality to get the weighted sums we are
 # interested in.
+
+
+# Output the dataset for analysis 
+compression_opts = dict(method="gzip", archive_name="person_costs_sim.csv")
+person_sim.to_csv(
+    "person_costs_sim.csv.gz", index=False, compression=compression_opts
+)
+
