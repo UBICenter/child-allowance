@@ -144,4 +144,7 @@ person_sim = person.drop("spmftotval", axis=1).merge(
     on=["spmfamunit", "year"],
 )
 
-person_sim.to_csv(compression="gzip")
+compression_opts = dict(method="gzip", archive_name="person_sim.csv")
+person_sim.to_csv(
+    "person_sim.csv.gz", index=False, compression=compression_opts
+)
