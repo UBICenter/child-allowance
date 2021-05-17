@@ -1,8 +1,3 @@
-# Roadmap:
-# Comparison to other potential policies
-# Replicate plotly code from the child allowance for JB
-# Move to second simulation
-
 # Preamble and read data
 import microdf as mdf
 import pandas as pd
@@ -10,8 +5,9 @@ import numpy as np
 import us
 
 # Read in census data and specify columns for use
-raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz",
+person_raw = pd.read_csv(
+    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
+    compression="gzip",
     usecols=[
         "YEAR",
         "MONTH",
@@ -32,7 +28,7 @@ raw = pd.read_csv(
 
 # Create a copy of the raw dataset and make column names non-capitalized
 # for readability
-person = raw.copy(deep=True)
+person = person_raw.copy(deep=True)
 person.columns = person.columns.str.lower()
 
 # Asec weights are year-person units, and we average over 3 years,
@@ -41,6 +37,7 @@ person.asecwt /= 3
 
 # Define child age identifiers
 person["child_6"] = person.age < 6
+person["child_18"] = person.age < 18
 person["infant"] = person.age < 1
 person["toddler"] = person.age.between(1, 2)
 person["preschool"] = person.age.between(3, 5)
@@ -82,7 +79,6 @@ person["state"] = (
 SPMU_COLS = [
     "spmfamunit",
     "spmwt",
-    "spmftotval",
     "spmtotres",
     "spmchxpns",
     "spmthresh",
@@ -91,11 +87,18 @@ SPMU_COLS = [
 
 spmu = pd.DataFrame(
     person.groupby(SPMU_COLS)[
-        ["child_6", "infant", "toddler", "preschool", "person"]
+        ["child_18", "child_6", "infant", "toddler", "preschool", "person"]
     ].sum()
 ).reset_index()
 
-SPMU_AGG_COLS = ["child_6", "infant", "toddler", "preschool", "person"]
+SPMU_AGG_COLS = [
+    "child_18",
+    "child_6",
+    "infant",
+    "toddler",
+    "preschool",
+    "person",
+]
 spmu = person.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
 spmu.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu.reset_index(inplace=True)
@@ -105,117 +108,75 @@ program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
 total_child_6 = mdf.weighted_sum(spmu, "spmu_child_6", "spmwt")
 childallowance = program_cost / total_child_6
 
+### Ben - characterize distribution of spmchxpns - histogram (by number of kids)
+
+### filter out households with children over 6.
+### Recover average cost for children under 6.
+### Weighting to recover average - multiply by total number of kids under age six.
+### Other options - predict reg childcare expenses ~ child ages + num_kid
+# Less controls may be better here - just trying to decompose the amount
+# Consider different specifications
+
 # Create copies of the dataset in which to simulate the policies
 spmu_replace_cost = spmu.copy(deep=True)
 spmu_flat_transfer = spmu.copy(deep=True)
 
-# Generate scenario flags to separate datasets,
-# 0 = base case, 1 = cost replacement design, 2 = flat transfer
+# Generate scenario flags to separate datasets
 spmu["sim_flag"] = "baseline"
 spmu_replace_cost["sim_flag"] = "cc_replacement"
 spmu_flat_transfer["sim_flag"] = "child_allowance"
 
-# Caluclate new income by simulation
-spmu_replace_cost.spmftotval += spmu_replace_cost.spmchxpns
+# Calculate new income by simulation
+### Opportunity here to put in a threshold to define the incomes
+### Once we get into tax, marginal tax rates + GE effects are annoying
+spmu_replace_cost.spmtotres += spmu_replace_cost.spmchxpns
 
 spmu_flat_transfer["childallowance"] = (
     childallowance * spmu_flat_transfer.spmu_child_6
 )
-spmu_flat_transfer.spmftotval += spmu_flat_transfer.childallowance
+spmu_flat_transfer.spmtotres += spmu_flat_transfer.childallowance
 
-# Append dataframes
+# Append/stack/concatenate dataframes - allows for use of groupby functions
 spmu_sim = pd.concat(
     [spmu, spmu_replace_cost, spmu_flat_transfer], ignore_index=True
 )
 
 # Create poverty flags on simulated incomes
-spmu_sim["poverty_flag"] = spmu_sim.spmftotval < spmu_sim.spmthresh
+# Threshold take into account household size and local property value
+spmu_sim["poverty_flag"] = spmu_sim.spmtotres < spmu_sim.spmthresh
 
-# Calculate per person spmftotval (resources)
-spmu_sim["resources_pp"] = spmu_sim.spmftotval / spmu_sim.spmu_person
+# Calculate per person spmtotres (resources) - we are not using this but
+# may be useful for gini calculation
+spmu_sim["resources_pp"] = spmu_sim.spmtotres / spmu_sim.spmu_person
 
 # Construct dataframe to disaggregate poverty flag to person level
-person_sim = person.drop("spmftotval", axis=1).merge(
+person_sim = person.drop("spmtotres", axis=1).merge(
     spmu_sim[
         [
             "spmfamunit",
             "year",
             "poverty_flag",
             "sim_flag",
-            "spmftotval",
+            "spmtotres",
             "resources_pp",
         ]
     ],
     on=["spmfamunit", "year"],
 )
 
-# Define a function to calculate poverty rates
-def pov(groupby, data=person_sim):
-    return (
-        data.groupby(groupby)
-        .apply(lambda x: mdf.weighted_mean(x, "poverty_flag", "asecwt"))
-        .reset_index()
+
+def pov(data, group):
+    return pd.DataFrame(
+        mdf.weighted_mean(data, "poverty_flag", "asecwt", groupby=group)
     )
 
 
-# Function to be simplified with microdf update to:
-# `return mdf.weighted_mean(data, "poverty_flag", "asecwt",groupby)
-# .reset_index()`
+poverty_rate_child = pov(
+    person_sim[person_sim.child_18], "sim_flag"
+)  # Child poverty rate
 
-# Poverty rate and demographic-based heterogenous poverty rates
-poverty_rate = pov("sim_flag")
-poverty_rate_sex = pov(["sim_flag", "sex"])
-poverty_rate_race_hispan = pov(["sim_flag", "race_hispan"])
-poverty_rate_state = pov(["sim_flag", "state"])
-
-# Child poverty rate
-poverty_rate_child = pov("sim_flag", person_sim[person_sim.child_6])
-
-# Rename constructed poverty_rates
-poverty_rates = [
-    poverty_rate,
-    poverty_rate_sex,
-    poverty_rate_race_hispan,
-    poverty_rate_race_hispan,
-    poverty_rate_state,
-    poverty_rate_child,
-]
-for i in poverty_rates:
-    i.rename({0: "poverty_rate"}, axis=1, inplace=True)
-
-# Create pivot table to interpret state-based poverty effects
-state = poverty_rate_state.pivot_table(
-    values="poverty_rate", index="state", columns="sim_flag"
+# Output the dataset (which is housed on Github)
+compression_opts = dict(method="gzip", archive_name="person_sim.csv")
+person_sim.to_csv(
+    "person_sim.csv.gz", index=False, compression=compression_opts
 )
-
-# Construct poverty percentage changes
-def percent_change(base, new):
-    return 100 * (new - base) / new
-
-
-state["poverty_change_cc"] = percent_change(
-    state.baseline, state.cc_replacement
-)
-state["poverty_change_flat"] = percent_change(
-    state.baseline, state.child_allowance
-)
-
-# Gini coefficients
-mdf.gini(person_sim, "spmftotval", "asecwt")
-mdf.gini(person_sim, "resources_pp", "asecwt")
-person_sim.groupby("sim_flag").apply(
-    lambda x: mdf.gini(x, "spmftotval", "asecwt")
-)
-person_sim.groupby("sim_flag").apply(
-    lambda x: mdf.gini(x, "resources_pp", "asecwt")
-)
-
-# Re-arrange by poverty rate
-state.sort_values(by="poverty_change_flat", ascending=False)
-
-# Interesting findings:
-# Flat transfer: Roughly 10* the impact on poverty and gini coefficient
-# compared to the childcare provision equivalent policy (paying costs)
-# The poverty change is much larger for female-identifying people.
-# The poverty change for the flat transfer is largest for Black and
-# Hispanic populations ~3%, lower for White ~1.2%, and other non-hispanic ~1.8%.

@@ -3,6 +3,8 @@ title: Child allowance
 author: UBI Center
 logo: _static/ubi_center_logo_wide_blue.png
 
+only_build_toc_files: true
+
 html:
   use_edit_page_button      : true
   use_repository_button     : true
