@@ -19,6 +19,7 @@ repository:
 execute:
   execute_notebooks: 'force'
   timeout: -1
+  only_build_toc_files: true
 
 # See https://github.com/executablebooks/jupyter-book/issues/954#issuecomment-688220038
 sphinx:

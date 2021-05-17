@@ -4,9 +4,7 @@ Check what states are dropped - e.g. Puerto Rico - Use
 US average for those states.
 Pull in the edited dataset
 Merge on State index using person-level child age indicator
-Create two rows per index (low and high quality)
 Calculate state-based outcomes.
-Poverty Gap analysis?
 """
 
 # Preamble and read data
@@ -118,18 +116,20 @@ person_quality.loc[(person_quality.age_cat == "over_5"), "cost"] = 0
 def tot_num_cost(group):
     return mdf.weighted_sum(person_quality,["cost", "person"],"asecwt",groupby=group).reset_index()
 
-#  Calculate cost for all children
+#  Return dataframe with per-child cost, child age cat, (2 observations of quality) weighting person by asecwt 
 num_cost = tot_num_cost(["age_cat", "high_quality"])
 
-# Calculate cost per child
+# Add a column with cost per child (weighted cost / weighted children)
 num_cost["cost_per_child"] = num_cost.cost/num_cost.person
+
+# Merge this dataframe 
 person_quality = person_quality.merge(num_cost[["age_cat","high_quality","cost_per_child"]], on=["age_cat", "high_quality"])
 
 # Define data collected at the SPM unit level
 SPMU_COLS = [
     "spmfamunit",
     "spmwt",
-    "spmftotval",
+    "spmftotres",
     "spmtotres",
     "spmchxpns",
     "spmthresh",
@@ -166,12 +166,7 @@ spmu_quality_state["sim_flag"] = "state"
 spmu_quality_us["sim_flag"] = "US"
 
 # Calculate cost of the policies
-"""
-TO DO: EDIT FROM HERE
-
-Does the following weighting make sense to sum by age group?
-"""
-
+### Check the following with Max
 tot_cost = mdf.weighted_sum(spmu_quality,"spmu_cost_per_child",["spmwt","spmu_toddler","spmu_infant","spmu_preschool"],groupby="high_quality")
 
 # Need total cost by infants v toddlers etc.
