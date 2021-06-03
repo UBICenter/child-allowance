@@ -3,6 +3,7 @@ import microdf as mdf
 import pandas as pd
 import numpy as np
 import us
+import statsmodels.api as sm
 
 # Read in census data and specify columns for use
 person_raw = pd.read_csv(
@@ -41,6 +42,7 @@ person["child_18"] = person.age < 18
 person["infant"] = person.age < 1
 person["toddler"] = person.age.between(1, 2)
 person["preschool"] = person.age.between(3, 5)
+person["age_6_12"] = person.age.between(6, 12)
 person["person"] = 1
 
 # Redefine race categories
@@ -97,11 +99,19 @@ SPMU_AGG_COLS = [
     "infant",
     "toddler",
     "preschool",
+    "age_6_12",
     "person",
 ]
 spmu = person.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
 spmu.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu.reset_index(inplace=True)
+
+reg = sm.regression.linear_model.WLS(
+    spmu.spmchxpns,
+    spmu[["spmu_infant", "spmu_toddler", "spmu_preschool", "spmu_age_6_12"]],
+    weights=spmu.spmwt,
+)
+child_allowance_amounts = reg.fit().params
 
 # Calculate total cost of transfers, and total number of children
 program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
@@ -132,14 +142,19 @@ spmu_flat_transfer["sim_flag"] = "child_allowance"
 spmu_replace_cost.spmtotres += spmu_replace_cost.spmchxpns
 
 spmu_flat_transfer["childallowance"] = (
-    childallowance * spmu_flat_transfer.spmu_child_6
+    child_allowance_amounts.spmu_infant * spmu_flat_transfer.spmu_infant
+    + child_allowance_amounts.spmu_toddler * spmu_flat_transfer.spmu_toddler
+    + child_allowance_amounts.spmu_preschool * spmu_flat_transfer.spmu_preschool
+    + child_allowance_amounts.spmu_age_6_12 * spmu_flat_transfer.spmu_age_6_12
 )
+flat_transfer_cost = mdf.weighted_sum(spmu_flat_transfer, "childallowance", "spmwt")
+cost_ratio = program_cost / flat_transfer_cost
+spmu_flat_transfer.childallowance *= cost_ratio
 spmu_flat_transfer.spmtotres += spmu_flat_transfer.childallowance
+true_child_allowance = child_allowance_amounts * cost_ratio
 
 # Append/stack/concatenate dataframes - allows for use of groupby functions
-spmu_sim = pd.concat(
-    [spmu, spmu_replace_cost, spmu_flat_transfer], ignore_index=True
-)
+spmu_sim = pd.concat([spmu, spmu_replace_cost, spmu_flat_transfer], ignore_index=True)
 
 # Create poverty flags on simulated incomes
 # Threshold take into account household size and local property value
@@ -152,14 +167,7 @@ spmu_sim["resources_pp"] = spmu_sim.spmtotres / spmu_sim.spmu_person
 # Construct dataframe to disaggregate poverty flag to person level
 person_sim = person.drop("spmtotres", axis=1).merge(
     spmu_sim[
-        [
-            "spmfamunit",
-            "year",
-            "poverty_flag",
-            "sim_flag",
-            "spmtotres",
-            "resources_pp",
-        ]
+        ["spmfamunit", "year", "poverty_flag", "sim_flag", "spmtotres", "resources_pp",]
     ],
     on=["spmfamunit", "year"],
 )
@@ -177,6 +185,5 @@ poverty_rate_child = pov(
 
 # Output the dataset (which is housed on Github)
 compression_opts = dict(method="gzip", archive_name="person_sim.csv")
-person_sim.to_csv(
-    "person_sim.csv.gz", index=False, compression=compression_opts
-)
+person_sim.to_csv("person_sim.csv.gz", index=False, compression=compression_opts)
+
