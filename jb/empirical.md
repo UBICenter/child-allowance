@@ -47,6 +47,9 @@ By reducing the cost of childbearing, child benefits modestly increase fertility
 In the US, a \$1,000 subsidy increases the probability of having a child in the following two years by 0.4 percent, an effect driven by the Earned Income Tax Credit and personal tax exemptions on low-income, married women in their 30s {cite}`mumford2017fertility`.
 Canada's child benefit had a larger effect of 16.9 percent per C\$1,000, possibly due to its greater salience from being a standalone monthly program, while German child benefits only raised fertility among high-income parents considering a second child {cite}`riphahn2017fertility`.
 
+As of 2016, women in the US report wanting an average of 2.7 children, yet they are having only 1.8 children---the largest gap in 40 years {cite}`stone2018`.
+This suggests that additional fertility from child allowances would be welfare-enhancing.
+
 ## Sub-Saharan Africa
 
 ### Introduction
@@ -232,27 +235,23 @@ Thus, there appears to be some evidence of stronger educational impacts where tr
 ### Child labor
 
 The studies considered found inconsistent evidence on the effects of cash transfers on child labor. 
-There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions [^Child-labor].
+There was limited consistency in the definition used to define child labor, with some studies using the UNICEF thresholds for identification of an excessive number of hours spent working that would lower school participation and many using similar though slightly altered definitions.[^child-labor]
 While the Kenya CT-OVC found a modest reduction (-12%\*\*\* [42%]) in own-farm labor, the vast majority of studies found no effect of cash transfers on child labor incidence, though this may be a result of substantial ceiling effects. 
 For example, it was unsurprising that the Kenya CT-OVC found no reduction in wage labor participation, as at baseline less than 2% of children aged 10-15 were engaged in wage labor.
 That said, there were some unusual results which highlight the weakness of evidence on the relationship between cash transfers and child labour incidence. The Malawi SCTP found a 9 pp*** increase in child labour incidence, with the majority of the increase in hazardous activities.
 The absence of evidence is reflected in the World Bank meta-analysis, which found no significant effect {cite}`World_Bank_meta`. 
 
-[^Child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
+[^child-labor]: Consider, for example, the definition of child labor used by the Malawi SCTP program:
 
     >1. For economic activities the following age-specific thresholds are applied to identify child labour:
-
         * Ages 5-11: 1 any engagement in the week prior to the interview;
         * Ages 12-14: 14 hours or more in the week prior to the interview.
         * Ages 15-17: 43 hours or more in the week prior to the interview.
-
     >
     >2. For household chores (in combination with economic activities) the following age-specific
     thresholds are applied to identify child labour:
-
         * Age 5-14: 28 hours or more in the week prior to the interview;
         * Age 15-17: 43 hours or more in the week prior to the interview.
-
     >
     >3. Hazardous economic activities carried out in the year prior to the interview are considered to be
     child labour for all children under the age of 18. 

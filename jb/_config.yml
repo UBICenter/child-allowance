@@ -18,6 +18,9 @@ repository:
   url: https://github.com/UBICenter/child-allowance
   path_to_book: jb
 
+bibtex_bibfiles:
+  - references.bib
+
 execute:
   execute_notebooks: 'force'
   timeout: -1
