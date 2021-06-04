@@ -3,6 +3,7 @@ import microdf as mdf
 import pandas as pd
 import numpy as np
 import us
+import statsmodels.api as sm
 
 # Read in census data and specify columns for use
 person_raw = pd.read_csv(
@@ -41,7 +42,36 @@ person["child_18"] = person.age < 18
 person["infant"] = person.age < 1
 person["toddler"] = person.age.between(1, 2)
 person["preschool"] = person.age.between(3, 5)
+person["age_6_12"] = person.age.between(6, 12)
 person["person"] = 1
+
+# Define child age categories for group-by analysis and merge
+person["age_cat"] = "over_5"
+person.loc[(person.age < 1), "age_cat"] = "infant"
+person.loc[(person.age.between(1, 2)), "age_cat"] = "toddler"
+person.loc[(person.age.between(3, 5)), "age_cat"] = "preschool"
+
+# reg SPMU childcare XPNS ~ number of kids in each age group
+# If we gave an amount to each kid what are they for each
+# age group.
+
+# Infant number is low due to low takeup?
+# Disabled kids - potentially can take another stab
+
+
+# Define child age units for summation by SPMU unit
+person["person"] = 1
+person["child_6"] = person.age < 6
+person["infant"] = person.age < 1
+person["toddler"] = person.age.between(1, 2)
+person["preschool"] = person.age.between(3, 5)
+
+# Create State categories
+person["state"] = (
+    pd.Series(person.statefip)
+    .apply(lambda x: us.states.lookup(str(x).zfill(2)).name)
+    .tolist()
+)
 
 # Redefine race categories
 person["race_group"] = "Other"
@@ -97,11 +127,19 @@ SPMU_AGG_COLS = [
     "infant",
     "toddler",
     "preschool",
+    "age_6_12",
     "person",
 ]
 spmu = person.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
 spmu.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu.reset_index(inplace=True)
+
+reg = sm.regression.linear_model.WLS(
+    spmu.spmchxpns,
+    spmu[["spmu_infant", "spmu_toddler", "spmu_preschool", "spmu_age_6_12"]],
+    weights=spmu.spmwt,
+)
+child_allowance_amounts = reg.fit().params
 
 # Calculate total cost of transfers, and total number of children
 program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
@@ -132,9 +170,22 @@ spmu_flat_transfer["sim_flag"] = "child_allowance"
 spmu_replace_cost.spmtotres += spmu_replace_cost.spmchxpns
 
 spmu_flat_transfer["childallowance"] = (
-    childallowance * spmu_flat_transfer.spmu_child_6
+    child_allowance_amounts.spmu_infant * spmu_flat_transfer.spmu_infant
+    + child_allowance_amounts.spmu_toddler * spmu_flat_transfer.spmu_toddler
+    + child_allowance_amounts.spmu_preschool
+    * spmu_flat_transfer.spmu_preschool
+    + child_allowance_amounts.spmu_age_6_12 * spmu_flat_transfer.spmu_age_6_12
 )
+
+flat_transfer_cost = mdf.weighted_sum(
+    spmu_flat_transfer, "childallowance", "spmwt"
+)
+cost_ratio = program_cost / flat_transfer_cost
+spmu_flat_transfer.childallowance *= cost_ratio
+
 spmu_flat_transfer.spmtotres += spmu_flat_transfer.childallowance
+
+true_child_allowance = child_allowance_amounts * cost_ratio
 
 # Append/stack/concatenate dataframes - allows for use of groupby functions
 spmu_sim = pd.concat(
