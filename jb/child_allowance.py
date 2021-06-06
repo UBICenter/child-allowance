@@ -11,7 +11,7 @@ Read in the CPS (census) and CAP datasets
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
+    "jb/data/cps_00003.csv.gz",
     compression="gzip",
     usecols=[
         "YEAR",
@@ -32,9 +32,7 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv(
-    "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv",
-)
+costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
 
 """
 Generate copies of the datasets, perform data cleaning.
@@ -123,26 +121,17 @@ person_cc_rep_ca["ca"] = True
 # Creates two rows per person (base and high quality, different costs)
 # Note: over_5s do not have a cost or childcare quality
 person_quality = person.merge(
-    costs[
-        [
-            "state",
-            "high_quality",
-            "age_cat",
-            "cost",
-        ]
-    ],
+    costs[["state", "high_quality", "age_cat", "cost",]],
     how="left",
     on=["state", "age_cat"],
 )
 
 # Assign scenario to each quality
-person_quality_ca = person_quality.copy()
 person_quality["scenario"] = np.where(
     person_quality.high_quality, "high_cc_full", "low_cc_full"
 )
-person_quality_ca["scenario"] = np.where(
-    person_quality_ca.high_quality, "high_cc_full_flat", "low_cc_full_flat"
-)
+person_quality_ca = person_quality.copy()
+person_quality_ca.scenario = person_quality_ca.scenario + "_flat"
 person_quality["ca"] = False
 person_quality_ca["ca"] = True
 
@@ -150,10 +139,10 @@ person_quality_ca["ca"] = True
 person_sim = pd.concat(
     [
         person,
-        person_replace_cost,
-        person_flat_transfer,
+        person_cc_rep,
+        person_cc_rep_ca,
         person_quality,
-        person_quality_flat,
+        person_quality_ca,
     ],
     ignore_index=True,
 )
@@ -198,23 +187,18 @@ Baseline transfer amount (0)
 
 spmu_sim.loc[spmu_sim.scenario == "baseline", "transfer"] = 0
 
-"""
-Conduct simulation 1 - replacing childcare expenditure
-'cc_replacement'
-ca = 'False'
-"""
+# Conduct simulation 1 - replacing childcare expenditure
+# 'cc_replacement', ca = False
 
 spmu_sim.loc[
     (spmu_sim.scenario == "cc_replacement") & ~spmu_sim.ca, "transfer"
 ] = spmu_sim.spmchxpns
 
-"""
-Conduct simulation 2 - flat child allowance of equal size
-"cc_replacement"
-ca = "True"
-"""
+# Conduct simulation 2 - flat child allowance of equal size
+# "cc_replacement", ca = "True
 
 # Use regression to predict actual expenditure per child of a given age
+spmu = spmu_sim[spmu_sim.scenario == "baseline"]
 reg = sm.regression.linear_model.WLS(
     spmu.spmchxpns,
     spmu[["spmu_infant", "spmu_toddler", "spmu_preschool", "spmu_age_6_12"]],
@@ -237,8 +221,8 @@ spmu_sim.loc[
     + child_allowance_amounts.spmu_age_6_12 * spmu_sim.spmu_age_6_12
 )
 
-flat_transfer_cost = mdf.weighted_sum(
-    spmu_flat_transfer, "childallowance", "spmwt"
+initial_replacement_ca_cost = mdf.weighted_sum(
+    spmu_sim[(spmu_sim.scenario == "cc_replacement") & spmu_sim.ca], "transfer", "spmwt"
 )
 
 """
@@ -249,31 +233,32 @@ to the summation in of expenditures in the dataset. We therefore
 inflate the costs by the cost-ratio.
 """
 
-cost_ratio = program_cost / flat_transfer_cost
-spmu_flat_transfer.childallowance *= cost_ratio
-spmu_flat_transfer.spmtotres += spmu_flat_transfer.childallowance
+cost_ratio = program_cost / initial_replacement_ca_cost
+spmu_sim.loc[
+    (spmu_sim.scenario == "cc_replacement") & spmu_sim.ca, "transfer"
+] *= cost_ratio
 true_child_allowance = child_allowance_amounts * cost_ratio
 
 
-"""
-Conduct simulation 3 - base qual replace
+# Conduct simulation 3 - base quality full take-up
+# 'cc_replacement', ca = False
+# We begin by merging the datasets
 
-We begin by merging the datasets
-"""
+# Same for simulation 5 - high quality full take-up
+
+# Conduct simulation 4 & 6 - full take-up, child allowance
+# From spmu, calculate number of infants/toddlers/preschoolers, 
+# and childcare costs for each age group.
+# Then sum up to get the total cost of each age group.
 
 
-"""
-Conduct simulation 4 - base qual flat
-"""
+# Add transfer to SPM resources.
+spmu_sim.spmtotres += spmu_sim.transfer
 
-"""
-Conduct simulation 5 - high qual replace
-"""
-
-"""
-Conduct simulation 6 - high qual flat
-"""
-
+# Merge back to person_sim to replace spmtotres.
+SPM_SIM_IDS = ["spmfamunit", "scenario", "ca", "year"]
+person_sim = person_sim.drop(columns="spmtotres").merge(
+    spmu_sim[SPM_SIM_IDS + ["spmtotres"]], on=SPM_SIM_IDS)
 
 # Output the dataset (which is housed on Github)
 compression_opts = dict(method="gzip", archive_name="person_sim.csv")
