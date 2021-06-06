@@ -11,7 +11,7 @@ Read in the CPS (census) and CAP datasets
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
+    "data/cps_00003.csv.gz",
     compression="gzip",
     usecols=[
         "YEAR",
@@ -32,9 +32,7 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv(
-    "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv",
-)
+costs_raw = pd.read_csv("data/CCare_cost.csv")
 
 """
 Generate copies of the datasets, perform data cleaning.
@@ -123,14 +121,7 @@ person_cc_rep_ca["ca"] = True
 # Creates two rows per person (base and high quality, different costs)
 # Note: over_5s do not have a cost or childcare quality
 person_quality = person.merge(
-    costs[
-        [
-            "state",
-            "high_quality",
-            "age_cat",
-            "cost",
-        ]
-    ],
+    costs[["state", "high_quality", "age_cat", "cost",]],
     how="left",
     on=["state", "age_cat"],
 )
