@@ -6,7 +6,7 @@ import us
 import statsmodels.api as sm
 
 """
-Read in the CPS and CAP datasets
+Read in the CPS (census) and CAP datasets
 """
 
 # Read in CPS data and specify columns for use
