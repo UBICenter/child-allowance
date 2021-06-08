@@ -1,3 +1,8 @@
+# To do:
+# Low quality still has too few observations (likely state
+# match issue)
+# Logistic regression of childcare expenses on demographics.
+
 # Packages
 import microdf as mdf
 import pandas as pd
@@ -11,16 +16,14 @@ Read in the CPS (census) and CAP datasets
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "jb/data/cps_00003.csv.gz",
+    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
     compression="gzip",
     usecols=[
         "YEAR",
-        "MONTH",
         "STATEFIP",
         "AGE",
         "SEX",
-        "RACE",
-        "HISPAN",
+        "ASECWT",
         "SPMWT",
         "SPMFTOTVAL",
         "SPMTOTRES",
@@ -28,12 +31,15 @@ person_raw = pd.read_csv(
         "SPMTHRESH",
         "SPMFAMUNIT",
         "ASECWT",
+        "RACE",
+        "HISPAN",
     ],
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
-
+costs_raw = pd.read_csv(
+    "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv",
+)
 """
 Generate copies of the datasets, perform data cleaning.
 """
@@ -45,9 +51,9 @@ person.columns = person.columns.str.lower()
 costs = costs_raw.copy(deep=True)
 costs.columns = costs.columns.str.lower()
 
-# Asec weights are year-person units, and we average over 3 years,
-# so divide by the 3 years to give per year weights.
+# We average over 3 years so divide by 3 to give per-year weights
 person.asecwt /= 3
+person.spmwt /= 3
 
 """
 Define CPS variables for analysis and merging
@@ -63,7 +69,7 @@ person["age_6_12"] = person.age.between(6, 12)
 person["person"] = 1
 
 # Define child age categories for group-by analysis and merge
-person["age_cat"] = "over_5"
+person["age_cat"] = "adult"
 person.loc[(person.age < 1), "age_cat"] = "infant"
 person.loc[(person.age.between(1, 2)), "age_cat"] = "toddler"
 person.loc[(person.age.between(3, 5)), "age_cat"] = "preschool"
@@ -112,14 +118,15 @@ person_cc_rep_ca = person.copy()
 
 # Create a column to specify scenario/simulation
 person["scenario"] = "baseline"
+person["ca"] = False
 person_cc_rep["scenario"] = "cc_replacement"
 person_cc_rep["ca"] = False
 person_cc_rep_ca["scenario"] = "cc_replacement"
 person_cc_rep_ca["ca"] = True
 
+
 # Merge the CPS and CAP datasets to produce person_quality with per-child costs
 # Creates two rows per person (base and high quality, different costs)
-# Note: over_5s do not have a cost or childcare quality
 person_quality = person.merge(
     costs[
         [
@@ -138,7 +145,6 @@ person_quality["scenario"] = np.where(
     person_quality.high_quality, "high_cc_full", "low_cc_full"
 )
 person_quality_ca = person_quality.copy()
-person_quality_ca.scenario = person_quality_ca.scenario + "_flat"
 person_quality["ca"] = False
 person_quality_ca["ca"] = True
 
@@ -154,8 +160,84 @@ person_sim = pd.concat(
     ignore_index=True,
 )
 
-# Aggregate to SPMU level to use household childcare expenditures
+"""
+In the following code, we begin simulating the various policies.
 
+Simulations 3 and 5 are conducted first and grouped together
+as the transfer amount is simply set to the amount set by the
+CAP estimate at the person level.
+"""
+
+# Conduct simulation - 3
+# base_cc_full, ca = False
+
+person_sim.loc[
+    (person_sim.scenario == "low_cc_full"),
+    "transfer",
+] = person_sim.cost
+
+# Conduct simulation 5 - high quality full take-up
+# high_cc_full, ca = False
+
+person_sim.loc[
+    (person_sim.scenario == "high_cc_full"),
+    "transfer",
+] = person_sim.cost
+
+"""
+Simulations 4 and 6 are similarly grouped together as
+we need to estimate per-child-age-quality costs at the
+person level.
+"""
+
+# Conduct simulation 4 - base quality flat transfer
+# base_cc_full, ca = True
+
+# Conduct simulation 6 - high quality flat transfer
+# high_cc_full, ca = True
+
+# Define function to calculate child cost by age, qual, weighted by asecwt
+def tot_cost(group):
+    return mdf.weighted_sum(
+        person_quality, ["cost", "person"], "asecwt", groupby=group
+    ).reset_index()
+
+
+# Use function to generate dataframe
+qual_cost = tot_cost(["age_cat", "high_quality"])
+# Add column of per-child costs
+qual_cost["per_child"] = qual_cost.cost / qual_cost.person
+
+
+### Easier to merge to person sim on age_cat and high_quality
+ages = ["infant", "toddler", "preschool"]
+for x in ages:
+    person_sim.loc[
+        (person_sim.scenario == "low_cc_full_flat")
+        & person_sim.ca
+        & (person_sim.high_quality == 0)
+        & (person_sim.age_cat == x),
+        "transfer",
+    ] = qual_cost.loc[
+        (qual_cost.age_cat == x) & (person_sim.high_quality == 0), "per_child"
+    ]
+    person_sim.loc[
+        (person_sim.scenario == "high_cc_full_flat")
+        & person_sim.ca
+        & (person_sim.high_quality == 1)
+        & (person_sim.age_cat == x),
+        "transfer",
+    ] = qual_cost.loc[
+        (qual_cost.age_cat == x) & (person_sim.high_quality == 1), "per_child"
+    ]
+
+"""
+For simulations 1 and 2, we need to aggregate at the SPMU level, so 
+again we group them below and also specify the baseline dataset for
+clarity.
+"""
+
+# Aggregate to SPMU level to use household childcare expenditures
 # Define data collected at the SPMU level
 SPMU_COLS = [
     "spmfamunit",
@@ -185,11 +267,9 @@ spmu_sim = person_sim.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
 spmu_sim.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu_sim.reset_index(inplace=True)
 
-### Begin simulations
-
 # Conduct simulation 0 - baseline
 # Transfer amount (0)
-# baseline, ca = NA
+# baseline, ca = False
 
 spmu_sim.loc[spmu_sim.scenario == "baseline", "transfer"] = 0
 
@@ -202,8 +282,6 @@ spmu_sim.loc[
 
 # Conduct simulation 2 - flat child allowance of equal size
 # cc_replacement, ca = True
-
-####### Regression doesn't run
 
 # Use regression to predict actual expenditure per child of a given age
 spmu = spmu_sim[spmu_sim.scenario == "baseline"]
@@ -249,118 +327,34 @@ spmu_sim.loc[
 ] *= cost_ratio
 true_child_allowance = child_allowance_amounts * cost_ratio
 
-########## THIS IS AT THE PERSON LEVEL
-# Conduct simulation 3 - base quality full take-up
-# base_cc_full, ca = False
+"""
+Add the simulated transfer amounts to totres to give the policy impact
+on household resources
+"""
 
-person_sim.loc[
-    (person_sim.scenario == "low_cc_full"),
-    "transfer",
-] = person_sim.cost
-
-# Conduct simulation 5 - high quality full take-up
-# high_cc_full, ca = False
-
-person_sim.loc[
-    (person_sim.scenario == "high_cc_full"),
-    "transfer",
-] = person_sim.cost
-
-
-# Conduct simulation 4 - base quality flat transfer
-# base_cc_full_flat, ca = True
-
-# Define function to calculate child cost by age, qual, weighted by asecwt
-def tot_cost(group):
-    return mdf.weighted_sum(
-        person_quality, ["cost", "person"], "asecwt", groupby=group
-    ).reset_index()
-
-
-# Use function to generate dataframe
-qual_cost = tot_cost(["age_cat", "high_quality"])
-# Add column of per-child costs
-qual_cost["per_child"] = qual_cost.cost / qual_cost.person
-
-# Conduct simulation 5 - flat child allowance base qual
-# CAP_sim, ca = True, qual = base
-
-ages = ["infant", "toddler", "preschool"]
-for x in ages:
-    person_sim.loc[
-        (person_sim.scenario == "low_cc_full_flat")
-        & person_sim.ca
-        & (person_sim.high_quality == 0)
-        & (person_sim.age_cat == x),
-        "transfer",
-    ] = qual_cost.loc[
-        (qual_cost.age_cat == x) & (person_sim.high_quality == 0), "per_child"
-    ]
-
-
-# Conduct simulation 6 - high quality flat transfer
-# high_cc_full_flat, ca = True
-
-for x in ages:
-    person_sim.loc[
-        (person_sim.scenario == "high_cc_full_flat")
-        & person_sim.ca
-        & (person_sim.high_quality == 1)
-        & (person_sim.age_cat == x),
-        "transfer",
-    ] = qual_cost.loc[
-        (qual_cost.age_cat == x) & (person_sim.high_quality == 1), "per_child"
-    ]
-
-### Notes from Max
-# Conduct simulation 4 & 6 - full take-up, child allowance
-# From spmu, calculate number of infants/toddlers/preschoolers,
-# and childcare costs for each age group.
-# Then sum up to get the total cost of each age group.
-# Calculate total cost and number of children by age_cat and high and low quality
-
-
-# Add transfer to SPM resources.
+# Add transfer to SPM resources
 spmu_sim.spmtotres += spmu_sim.transfer
 
+# Create poverty flags on simulated incomes
+# Thresholds take into account household size and local property value
+spmu_sim["poverty_flag"] = spmu_sim.spmtotres < spmu_sim.spmthresh
+spmu_sim["deep_poverty_flag"] = spmu_sim.spmtotres < spmu_sim.spmthresh / 2
+
 # Merge back to person_sim to replace spmtotres.
-SPM_SIM_IDS = ["spmfamunit", "scenario", "ca", "year"]
-person_sim = person_sim.drop(columns="spmtotres").merge(
-    spmu_sim[SPM_SIM_IDS + ["spmtotres"]], on=SPM_SIM_IDS
+SPM_SIM_IDS = [
+    "spmfamunit",
+    "scenario",
+    "ca",
+    "year",
+]
+###### Does the inclusion of the poverty flags here work?
+person_sim = person_sim.drop(columns="spmtotres", axis=1).merge(
+    spmu_sim[SPM_SIM_IDS + ["spmtotres", "poverty_flag", "deep_poverty_flag"]],
+    on=SPM_SIM_IDS,
 )
 
-# Output the dataset (which is housed on Github)
+# Output the dataset
 compression_opts = dict(method="gzip", archive_name="person_sim.csv")
 person_sim.to_csv(
     "person_sim.csv.gz", index=False, compression=compression_opts
 )
-
-"""
-Outdated SPMU analysis
-"""
-
-# Create poverty flags on simulated incomes
-# Threshold take into account household size and local property value
-spmu_sim["poverty_flag"] = spmu_sim.spmtotres < spmu_sim.spmthresh
-
-# Calculate per person spmtotres (resources) - we are not using this but
-# may be useful for gini calculation
-spmu_sim["resources_pp"] = spmu_sim.spmtotres / spmu_sim.spmu_person
-
-# Construct dataframe to disaggregate poverty flag to person level
-person_sim = person.drop("spmtotres", axis=1).merge(
-    spmu_sim[
-        [
-            "spmfamunit",
-            "year",
-            "poverty_flag",
-            "sim_flag",
-            "spmtotres",
-            "resources_pp",
-        ]
-    ],
-    on=["spmfamunit", "year"],
-)
-
-# 7 rows per person single sim.
-# Group by SPM ID and scenario. Merge by SPM ID and scenario.
