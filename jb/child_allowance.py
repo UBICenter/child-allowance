@@ -16,7 +16,7 @@ import statsmodels.api as sm
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "jb/data/cps_00003.csv.gz",
+    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",
     compression="gzip",
     usecols=[
         "YEAR",
@@ -37,7 +37,7 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
+costs_raw = pd.read_csv("C:\\Users\\John Walker\\Desktop\\CCare_cost.csv")
 
 # Generate copies of the datasets, perform data cleaning.
 
@@ -151,6 +151,33 @@ person_sim = pd.concat(
     ignore_index=True,
 )
 
+# Assign simulation key
+person_sim["sim"] = "baseline"
+person_sim.loc[
+    (person_sim.scenario == "low_cc_full") & (person_sim.ca == 0),
+    "sim",
+] = "low_xpns"
+person_sim.loc[
+    (person_sim.scenario == "low_cc_full") & (person_sim.ca == 1),
+    "sim",
+] = "low_ca"
+person_sim.loc[
+    (person_sim.scenario == "high_cc_full") & (person_sim.ca == 0),
+    "sim",
+] = "high_xpns"
+person_sim.loc[
+    (person_sim.scenario == "high_cc_full") & (person_sim.ca == 1),
+    "sim",
+] = "high_ca"
+person_sim.loc[
+    (person_sim.scenario == "cc_replacement") & (person_sim.ca == 0),
+    "sim",
+] = "replace_xpns"
+person_sim.loc[
+    (person_sim.scenario == "cc_replacement") & (person_sim.ca == 1),
+    "sim",
+] = "replace_ca"
+
 
 # In the following code, we begin simulating the various policies.
 
@@ -220,9 +247,6 @@ for x in ages:
         (qual_cost.age_cat == x) & (person_sim.high_quality == 1), "per_child"
     ]
 
-# For simulations 1 and 2, we need to aggregate at the SPMU level, so
-# again we group them below and also specify the baseline dataset for
-# clarity.
 
 # Create a dummy for whether an spmu has child care expenses
 person_sim["anyspmchxpns"] = person_sim.spmchxpns > 0
@@ -257,6 +281,10 @@ SPMU_AGG_COLS = [
 spmu_sim = person_sim.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
 spmu_sim.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu_sim.reset_index(inplace=True)
+
+# For simulations 1 and 2, we need to aggregate at the SPMU level, so
+# again we group them below and also specify the baseline dataset for
+# clarity.
 
 # Conduct simulation 0 - baseline
 # Transfer amount (0)
