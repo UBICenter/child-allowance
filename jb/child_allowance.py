@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import us
 import statsmodels.api as sm
+import pickle as pkl
 
 
 # Read in the CPS (census) and CAP datasets
@@ -248,9 +249,6 @@ for x in ages:
     ]
 
 
-# Create a dummy for whether an spmu has child care expenses
-person_sim["anyspmchxpns"] = person_sim.spmchxpns > 0
-
 # Aggregate to SPMU level to use household childcare expenditures
 # Define data collected at the SPMU level
 SPMU_COLS = [
@@ -258,7 +256,6 @@ SPMU_COLS = [
     "spmwt",
     "spmtotres",
     "spmchxpns",
-    "anyspmchxpns",  # Not aggregating correctly
     "spmthresh",
     "year",
     "state",
@@ -275,6 +272,7 @@ SPMU_AGG_COLS = [
     "preschool",
     "age_6_12",
     "person",
+    "transfer",
 ]
 
 # Define a new SPMU-level dataframe with aggregated data
@@ -350,10 +348,22 @@ true_child_allowance = child_allowance_amounts * cost_ratio
 # Add transfer to SPM resources
 spmu_sim.spmtotres += spmu_sim.transfer
 
-# Create poverty flags on simulated incomes
-# Thresholds take into account household size and local property value
-spmu_sim["poverty_flag"] = spmu_sim.spmtotres < spmu_sim.spmthresh
-spmu_sim["deep_poverty_flag"] = spmu_sim.spmtotres < spmu_sim.spmthresh / 2
+# Regression of any childcare expenses
+# Create a dummy for whether an spmu has child care expenses
+spmu["anyspmchxpns"] = spmu.spmchxpns > 0
+
+#### Household head. Anyone hispanic in SPMU?
+# Add in some more covariates here!
+reg_1 = sm.regression.linear_model.WLS(
+    spmu.anyspmchxpns,
+    spmu[["spmtotres"]],
+    weights=spmu.spmwt,
+)
+print(reg_1.fit().summary())
+
+# Pickle out the regression object for use in the Jupyterbook
+# pkl.dump(reg,)
+### Output first regression too.
 
 # Merge back to person_sim to replace spmtotres.
 SPM_SIM_IDS = [
@@ -362,18 +372,21 @@ SPM_SIM_IDS = [
     "ca",
     "year",
 ]
-###### Does the inclusion of the poverty flags here work?
 person_sim = person_sim.drop(columns="spmtotres", axis=1).merge(
     spmu_sim[
         SPM_SIM_IDS
         + [
             "spmtotres",
-            "poverty_flag",
-            "deep_poverty_flag",
-            "anyspmchxpns",
-        ]  # anyspm not aggregating correctly
+        ]
     ],
     on=SPM_SIM_IDS,
+)
+
+# Create poverty flags on simulated incomes
+# Thresholds take into account household size and local property value
+person_sim["poverty_flag"] = person_sim.spmtotres < person_sim.spmthresh
+person_sim["deep_poverty_flag"] = (
+    person_sim.spmtotres < person_sim.spmthresh / 2
 )
 
 # Output the dataset
