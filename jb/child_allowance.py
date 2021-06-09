@@ -222,32 +222,22 @@ def tot_cost(group):
 
 # Use function to generate dataframe
 qual_cost = tot_cost(["age_cat", "high_quality"])
+
 # Add column of per-child costs
 qual_cost["per_child"] = qual_cost.cost / qual_cost.person
 
-
-### Easier to merge to person sim on age_cat and high_quality
+# Merge the qual_cost dataframe for transfer
+person_sim = person_sim.merge(
+    qual_cost[["high_quality", "age_cat", "per_child"]],
+    on=["age_cat", "high_quality"],
+    how="left",
+)
 ages = ["infant", "toddler", "preschool"]
-for x in ages:
-    person_sim.loc[
-        (person_sim.scenario == "low_cc_full_flat")
-        & person_sim.ca
-        & (person_sim.high_quality == 0)
-        & (person_sim.age_cat == x),
-        "transfer",
-    ] = qual_cost.loc[
-        (qual_cost.age_cat == x) & (person_sim.high_quality == 0), "per_child"
-    ]
-    person_sim.loc[
-        (person_sim.scenario == "high_cc_full_flat")
-        & person_sim.ca
-        & (person_sim.high_quality == 1)
-        & (person_sim.age_cat == x),
-        "transfer",
-    ] = qual_cost.loc[
-        (qual_cost.age_cat == x) & (person_sim.high_quality == 1), "per_child"
-    ]
-
+person_sim.loc[
+    person_sim.sim.isin(["low_ca", "high_ca"])
+    & (person_sim.age_cat.isin(ages)),
+    "transfer",
+] = person_sim.per_child
 
 # Aggregate to SPMU level to use household childcare expenditures
 # Define data collected at the SPMU level
@@ -279,6 +269,7 @@ SPMU_AGG_COLS = [
 spmu_sim = person_sim.groupby(SPMU_COLS)[SPMU_AGG_COLS].sum()
 spmu_sim.columns = ["spmu_" + i for i in SPMU_AGG_COLS]
 spmu_sim.reset_index(inplace=True)
+spmu_sim.rename(columns={"spmu_transfer": "transfer"}, inplace=True)
 
 # For simulations 1 and 2, we need to aggregate at the SPMU level, so
 # again we group them below and also specify the baseline dataset for
@@ -309,10 +300,8 @@ reg = sm.regression.linear_model.WLS(
 )
 child_allowance_amounts = reg.fit().params
 
-# Calculate total cost of transfers, and total number of children
+# Calculate total cost of transfers
 program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
-total_child_6 = mdf.weighted_sum(spmu, "spmu_child_6", "spmwt")
-childallowance = program_cost / total_child_6
 
 # Calculate new income by simulation
 spmu_sim.loc[
