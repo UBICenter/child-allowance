@@ -2,6 +2,7 @@
 # Low quality still has too few observations (likely state
 # match issue)
 # Logistic regression of childcare expenses on demographics.
+#
 
 # Packages
 import microdf as mdf
@@ -10,13 +11,12 @@ import numpy as np
 import us
 import statsmodels.api as sm
 
-"""
-Read in the CPS (census) and CAP datasets
-"""
+
+# Read in the CPS (census) and CAP datasets
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",  # noqa
+    "jb/data/cps_00003.csv.gz",
     compression="gzip",
     usecols=[
         "YEAR",
@@ -37,27 +37,22 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv(
-    "C:\\Users\\John Walker\\Desktop\\CCare_cost.csv",
-)
-"""
-Generate copies of the datasets, perform data cleaning.
-"""
+pd.read_csv("jb/data/CCare_cost.csv")
+
+# Generate copies of the datasets, perform data cleaning.
 
 # Create a copy of the raw dataset and make column names non-capitalized
 # for readability
-person = person_raw.copy(deep=True)
+person = person_raw.copy()
 person.columns = person.columns.str.lower()
-costs = costs_raw.copy(deep=True)
+costs = costs_raw.copy()
 costs.columns = costs.columns.str.lower()
 
 # We average over 3 years so divide by 3 to give per-year weights
 person.asecwt /= 3
 person.spmwt /= 3
 
-"""
-Define CPS variables for analysis and merging
-"""
+# Define CPS variables for analysis and merging
 
 # Define child age identifiers
 person["child_6"] = person.age < 6
@@ -106,10 +101,6 @@ person.race_hispan.mask(person.hispanic, "Hispanic", inplace=True)
 # Relabel sex categories
 person["female"] = person.sex == 2
 
-"""
-Generate copies of the datasets in which to perform simulations
-and create a column to specify the relevant scenario/simulation.
-"""
 
 # Create 2 copies of the dataset in which to simulate
 # policies based on child expenditure (CPS)
@@ -160,13 +151,12 @@ person_sim = pd.concat(
     ignore_index=True,
 )
 
-"""
-In the following code, we begin simulating the various policies.
 
-Simulations 3 and 5 are conducted first and grouped together
-as the transfer amount is simply set to the amount set by the
-CAP estimate at the person level.
-"""
+# In the following code, we begin simulating the various policies.
+
+# Simulations 3 and 5 are conducted first and grouped together
+# as the transfer amount is simply set to the amount set by the
+# CAP estimate at the person level.
 
 # Conduct simulation - 3
 # base_cc_full, ca = False
@@ -184,11 +174,10 @@ person_sim.loc[
     "transfer",
 ] = person_sim.cost
 
-"""
-Simulations 4 and 6 are similarly grouped together as
-we need to estimate per-child-age-quality costs at the
-person level.
-"""
+
+# Simulations 4 and 6 are similarly grouped together as
+# we need to estimate per-child-age-quality costs at the
+# person level.
 
 # Conduct simulation 4 - base quality flat transfer
 # base_cc_full, ca = True
@@ -231,11 +220,12 @@ for x in ages:
         (qual_cost.age_cat == x) & (person_sim.high_quality == 1), "per_child"
     ]
 
-"""
-For simulations 1 and 2, we need to aggregate at the SPMU level, so 
-again we group them below and also specify the baseline dataset for
-clarity.
-"""
+# For simulations 1 and 2, we need to aggregate at the SPMU level, so
+# again we group them below and also specify the baseline dataset for
+# clarity.
+
+# Create a dummy for whether an spmu has child care expenses
+person_sim["anyspmchxpns"] = person_sim.spmchxpns > 0
 
 # Aggregate to SPMU level to use household childcare expenditures
 # Define data collected at the SPMU level
@@ -244,6 +234,7 @@ SPMU_COLS = [
     "spmwt",
     "spmtotres",
     "spmchxpns",
+    "anyspmchxpns",
     "spmthresh",
     "year",
     "state",
@@ -313,13 +304,11 @@ initial_replacement_ca_cost = mdf.weighted_sum(
     "spmwt",
 )
 
-"""
-Because we do not include an intercept in our regression
-(to maintain per-child-category allowances - i.e. to not give families
-lump sum additional amounts), the total sum of predicted costs do not sum 
-to the summation in of expenditures in the dataset. We therefore
-inflate the costs by the cost-ratio.
-"""
+# Because we do not include an intercept in our regression
+# (to maintain per-child-category allowances - i.e. to not give families
+# lump sum additional amounts), the total sum of predicted costs do not sum
+# to the summation in of expenditures in the dataset. We therefore
+# inflate the costs by the cost-ratio.
 
 cost_ratio = program_cost / initial_replacement_ca_cost
 spmu_sim.loc[
@@ -327,10 +316,8 @@ spmu_sim.loc[
 ] *= cost_ratio
 true_child_allowance = child_allowance_amounts * cost_ratio
 
-"""
-Add the simulated transfer amounts to totres to give the policy impact
-on household resources
-"""
+# Add the simulated transfer amounts to totres to give the policy impact
+# on household resources
 
 # Add transfer to SPM resources
 spmu_sim.spmtotres += spmu_sim.transfer
@@ -349,7 +336,10 @@ SPM_SIM_IDS = [
 ]
 ###### Does the inclusion of the poverty flags here work?
 person_sim = person_sim.drop(columns="spmtotres", axis=1).merge(
-    spmu_sim[SPM_SIM_IDS + ["spmtotres", "poverty_flag", "deep_poverty_flag"]],
+    spmu_sim[
+        SPM_SIM_IDS
+        + ["spmtotres", "poverty_flag", "deep_poverty_flag", "anyspmchxpns"]
+    ],
     on=SPM_SIM_IDS,
 )
 
