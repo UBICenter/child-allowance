@@ -37,7 +37,7 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs = pd.read_csv("jb/data/CCare_cost.csv")
+costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
 
 # Generate copies of the datasets, perform data cleaning.
 
