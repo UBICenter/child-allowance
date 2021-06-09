@@ -16,7 +16,7 @@ import statsmodels.api as sm
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",
+    "jb/data/cps_00003.csv.gz",
     compression="gzip",
     usecols=[
         "YEAR",
@@ -37,7 +37,7 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv("C:\\Users\\John Walker\\Desktop\\CCare_cost.csv")
+costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
 
 # Generate copies of the datasets, perform data cleaning.
 
@@ -258,7 +258,7 @@ SPMU_COLS = [
     "spmwt",
     "spmtotres",
     "spmchxpns",
-    "anyspmchxpns",
+    "anyspmchxpns",  # Not aggregating correctly
     "spmthresh",
     "year",
     "state",
@@ -366,7 +366,12 @@ SPM_SIM_IDS = [
 person_sim = person_sim.drop(columns="spmtotres", axis=1).merge(
     spmu_sim[
         SPM_SIM_IDS
-        + ["spmtotres", "poverty_flag", "deep_poverty_flag", "anyspmchxpns"]
+        + [
+            "spmtotres",
+            "poverty_flag",
+            "deep_poverty_flag",
+            "anyspmchxpns",
+        ]  # anyspm not aggregating correctly
     ],
     on=SPM_SIM_IDS,
 )
