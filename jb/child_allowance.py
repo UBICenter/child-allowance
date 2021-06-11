@@ -1,9 +1,3 @@
-# To do:
-# Low quality still has too few observations (likely state
-# match issue)
-# Logistic regression of childcare expenses on demographics.
-#
-
 # Packages
 import microdf as mdf
 import pandas as pd
@@ -11,6 +5,7 @@ import numpy as np
 import us
 import statsmodels.api as sm
 import pickle as pkl
+from stargazer.stargazer import Stargazer
 
 
 # Read in the CPS (census) and CAP datasets
@@ -39,6 +34,7 @@ person_raw = pd.read_csv(
 
 # Read in CAP dataset
 costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
+# costs_raw = pd.read_csv("C:\\Users\\John Walker\\Desktop\\CCare_cost.csv")
 
 # Generate copies of the datasets, perform data cleaning.
 
@@ -62,6 +58,8 @@ person["infant"] = person.age < 1
 person["toddler"] = person.age.between(1, 2)
 person["preschool"] = person.age.between(3, 5)
 person["age_6_12"] = person.age.between(6, 12)
+person["age_13_17"] = person.age.between(13, 17)
+person["adult"] = person.age > 17
 person["person"] = 1
 
 # Define child age categories for group-by analysis and merge
@@ -101,7 +99,6 @@ person.race_hispan.mask(person.hispanic, "Hispanic", inplace=True)
 
 # Relabel sex categories
 person["female"] = person.sex == 2
-
 
 # Create 2 copies of the dataset in which to simulate
 # policies based on child expenditure (CPS)
@@ -245,6 +242,7 @@ SPMU_COLS = [
     "spmfamunit",
     "spmwt",
     "spmtotres",
+    "spmftotval",
     "spmchxpns",
     "spmthresh",
     "year",
@@ -263,6 +261,7 @@ SPMU_AGG_COLS = [
     "age_6_12",
     "person",
     "transfer",
+    "adult",
 ]
 
 # Define a new SPMU-level dataframe with aggregated data
@@ -297,7 +296,9 @@ reg = sm.regression.linear_model.WLS(
     spmu.spmchxpns,
     spmu[["spmu_infant", "spmu_toddler", "spmu_preschool", "spmu_age_6_12"]],
     weights=spmu.spmwt,
-)
+).fit()
+stargazer = Stargazer([reg])
+stargazer.render_latex()
 child_allowance_amounts = reg.fit().params
 
 # Calculate total cost of transfers
@@ -340,19 +341,28 @@ spmu_sim.spmtotres += spmu_sim.transfer
 # Regression of any childcare expenses
 # Create a dummy for whether an spmu has child care expenses
 spmu["anyspmchxpns"] = spmu.spmchxpns > 0
+# Generate household demographics
+spmu["single_parent"] = spmu.spmu_adult == 1
 
-#### Household head. Anyone hispanic in SPMU?
-# Add in some more covariates here!
 reg_1 = sm.regression.linear_model.WLS(
-    spmu.anyspmchxpns,
-    spmu[["spmtotres"]],
+    spmu.anyspmchxpns.astype(int),
+    sm.add_constant(
+        spmu[
+            [
+                "single_parent",
+                "spmftotval",
+                "spmu_adult",
+                "spmu_infant",
+                "spmu_toddler",
+                "spmu_preschool",
+                "spmu_age_6_12",
+            ]
+        ]
+    ).astype(float),
     weights=spmu.spmwt,
-)
-print(reg_1.fit().summary())
-
-# Pickle out the regression object for use in the Jupyterbook
-# pkl.dump(reg,)
-### Output first regression too.
+).fit()
+stargazer_1 = Stargazer([reg_1])
+stargazer_1.render_latex()
 
 # Merge back to person_sim to replace spmtotres.
 SPM_SIM_IDS = [

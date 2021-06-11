@@ -5,6 +5,10 @@ US average for those states.
 Merge on State index using person-level child age indicator
 Calculate state-based outcomes.
 """
+person_sim = pd.read_csv(
+    "C:\\Users\\John Walker\\Desktop\\person_sim.csv.gz",
+    compression="gzip")
+
 
 # Preamble and read data
 import microdf as mdf
