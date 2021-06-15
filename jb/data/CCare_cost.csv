@@ -1,0 +1,417 @@
+﻿state,high_quality,age_cat,cost
+Alabama,0,infant,11400
+Alaska,0,infant,16300
+Arizona,0,infant,12500
+Arkansas,0,infant,11000
+California,0,infant,17900
+Colorado,0,infant,14300
+Connecticut,0,infant,18200
+Delaware,0,infant,15200
+District of Columbia,0,infant,20400
+Florida,0,infant,14400
+Georgia,0,infant,10800
+Hawaii,0,infant,16200
+Idaho,0,infant,10100
+Illinois,0,infant,12800
+Indiana,0,infant,14000
+Iowa,0,infant,14500
+Kansas,0,infant,17000
+Kentucky,0,infant,12900
+Louisiana,0,infant,11100
+Maine,0,infant,16200
+Maryland,0,infant,21300
+Massachusetts,0,infant,19900
+Michigan,0,infant,11900
+Minnesota,0,infant,16500
+Mississippi,0,infant,12200
+Missouri,0,infant,14600
+Montana,0,infant,14400
+Nebraska,0,infant,13400
+Nevada,0,infant,11600
+New Hampshire,0,infant,11800
+New Jersey,0,infant,14100
+New Mexico,0,infant,11200
+New York,0,infant,19800
+North Carolina,0,infant,12000
+North Dakota,0,infant,13100
+Ohio,0,infant,12200
+Oklahoma,0,infant,14400
+Oregon,0,infant,16100
+Pennsylvania,0,infant,14900
+Rhode Island,0,infant,17600
+South Carolina,0,infant,11900
+South Dakota,0,infant,8500
+Tennessee,0,infant,14600
+Texas,0,infant,12900
+Utah,0,infant,14200
+Vermont,0,infant,17200
+Virginia,0,infant,16600
+Washington,0,infant,16600
+West Virginia,0,infant,14700
+Wisconsin,0,infant,14400
+Wyoming,0,infant,15000
+United States,0,infant,14700
+Alabama,1,infant,22200
+Alaska,1,infant,36100
+Arizona,1,infant,23400
+Arkansas,1,infant,22500
+California,1,infant,31100
+Colorado,1,infant,26500
+Connecticut,1,infant,34100
+Delaware,1,infant,28700
+District of Columbia,1,infant,34700
+Florida,1,infant,25400
+Georgia,1,infant,24600
+Hawaii,1,infant,24900
+Idaho,1,infant,24700
+Illinois,1,infant,28600
+Indiana,1,infant,23600
+Iowa,1,infant,25900
+Kansas,1,infant,30000
+Kentucky,1,infant,25100
+Louisiana,1,infant,22200
+Maine,1,infant,27400
+Maryland,1,infant,35500
+Massachusetts,1,infant,36000
+Michigan,1,infant,28000
+Minnesota,1,infant,28700
+Mississippi,1,infant,20600
+Missouri,1,infant,25900
+Montana,1,infant,25000
+Nebraska,1,infant,25800
+Nevada,1,infant,27500
+New Hampshire,1,infant,27000
+New Jersey,1,infant,30300
+New Mexico,1,infant,26400
+New York,1,infant,33800
+North Carolina,1,infant,22400
+North Dakota,1,infant,25500
+Ohio,1,infant,26700
+Oklahoma,1,infant,20800
+Oregon,1,infant,30400
+Pennsylvania,1,infant,26600
+Rhode Island,1,infant,29900
+South Carolina,1,infant,24400
+South Dakota,1,infant,22700
+Tennessee,1,infant,24200
+Texas,1,infant,24700
+Utah,1,infant,23400
+Vermont,1,infant,28500
+Virginia,1,infant,29300
+Washington,1,infant,29900
+West Virginia,1,infant,23500
+Wisconsin,1,infant,27300
+Wyoming,1,infant,28500
+United States,1,infant,27100
+Alabama,0,toddler,8800
+Alaska,0,toddler,14600
+Arizona,0,toddler,9600
+Arkansas,0,toddler,8800
+California,0,toddler,13900
+Colorado,0,toddler,11800
+Connecticut,0,toddler,18200
+Delaware,0,toddler,10300
+District of Columbia,0,toddler,20400
+Florida,0,toddler,8400
+Georgia,0,toddler,8200
+Hawaii,0,toddler,10700
+Idaho,0,toddler,8700
+Illinois,0,toddler,10900
+Indiana,0,toddler,10100
+Iowa,0,toddler,11400
+Kansas,0,toddler,10000
+Kentucky,0,toddler,8700
+Louisiana,0,toddler,7600
+Maine,0,toddler,14000
+Maryland,0,toddler,13600
+Massachusetts,0,toddler,10700
+Michigan,0,toddler,10200
+Minnesota,0,toddler,11800
+Mississippi,0,toddler,10200
+Missouri,0,toddler,9800
+Montana,0,toddler,9700
+Nebraska,0,toddler,13400
+Nevada,0,toddler,8800
+New Hampshire,0,toddler,9600
+New Jersey,0,toddler,10800
+New Mexico,0,toddler,8500
+New York,0,toddler,15400
+North Carolina,0,toddler,8200
+North Dakota,0,toddler,8900
+Ohio,0,toddler,10000
+Oklahoma,0,toddler,9500
+Oregon,0,toddler,13900
+Pennsylvania,0,toddler,11700
+Rhode Island,0,toddler,13800
+South Carolina,0,toddler,8600
+South Dakota,0,toddler,8500
+Tennessee,0,toddler,10500
+Texas,0,toddler,8300
+Utah,0,toddler,10100
+Vermont,0,toddler,14900
+Virginia,0,toddler,9900
+Washington,0,toddler,11900
+West Virginia,0,toddler,9700
+Wisconsin,0,toddler,11300
+Wyoming,0,toddler,15000
+United States,0,toddler,11000
+Alabama,1,toddler,17200
+Alaska,1,toddler,27600
+Arizona,1,toddler,18000
+Arkansas,1,toddler,17300
+California,1,toddler,23800
+Colorado,1,toddler,20400
+Connecticut,1,toddler,34100
+Delaware,1,toddler,22100
+District of Columbia,1,toddler,34700
+Florida,1,toddler,19900
+Georgia,1,toddler,19000
+Hawaii,1,toddler,19200
+Idaho,1,toddler,19200
+Illinois,1,toddler,22100
+Indiana,1,toddler,18200
+Iowa,1,toddler,20100
+Kansas,1,toddler,18800
+Kentucky,1,toddler,19000
+Louisiana,1,toddler,16900
+Maine,1,toddler,23500
+Maryland,1,toddler,22200
+Massachusetts,1,toddler,25200
+Michigan,1,toddler,21500
+Minnesota,1,toddler,22000
+Mississippi,1,toddler,15800
+Missouri,1,toddler,20000
+Montana,1,toddler,19200
+Nebraska,1,toddler,19700
+Nevada,1,toddler,20900
+New Hampshire,1,toddler,20800
+New Jersey,1,toddler,23400
+New Mexico,1,toddler,20200
+New York,1,toddler,26300
+North Carolina,1,toddler,17300
+North Dakota,1,toddler,19500
+Ohio,1,toddler,20500
+Oklahoma,1,toddler,16000
+Oregon,1,toddler,26100
+Pennsylvania,1,toddler,20600
+Rhode Island,1,toddler,23200
+South Carolina,1,toddler,18700
+South Dakota,1,toddler,17500
+Tennessee,1,toddler,18600
+Texas,1,toddler,18900
+Utah,1,toddler,18000
+Vermont,1,toddler,24400
+Virginia,1,toddler,22300
+Washington,1,toddler,22900
+West Virginia,1,toddler,17900
+Wisconsin,1,toddler,21000
+Wyoming,1,toddler,24600
+United States,1,toddler,20800
+Alabama,0,preschool,7600
+Alaska,0,preschool,11300
+Arizona,0,preschool,7700
+Arkansas,0,preschool,7700
+California,0,preschool,9800
+Colorado,0,preschool,9900
+Connecticut,0,preschool,11100
+Delaware,0,preschool,9300
+District of Columbia,0,preschool,13900
+Florida,0,preschool,7400
+Georgia,0,preschool,6900
+Hawaii,0,preschool,8200
+Idaho,0,preschool,7300
+Illinois,0,preschool,9900
+Indiana,0,preschool,8500
+Iowa,0,preschool,9900
+Kansas,0,preschool,7800
+Kentucky,0,preschool,8000
+Louisiana,0,preschool,7100
+Maine,0,preschool,9700
+Maryland,0,preschool,10500
+Massachusetts,0,preschool,10700
+Michigan,0,preschool,9200
+Minnesota,0,preschool,9900
+Mississippi,0,preschool,10200
+Missouri,0,preschool,8800
+Montana,0,preschool,9700
+Nebraska,0,preschool,10200
+Nevada,0,preschool,7900
+New Hampshire,0,preschool,8500
+New Jersey,0,preschool,10800
+New Mexico,0,preschool,7900
+New York,0,preschool,12500
+North Carolina,0,preschool,7400
+North Dakota,0,preschool,8900
+Ohio,0,preschool,7700
+Oklahoma,0,preschool,7900
+Oregon,0,preschool,9600
+Pennsylvania,0,preschool,9200
+Rhode Island,0,preschool,11300
+South Carolina,0,preschool,7300
+South Dakota,0,preschool,8500
+Tennessee,0,preschool,9200
+Texas,0,preschool,7300
+Utah,0,preschool,7900
+Vermont,0,preschool,10200
+Virginia,0,preschool,9900
+Washington,0,preschool,10000
+West Virginia,0,preschool,8700
+Wisconsin,0,preschool,8900
+Wyoming,0,preschool,15000
+United States,0,preschool,9100
+Alabama,1,preschool,13200
+Alaska,1,preschool,20800
+Arizona,1,preschool,13700
+Arkansas,1,preschool,13100
+California,1,preschool,18000
+Colorado,1,preschool,15600
+Connecticut,1,preschool,20100
+Delaware,1,preschool,16800
+District of Columbia,1,preschool,23300
+Florida,1,preschool,15500
+Georgia,1,preschool,14600
+Hawaii,1,preschool,14500
+Idaho,1,preschool,14700
+Illinois,1,preschool,16900
+Indiana,1,preschool,13900
+Iowa,1,preschool,17300
+Kansas,1,preschool,14300
+Kentucky,1,preschool,14200
+Louisiana,1,preschool,12700
+Maine,1,preschool,15600
+Maryland,1,preschool,16800
+Massachusetts,1,preschool,19100
+Michigan,1,preschool,16300
+Minnesota,1,preschool,16600
+Mississippi,1,preschool,12000
+Missouri,1,preschool,15300
+Montana,1,preschool,16400
+Nebraska,1,preschool,14800
+Nevada,1,preschool,15700
+New Hampshire,1,preschool,15900
+New Jersey,1,preschool,17800
+New Mexico,1,preschool,15300
+New York,1,preschool,24200
+North Carolina,1,preschool,13100
+North Dakota,1,preschool,17700
+Ohio,1,preschool,15600
+Oklahoma,1,preschool,12200
+Oregon,1,preschool,17500
+Pennsylvania,1,preschool,15800
+Rhode Island,1,preschool,18700
+South Carolina,1,preschool,14300
+South Dakota,1,preschool,13300
+Tennessee,1,preschool,14800
+Texas,1,preschool,14300
+Utah,1,preschool,13700
+Vermont,1,preschool,16300
+Virginia,1,preschool,16800
+Washington,1,preschool,17300
+West Virginia,1,preschool,13400
+Wisconsin,1,preschool,16000
+Wyoming,1,preschool,16700
+United States,1,preschool,15800
+Alabama,0,adult,0
+Alaska,0,adult,0
+Arizona,0,adult,0
+Arkansas,0,adult,0
+California,0,adult,0
+Colorado,0,adult,0
+Connecticut,0,adult,0
+Delaware,0,adult,0
+District of Columbia,0,adult,0
+Florida,0,adult,0
+Georgia,0,adult,0
+Hawaii,0,adult,0
+Idaho,0,adult,0
+Illinois,0,adult,0
+Indiana,0,adult,0
+Iowa,0,adult,0
+Kansas,0,adult,0
+Kentucky,0,adult,0
+Louisiana,0,adult,0
+Maine,0,adult,0
+Maryland,0,adult,0
+Massachusetts,0,adult,0
+Michigan,0,adult,0
+Minnesota,0,adult,0
+Mississippi,0,adult,0
+Missouri,0,adult,0
+Montana,0,adult,0
+Nebraska,0,adult,0
+Nevada,0,adult,0
+New Hampshire,0,adult,0
+New Jersey,0,adult,0
+New Mexico,0,adult,0
+New York,0,adult,0
+North Carolina,0,adult,0
+North Dakota,0,adult,0
+Ohio,0,adult,0
+Oklahoma,0,adult,0
+Oregon,0,adult,0
+Pennsylvania,0,adult,0
+Rhode Island,0,adult,0
+South Carolina,0,adult,0
+South Dakota,0,adult,0
+Tennessee,0,adult,0
+Texas,0,adult,0
+Utah,0,adult,0
+Vermont,0,adult,0
+Virginia,0,adult,0
+Washington,0,adult,0
+West Virginia,0,adult,0
+Wisconsin,0,adult,0
+Wyoming,0,adult,0
+United States,0,adult,0
+Alabama,1,adult,0
+Alaska,1,adult,0
+Arizona,1,adult,0
+Arkansas,1,adult,0
+California,1,adult,0
+Colorado,1,adult,0
+Connecticut,1,adult,0
+Delaware,1,adult,0
+District of Columbia,1,adult,0
+Florida,1,adult,0
+Georgia,1,adult,0
+Hawaii,1,adult,0
+Idaho,1,adult,0
+Illinois,1,adult,0
+Indiana,1,adult,0
+Iowa,1,adult,0
+Kansas,1,adult,0
+Kentucky,1,adult,0
+Louisiana,1,adult,0
+Maine,1,adult,0
+Maryland,1,adult,0
+Massachusetts,1,adult,0
+Michigan,1,adult,0
+Minnesota,1,adult,0
+Mississippi,1,adult,0
+Missouri,1,adult,0
+Montana,1,adult,0
+Nebraska,1,adult,0
+Nevada,1,adult,0
+New Hampshire,1,adult,0
+New Jersey,1,adult,0
+New Mexico,1,adult,0
+New York,1,adult,0
+North Carolina,1,adult,0
+North Dakota,1,adult,0
+Ohio,1,adult,0
+Oklahoma,1,adult,0
+Oregon,1,adult,0
+Pennsylvania,1,adult,0
+Rhode Island,1,adult,0
+South Carolina,1,adult,0
+South Dakota,1,adult,0
+Tennessee,1,adult,0
+Texas,1,adult,0
+Utah,1,adult,0
+Vermont,1,adult,0
+Virginia,1,adult,0
+Washington,1,adult,0
+West Virginia,1,adult,0
+Wisconsin,1,adult,0
+Wyoming,1,adult,0
+United States,1,adult,0
