@@ -12,7 +12,7 @@ from stargazer.stargazer import Stargazer
 
 # Read in CPS data and specify columns for use
 person_raw = pd.read_csv(
-    "jb/data/cps_00003.csv.gz",
+    "https://github.com/UBICenter/child-allowance/blob/master/jb/data/cps_00003.csv.gz?raw=true",
     compression="gzip",
     usecols=[
         "YEAR",
@@ -33,7 +33,7 @@ person_raw = pd.read_csv(
 )
 
 # Read in CAP dataset
-costs_raw = pd.read_csv("jb/data/CCare_cost.csv")
+costs_raw = pd.read_csv("C:\\Users\\John Walker\\Desktop\\CCare_cost.csv")
 # costs_raw = pd.read_csv("C:\\Users\\John Walker\\Desktop\\CCare_cost.csv")
 
 # Generate copies of the datasets, perform data cleaning.
@@ -299,7 +299,7 @@ reg = sm.regression.linear_model.WLS(
 ).fit()
 stargazer = Stargazer([reg])
 stargazer.render_latex()
-child_allowance_amounts = reg.fit().params
+child_allowance_amounts = reg.params
 
 # Calculate total cost of transfers
 program_cost = mdf.weighted_sum(spmu, "spmchxpns", "spmwt")
